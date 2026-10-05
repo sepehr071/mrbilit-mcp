@@ -1,0 +1,63 @@
+{
+ "hotels": [
+  {
+   "name": "جمالی",
+   "englishName": "jamali-mashhad",
+   "cityId": 16,
+   "cityName": "مشهد",
+   "cityEnglishName": "mashhad",
+   "provinceName": "خراسان رضوی",
+   "provinceEnglishName": "Khorasan, Razavi",
+   "id": 8194,
+   "tags": [
+    "cheap",
+    "hotelapartment"
+   ],
+   "searchTerms": null
+  },
+  {
+   "name": "انقلاب",
+   "englishName": "enghelab",
+   "cityId": 16,
+   "cityName": "مشهد",
+   "cityEnglishName": "mashhad",
+   "provinceName": "خراسان رضوی",
+   "provinceEnglishName": "Khorasan, Razavi",
+   "id": 8778,
+   "tags": [
+    "cheap"
+   ],
+   "searchTerms": null
+  },
+  {
+   "name": "رز درویشی",
+   "englishName": "rosedarvishi",
+   "cityId": 16,
+   "cityName": "مشهد",
+   "cityEnglishName": "mashhad",
+   "provinceName": "خراسان رضوی",
+   "provinceEnglishName": "Khorasan, Razavi",
+   "id": 11521,
+   "tags": [
+    "luxury"
+   ],
+   "searchTerms": null
+  }
+ ],
+ "cities": [
+  {
+   "title": "مشهد",
+   "englishTitle": "mashhad",
+   "id": 16,
+   "latitude": 36.2604623,
+   "longitude": 59.6167549,
+   "tags": [
+    "5star",
+    "cheap",
+    "hotelapartment",
+    "luxury"
+   ],
+   "searchTerms": null
+  }
+ ]
+}

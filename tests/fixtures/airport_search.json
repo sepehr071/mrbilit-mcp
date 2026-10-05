@@ -1,0 +1,28 @@
+[
+ {
+  "Airports": [
+   {
+    "CityPersianTitle": "استانبول",
+    "Code": "IST",
+    "Title": "Istanbul Airport",
+    "CityEnglishTitle": "Istanbul",
+    "Longitude": 28.7427,
+    "Latitude": 41.2599
+   },
+   {
+    "CityPersianTitle": "استانبول",
+    "Code": "SAW",
+    "Title": "Sabiha Gokcen Arpt",
+    "CityEnglishTitle": "Istanbul",
+    "Longitude": 29.3092,
+    "Latitude": 40.9047
+   }
+  ],
+  "Code": "ISTALL",
+  "CountryTitle": "Turkey",
+  "PersianTitle": "استانبول",
+  "Title": "Istanbul",
+  "CountryPersianTitle": "ترکیه",
+  "CityIataCode": "IST"
+ }
+]

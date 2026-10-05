@@ -1,0 +1,36 @@
+{
+ "routes": [
+  {
+   "fromID": 1,
+   "toID": 191,
+   "fromName": "تهران",
+   "toName": "مشهد",
+   "count": 23,
+   "minPrice": 7600000
+  },
+  {
+   "fromID": 209,
+   "toID": 191,
+   "fromName": "ورامین",
+   "toName": "مشهد",
+   "count": 4,
+   "minPrice": 7232000
+  },
+  {
+   "fromID": 1,
+   "toID": 206,
+   "fromName": "تهران",
+   "toName": "نیشابور",
+   "count": 3,
+   "minPrice": 6362000
+  },
+  {
+   "fromID": 176,
+   "toID": 191,
+   "fromName": "گرمسار",
+   "toName": "مشهد",
+   "count": 0,
+   "minPrice": 6730500
+  }
+ ]
+}

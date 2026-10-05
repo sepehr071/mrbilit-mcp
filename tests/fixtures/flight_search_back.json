@@ -1,0 +1,506 @@
+{
+ "Meta": {
+  "RoutesInfo": [
+   {
+    "Origin": {
+     "PersianTitle": "مشهد",
+     "EnglishTitle": "Mashhad",
+     "IataCode": "MHD",
+     "Latitude": 36.2272,
+     "Longitude": 59.6417,
+     "IsInternational": false,
+     "CityIataCode": "MHD"
+    },
+    "Destination": {
+     "PersianTitle": "تهران",
+     "EnglishTitle": "Tehran",
+     "IataCode": "THR",
+     "Latitude": 35.6915,
+     "Longitude": 51.3219,
+     "IsInternational": false,
+     "CityIataCode": "THR"
+    }
+   }
+  ],
+  "Airlines": [
+   {
+    "IataCode": "IS",
+    "PersianTitle": "سپهران ایر",
+    "EnglishTitle": "Sepehran Air",
+    "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/IS.svg",
+    "Title": null
+   },
+   {
+    "IataCode": "B9",
+    "PersianTitle": "ایران ایرتور",
+    "EnglishTitle": "Iran Airtour",
+    "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/B9.svg",
+    "Title": null
+   }
+  ],
+  "TotalCount": 17,
+  "MinPrice": 123200000,
+  "MaxPrice": 215655000,
+  "ShowIataCodeOnCard": false,
+  "AveragePrice": null,
+  "HasPriceFreezeOnRote": true,
+  "RouteNotFound": false,
+  "BaggageInfos": [
+   {
+    "Baggage": 20,
+    "BaggageType": "KG",
+    "Title": "20 کیلوگرم"
+   },
+   {
+    "Baggage": 30,
+    "BaggageType": "KG",
+    "Title": "30 کیلوگرم"
+   }
+  ],
+  "CabinClasses": [
+   {
+    "ClassOfService": "Economy",
+    "DisplayName": "اکونومی",
+    "Id": 0
+   },
+   {
+    "ClassOfService": "Business",
+    "DisplayName": "بیزینس",
+    "Id": 0
+   }
+  ],
+  "HasHigherPriceCapacityCard": false
+ },
+ "Flights": [
+  {
+   "Id": "21911397",
+   "Score": 0.0,
+   "Prices": [
+    {
+     "Url": null,
+     "UniqueId": "08400c7d164af2ec06d5ce7b27a541a2a6dec1dba5797bc19598ba022270f295",
+     "ProposalId": "W3siVCI6W3siSSI6IjIxOTExMzk3IiwiUCI6MSwiRCI6IjIxOTExMzk3fFkyMjA0NTl8MTIzMjAwMDAwfDEwNDgwMDAwMHwyNDkwMDAwMHxZfHwiLCJBIjoxMjMyMDAwMDAsIkMiOjU1OTIyNTAsIkNDIjoxLCJCIjp0cnVlLCJGUyI6MCwiQkMiOiJZMjIwNDU5IiwiSUIiOmZhbHNlLCJDUFIiOjAsIkRQIjoiMTY6MDA6MDAifV19XQ==",
+     "Capacity": 4,
+     "DiscountToken": null,
+     "BookingClass": "Y220459",
+     "PassengerFares": [
+      {
+       "Discount": 0,
+       "TotalFare": 123200000,
+       "PaxType": "ADL",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      },
+      {
+       "Discount": 0,
+       "TotalFare": 104800000,
+       "PaxType": "CHD",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      },
+      {
+       "Discount": 0,
+       "TotalFare": 24900000,
+       "PaxType": "INF",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      }
+     ],
+     "Baggage": 20,
+     "BaggageType": "KG",
+     "ProviderBaggageType": "",
+     "CabinClass": "Economy",
+     "CabinClassDisplayName": "اکونومی",
+     "FareRulesUrl": null,
+     "FareRules": "این بلیط تا 72 ساعت قبل از پرواز با 30% جریمه، تا 48 ساعت قبل از پرواز با 50% جریمه، تا 24 ساعت قبل از پرواز با 70% جریمه و پس از آن با 85% جریمه به صورت اینترنتی قابل کنسل می باشد.",
+     "ProviderName": "",
+     "CancellationTernEntities": [
+      {
+       "Amount": null,
+       "PercentAmount": 30,
+       "Title": "از لحظه صدور تا 3 روز قبل از پرواز",
+       "TimeTitle": "تا 3 روز",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "30% جریمه",
+       "PenaltyAmountTextEn": "30% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 50,
+       "Title": "تا 2 روز قبل از پرواز",
+       "TimeTitle": "تا 2 روز",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "50% جریمه",
+       "PenaltyAmountTextEn": "50% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 70,
+       "Title": "تا 1 روز قبل از پرواز",
+       "TimeTitle": "تا 1 روز",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "70% جریمه",
+       "PenaltyAmountTextEn": "70% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 85,
+       "Title": "از 1 روز قبل از پرواز به بعد",
+       "TimeTitle": null,
+       "DayBeforeTitle": "پس از پرواز",
+       "PenaltyAmountTextFa": "85% جریمه",
+       "PenaltyAmountTextEn": "85% penalty"
+      }
+     ],
+     "FlightSpecialOffers": [],
+     "IsCharter": false,
+     "IgnorePriceLimit": false,
+     "ExtraTerms": "",
+     "IncludeLowerCapacity": false,
+     "IncludeHigherCapacity": false,
+     "NeedGetPrice": false,
+     "IsAgencyHasPriorityOnShowingFlight": false,
+     "HasOfficialRatePrice": true
+    }
+   ],
+   "Segments": [
+    {
+     "ConnectionTime": "00:00:00",
+     "TotalTime": "01:40:00",
+     "Legs": [
+      {
+       "Id": 21911397,
+       "FlightNumber": "4311",
+       "Origin": "مشهد",
+       "OriginAirport": "شهید هاشمی نژاد",
+       "OriginCode": "MHD",
+       "Destination": "تهران",
+       "DestinationAirport": "مهرآباد",
+       "JourneyTime": "01:40:00",
+       "DestinationCode": "THR",
+       "AirCraft": {
+        "Id": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Score": null,
+        "Iatacode": null,
+        "ShortTitle": null
+       },
+       "AirlineCode": "IS",
+       "OperatingAirlineCode": null,
+       "Airline": {
+        "IataCode": "IS",
+        "PersianTitle": "سپهران ایر",
+        "EnglishTitle": "Sepehran Air",
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/IS.svg",
+        "Title": null
+       },
+       "OperatingAirline": {
+        "IataCode": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/.svg",
+        "Title": null
+       },
+       "DepartureDateString": "1 آبان",
+       "DepartureWeekDay": "جمعه",
+       "DepartureTerminal": "",
+       "ArrivalTerminal": "",
+       "DepartureTime": "2026-10-23T16:00:00+03:30",
+       "ArrivalTime": "2026-10-23T17:40:00+03:30",
+       "Status": 0,
+       "FlightStatus": "Ok",
+       "Stops": 0,
+       "AirplaneCode": null,
+       "PngLogoPath": null,
+       "SvgLogoPath": null,
+       "SuggestedServices": [],
+       "AirlineAuxiliaryServices": null,
+       "TechnicalStops": null
+      }
+     ],
+     "IsOriginMismatched": false,
+     "IsDestinationMismatched": false
+    }
+   ],
+   "FareFamilyComponents": null,
+   "UnchangeableInfCount": false,
+   "PassengerCountChangeAllowed": true,
+   "PhoneSale": false,
+   "AutomaticReserve": true,
+   "MustAppearInAutoReserve": false,
+   "MustAppearInPriceTrack": true,
+   "MustAppearInNotifyOnDecreasingPrice": true,
+   "IsFromMultilegSource": false,
+   "SpecialConditions": null,
+   "SpecialConditionTitle": null
+  },
+  {
+   "Id": "21874543",
+   "Score": 0.0,
+   "Prices": [
+    {
+     "Url": null,
+     "UniqueId": "9f4a309183c7a62691443a3e4f876d114b435c655426fc9df8cc9a57bc555330",
+     "ProposalId": "W3siVCI6W3siSSI6IjIxODc0NTQzIiwiUCI6MSwiRCI6IjIxODc0NTQzfFhVfDIxNTY1NDMwMHwxODMzMzE2NTV8MjE2MTg0MzB8Q3wzMHxLRyIsIkEiOjIxNTY1NDMwMCwiQyI6ODgxNTI3NSwiQ0MiOjIsIkIiOnRydWUsIkZTIjowLCJCQyI6IlhVIiwiSUIiOmZhbHNlLCJDUFIiOjAsIkRQIjoiMTI6MTA6MDAifV19XQ==",
+     "Capacity": 9,
+     "DiscountToken": null,
+     "BookingClass": "XU",
+     "PassengerFares": [
+      {
+       "Discount": 0,
+       "TotalFare": 215655000,
+       "PaxType": "ADL",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      },
+      {
+       "Discount": 0,
+       "TotalFare": 183332000,
+       "PaxType": "CHD",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      },
+      {
+       "Discount": 0,
+       "TotalFare": 21619000,
+       "PaxType": "INF",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      }
+     ],
+     "Baggage": 30,
+     "BaggageType": "KG",
+     "ProviderBaggageType": "",
+     "CabinClass": "Business",
+     "CabinClassDisplayName": "بیزینس",
+     "FareRulesUrl": null,
+     "FareRules": "این بلیط تا 168 ساعت قبل از پرواز با 20% جریمه، تا 72 ساعت قبل از پرواز با 40% جریمه، تا 24 ساعت قبل از پرواز با 60% جریمه، تا 6 ساعت قبل از پرواز با 75% جریمه و پس از آن با 100% جریمه به صورت اینترنتی قابل کنسل می باشد. این هواپیمایی برای استرداد بدون جریمه به علت پروازهای مرتبط، با سایر هواپیمایی ها قرارداد ندارد.",
+     "ProviderName": "",
+     "CancellationTernEntities": [
+      {
+       "Amount": null,
+       "PercentAmount": 20,
+       "Title": "از لحظه صدور تا 7 روز قبل از پرواز",
+       "TimeTitle": "تا 7 روز",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "20% جریمه",
+       "PenaltyAmountTextEn": "20% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 40,
+       "Title": "تا 3 روز قبل از پرواز",
+       "TimeTitle": "تا 3 روز",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "40% جریمه",
+       "PenaltyAmountTextEn": "40% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 60,
+       "Title": "تا 1 روز قبل از پرواز",
+       "TimeTitle": "تا 1 روز",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "60% جریمه",
+       "PenaltyAmountTextEn": "60% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 75,
+       "Title": "تا 6 ساعت قبل از پرواز",
+       "TimeTitle": "تا 6 ساعت",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "75% جریمه",
+       "PenaltyAmountTextEn": "75% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 100,
+       "Title": "از 6 ساعت قبل از پرواز به بعد",
+       "TimeTitle": null,
+       "DayBeforeTitle": "پس از پرواز",
+       "PenaltyAmountTextFa": "100% جریمه",
+       "PenaltyAmountTextEn": "100% penalty"
+      }
+     ],
+     "FlightSpecialOffers": [],
+     "IsCharter": false,
+     "IgnorePriceLimit": false,
+     "ExtraTerms": "",
+     "IncludeLowerCapacity": false,
+     "IncludeHigherCapacity": false,
+     "NeedGetPrice": false,
+     "IsAgencyHasPriorityOnShowingFlight": false,
+     "HasOfficialRatePrice": true
+    },
+    {
+     "Url": null,
+     "UniqueId": "16de6639b20460f82d0d60a7633765831c500e78075455e1bc51c0471534412b",
+     "ProposalId": "W3siVCI6W3siSSI6IjIxODc0NTQzIiwiUCI6MSwiRCI6IjIxODc0NTQzfFhUfDEyMzIyNDYwMHwxMDQ3NjY0MTB8MTIzNzU0NjB8WXx8IiwiQSI6MTIzMjI0NjAwLCJDIjo1MDM0MDYwLCJDQyI6MSwiQiI6dHJ1ZSwiRlMiOjAsIkJDIjoiWFQiLCJJQiI6ZmFsc2UsIkNQUiI6MCwiRFAiOiIxMjoxMDowMCJ9XX1d",
+     "Capacity": 9,
+     "DiscountToken": null,
+     "BookingClass": "XT",
+     "PassengerFares": [
+      {
+       "Discount": 0,
+       "TotalFare": 123225000,
+       "PaxType": "ADL",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      },
+      {
+       "Discount": 0,
+       "TotalFare": 104767000,
+       "PaxType": "CHD",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      },
+      {
+       "Discount": 0,
+       "TotalFare": 12376000,
+       "PaxType": "INF",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      }
+     ],
+     "Baggage": 20,
+     "BaggageType": "KG",
+     "ProviderBaggageType": "",
+     "CabinClass": "Economy",
+     "CabinClassDisplayName": "اکونومی",
+     "FareRulesUrl": null,
+     "FareRules": "این بلیط تا 168 ساعت قبل از پرواز با 30% جریمه، تا 72 ساعت قبل از پرواز با 50% جریمه، تا 24 ساعت قبل از پرواز با 70% جریمه، تا 6 ساعت قبل از پرواز با 85% جریمه و پس از آن با 100% جریمه به صورت اینترنتی قابل کنسل می باشد. این هواپیمایی برای استرداد بدون جریمه به علت پروازهای مرتبط، با سایر هواپیمایی ها قرارداد ندارد.",
+     "ProviderName": "",
+     "CancellationTernEntities": [
+      {
+       "Amount": null,
+       "PercentAmount": 30,
+       "Title": "از لحظه صدور تا 7 روز قبل از پرواز",
+       "TimeTitle": "تا 7 روز",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "30% جریمه",
+       "PenaltyAmountTextEn": "30% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 50,
+       "Title": "تا 3 روز قبل از پرواز",
+       "TimeTitle": "تا 3 روز",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "50% جریمه",
+       "PenaltyAmountTextEn": "50% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 70,
+       "Title": "تا 1 روز قبل از پرواز",
+       "TimeTitle": "تا 1 روز",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "70% جریمه",
+       "PenaltyAmountTextEn": "70% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 85,
+       "Title": "تا 6 ساعت قبل از پرواز",
+       "TimeTitle": "تا 6 ساعت",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "85% جریمه",
+       "PenaltyAmountTextEn": "85% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 100,
+       "Title": "از 6 ساعت قبل از پرواز به بعد",
+       "TimeTitle": null,
+       "DayBeforeTitle": "پس از پرواز",
+       "PenaltyAmountTextFa": "100% جریمه",
+       "PenaltyAmountTextEn": "100% penalty"
+      }
+     ],
+     "FlightSpecialOffers": [],
+     "IsCharter": false,
+     "IgnorePriceLimit": false,
+     "ExtraTerms": "",
+     "IncludeLowerCapacity": false,
+     "IncludeHigherCapacity": false,
+     "NeedGetPrice": false,
+     "IsAgencyHasPriorityOnShowingFlight": false,
+     "HasOfficialRatePrice": true
+    }
+   ],
+   "Segments": [
+    {
+     "ConnectionTime": "00:00:00",
+     "TotalTime": "01:35:00",
+     "Legs": [
+      {
+       "Id": 21874543,
+       "FlightNumber": "965",
+       "Origin": "مشهد",
+       "OriginAirport": "شهید هاشمی نژاد",
+       "OriginCode": "MHD",
+       "Destination": "تهران",
+       "DestinationAirport": "مهرآباد",
+       "JourneyTime": "01:35:00",
+       "DestinationCode": "THR",
+       "AirCraft": {
+        "Id": 4,
+        "PersianTitle": "ایرباس A320",
+        "EnglishTitle": "Airbus A320-100/200",
+        "Score": 3.5,
+        "Iatacode": "320",
+        "ShortTitle": "Airbus A320"
+       },
+       "AirlineCode": "B9",
+       "OperatingAirlineCode": null,
+       "Airline": {
+        "IataCode": "B9",
+        "PersianTitle": "ایران ایرتور",
+        "EnglishTitle": "Iran Airtour",
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/B9.svg",
+        "Title": null
+       },
+       "OperatingAirline": {
+        "IataCode": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/.svg",
+        "Title": null
+       },
+       "DepartureDateString": "1 آبان",
+       "DepartureWeekDay": "جمعه",
+       "DepartureTerminal": "",
+       "ArrivalTerminal": "",
+       "DepartureTime": "2026-10-23T12:10:00+03:30",
+       "ArrivalTime": "2026-10-23T13:45:00+03:30",
+       "Status": 0,
+       "FlightStatus": "Ok",
+       "Stops": 0,
+       "AirplaneCode": "320",
+       "PngLogoPath": null,
+       "SvgLogoPath": null,
+       "SuggestedServices": [],
+       "AirlineAuxiliaryServices": null,
+       "TechnicalStops": null
+      }
+     ],
+     "IsOriginMismatched": false,
+     "IsDestinationMismatched": false
+    }
+   ],
+   "FareFamilyComponents": null,
+   "UnchangeableInfCount": false,
+   "PassengerCountChangeAllowed": true,
+   "PhoneSale": false,
+   "AutomaticReserve": true,
+   "MustAppearInAutoReserve": false,
+   "MustAppearInPriceTrack": true,
+   "MustAppearInNotifyOnDecreasingPrice": true,
+   "IsFromMultilegSource": false,
+   "SpecialConditions": null,
+   "SpecialConditionTitle": null
+  }
+ ]
+}

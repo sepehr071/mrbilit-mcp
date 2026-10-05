@@ -1,0 +1,432 @@
+{
+ "buses": [
+  {
+   "id": 55983988,
+   "from": 11321006,
+   "to": 31310000,
+   "fromName": "تهران (جنوب)",
+   "toName": "مشهد",
+   "corporation": "شرکت  گیتی نورد تعاونى شماره 12 - پایانه جنوب",
+   "departureTime": "2026-10-20T06:00:00",
+   "arrivalTime": "2026-10-20T18:00:00",
+   "price": 13155000,
+   "serviceNumber": "",
+   "capacity": 23,
+   "busType": "وی آی پی29نفره صندلی تخت شو همراه باشارژراختصاصی",
+   "superCorporationID": 16,
+   "superCorporation": "گیتی نورد",
+   "fromTerminal": "تهران (جنوب)",
+   "fromCity": "تهران (جنوب)",
+   "toCity": "مشهد",
+   "distance": 899,
+   "providerID": 1,
+   "penaltyRates": [
+    {
+     "actualHoursBefore": 1.0,
+     "hoursBefore": 1.0,
+     "hoursBeforeText": null,
+     "percent": 10,
+     "customText": null
+    },
+    {
+     "actualHoursBefore": null,
+     "hoursBefore": null,
+     "hoursBeforeText": null,
+     "percent": 50,
+     "customText": null
+    }
+   ],
+   "busTypeID": 4634333,
+   "discount": 0,
+   "isVIP": true,
+   "points": 0,
+   "precisionPoints": 0.0,
+   "additionalInfo": null,
+   "finalDestinationCity": "مشهد",
+   "freeCancellationMins": null,
+   "weekday": "سه\u200cشنبه",
+   "dateString": "28 مهر",
+   "fromTerminalSpecified": true,
+   "toTerminalSpecified": false,
+   "fromTerminalName": null,
+   "arrivalDateString": "28 مهر",
+   "corportaionID": 228,
+   "canCancelAfterClose": true,
+   "corporationFailed": false,
+   "corporationFailedUntil": null,
+   "preferredProvider": 1,
+   "description": "###########",
+   "unmaskedDescription": null,
+   "fromDatabase": false,
+   "intermediateDestinations": [
+    "سبزوار",
+    "نیشابور"
+   ],
+   "penaltyText": "شرایط کنسلی آنلاین و استرداد وجه (در صورت عدم چاپ فیزیکی بلیط):\nتا یک ساعت پیش از حرکت: 10٪ جریمه\nاز یک ساعت مانده به حرکت به بعد: 50٪ جریمه",
+   "customOrder": 3,
+   "reservable": true,
+   "autoReservable": true,
+   "isCar": false,
+   "shortTitle": "",
+   "features": [
+    "تخت شو",
+    "شارژر دار"
+   ],
+   "busTypeClass": 0,
+   "needsNationalCode": false,
+   "needsSinglePerson": true,
+   "needsSelectSeat": true,
+   "briefDescription": null,
+   "lables": [],
+   "hasTempReserve": true,
+   "hasNoPassengers": false,
+   "isExclusive": false,
+   "companyCode": "11215",
+   "brandName": "gitynavard",
+   "serviceNo": "306138-6",
+   "finalCityCode": "31310000",
+   "finalCityName": "مشهد",
+   "providerName": null
+  },
+  {
+   "id": 55983989,
+   "from": 11321006,
+   "to": 31310000,
+   "fromName": "تهران (جنوب)",
+   "toName": "مشهد",
+   "corporation": "شرکت  گیتی نورد تعاونى شماره 12 - پایانه جنوب",
+   "departureTime": "2026-10-20T07:00:00",
+   "arrivalTime": "2026-10-20T19:00:00",
+   "price": 13155000,
+   "serviceNumber": "",
+   "capacity": 19,
+   "busType": "وی آی پی25نفره صندلی تخت شوهمراه باشارژراختصاصی",
+   "superCorporationID": 16,
+   "superCorporation": "گیتی نورد",
+   "fromTerminal": "تهران (جنوب)",
+   "fromCity": "تهران (جنوب)",
+   "toCity": "مشهد",
+   "distance": 899,
+   "providerID": 1,
+   "penaltyRates": [
+    {
+     "actualHoursBefore": 1.0,
+     "hoursBefore": 1.0,
+     "hoursBeforeText": null,
+     "percent": 10,
+     "customText": null
+    },
+    {
+     "actualHoursBefore": null,
+     "hoursBefore": null,
+     "hoursBeforeText": null,
+     "percent": 50,
+     "customText": null
+    }
+   ],
+   "busTypeID": 4632684,
+   "discount": 0,
+   "isVIP": true,
+   "points": 0,
+   "precisionPoints": 0.0,
+   "additionalInfo": null,
+   "finalDestinationCity": "مشهد",
+   "freeCancellationMins": null,
+   "weekday": "سه\u200cشنبه",
+   "dateString": "28 مهر",
+   "fromTerminalSpecified": true,
+   "toTerminalSpecified": false,
+   "fromTerminalName": null,
+   "arrivalDateString": "28 مهر",
+   "corportaionID": 228,
+   "canCancelAfterClose": true,
+   "corporationFailed": false,
+   "corporationFailedUntil": null,
+   "preferredProvider": 1,
+   "description": "###########",
+   "unmaskedDescription": null,
+   "fromDatabase": false,
+   "intermediateDestinations": [
+    "نیشابور",
+    "سبزوار"
+   ],
+   "penaltyText": "شرایط کنسلی آنلاین و استرداد وجه (در صورت عدم چاپ فیزیکی بلیط):\nتا یک ساعت پیش از حرکت: 10٪ جریمه\nاز یک ساعت مانده به حرکت به بعد: 50٪ جریمه",
+   "customOrder": 3,
+   "reservable": true,
+   "autoReservable": true,
+   "isCar": false,
+   "shortTitle": "",
+   "features": [
+    "تخت شو",
+    "شارژر"
+   ],
+   "busTypeClass": 0,
+   "needsNationalCode": false,
+   "needsSinglePerson": true,
+   "needsSelectSeat": true,
+   "briefDescription": null,
+   "lables": [],
+   "hasTempReserve": true,
+   "hasNoPassengers": false,
+   "isExclusive": false,
+   "companyCode": "11215",
+   "brandName": "gitynavard",
+   "serviceNo": "306168-6",
+   "finalCityCode": "31310000",
+   "finalCityName": "مشهد",
+   "providerName": null
+  },
+  {
+   "id": 56145483,
+   "from": 11321006,
+   "to": 31310000,
+   "fromName": "تهران (جنوب)",
+   "toName": "مشهد",
+   "corporation": "ایمن سفر ایرانیان تهران جنوب تعاونی 6",
+   "departureTime": "2026-10-20T08:15:00",
+   "arrivalTime": "2026-10-20T20:15:00",
+   "price": 13150000,
+   "serviceNumber": "",
+   "capacity": 29,
+   "busType": "مارال سه محوره",
+   "superCorporationID": 15,
+   "superCorporation": "ایمن سفر",
+   "fromTerminal": "تهران (جنوب)",
+   "fromCity": "تهران (جنوب)",
+   "toCity": "مشهد",
+   "distance": 899,
+   "providerID": 5,
+   "penaltyRates": [
+    {
+     "actualHoursBefore": 1.0,
+     "hoursBefore": 1.0,
+     "hoursBeforeText": null,
+     "percent": 10,
+     "customText": null
+    },
+    {
+     "actualHoursBefore": null,
+     "hoursBefore": null,
+     "hoursBeforeText": null,
+     "percent": 50,
+     "customText": null
+    }
+   ],
+   "busTypeID": 4618505,
+   "discount": 0,
+   "isVIP": true,
+   "points": 0,
+   "precisionPoints": 0.0,
+   "additionalInfo": null,
+   "finalDestinationCity": "مشهد",
+   "freeCancellationMins": null,
+   "weekday": "سه\u200cشنبه",
+   "dateString": "28 مهر",
+   "fromTerminalSpecified": true,
+   "toTerminalSpecified": false,
+   "fromTerminalName": null,
+   "arrivalDateString": "28 مهر",
+   "corportaionID": 1937,
+   "canCancelAfterClose": false,
+   "corporationFailed": false,
+   "corporationFailedUntil": null,
+   "preferredProvider": 1,
+   "description": "",
+   "unmaskedDescription": null,
+   "fromDatabase": false,
+   "intermediateDestinations": [],
+   "penaltyText": "شرایط کنسلی آنلاین و استرداد وجه (در صورت عدم چاپ فیزیکی بلیط):\nتا یک ساعت پیش از حرکت: 10٪ جریمه\nاز یک ساعت مانده به حرکت به بعد: متاسفانه کنسلی آنلاین امکان\u200cپذیر نیست. کنسلی و استرداد فقط به\u200cصورت حضوری در تعاونی مبدأ، با ارائه کارت شناسایی و 50٪ جریمه انجام می\u200cشود.\r\n",
+   "customOrder": 3,
+   "reservable": true,
+   "autoReservable": true,
+   "isCar": false,
+   "shortTitle": "مارال",
+   "features": [
+    "سه محور"
+   ],
+   "busTypeClass": 0,
+   "needsNationalCode": false,
+   "needsSinglePerson": true,
+   "needsSelectSeat": true,
+   "briefDescription": null,
+   "lables": [],
+   "hasTempReserve": true,
+   "hasNoPassengers": false,
+   "isExclusive": false,
+   "companyCode": null,
+   "brandName": "imensafar",
+   "serviceNo": "b1fa0bfa115a8-19a1525bae",
+   "finalCityCode": "31310000",
+   "finalCityName": "مشهد",
+   "providerName": null
+  },
+  {
+   "id": 56246979,
+   "from": 11321004,
+   "to": 31310000,
+   "fromName": "تهران (غرب)",
+   "toName": "مشهد",
+   "corporation": "تعاونی 4 میهن نور ",
+   "departureTime": "2026-10-20T08:30:00",
+   "arrivalTime": "2026-10-20T20:30:00",
+   "price": 13150000,
+   "serviceNumber": "",
+   "capacity": 9,
+   "busType": "SCANIA VIP 2+1 / پذیرایی / برق 220 ولت / سیستم تهویه مطبوع / تخت شو",
+   "superCorporationID": 12,
+   "superCorporation": "میهن نور",
+   "fromTerminal": "تهران (غرب)",
+   "fromCity": "تهران (غرب)",
+   "toCity": "مشهد",
+   "distance": 899,
+   "providerID": 3,
+   "penaltyRates": [
+    {
+     "actualHoursBefore": 1.0,
+     "hoursBefore": 1.0,
+     "hoursBeforeText": null,
+     "percent": 10,
+     "customText": null
+    },
+    {
+     "actualHoursBefore": null,
+     "hoursBefore": null,
+     "hoursBeforeText": null,
+     "percent": 50,
+     "customText": "درصورت عدم چاپ یا استرداد بلیط توسط ترمینال به صورت اینترنتی"
+    }
+   ],
+   "busTypeID": 4608969,
+   "discount": 0,
+   "isVIP": true,
+   "points": 0,
+   "precisionPoints": 0.0,
+   "additionalInfo": null,
+   "finalDestinationCity": "مشهد",
+   "freeCancellationMins": null,
+   "weekday": "سه\u200cشنبه",
+   "dateString": "28 مهر",
+   "fromTerminalSpecified": true,
+   "toTerminalSpecified": false,
+   "fromTerminalName": null,
+   "arrivalDateString": "28 مهر",
+   "corportaionID": 1204,
+   "canCancelAfterClose": true,
+   "corporationFailed": false,
+   "corporationFailedUntil": null,
+   "preferredProvider": 1,
+   "description": "امکانات سرویس: پذیرایی / برق 220 ولت / سیستم تهویه مطبوع / تخت شو، تلفن هماهنگی (###########)",
+   "unmaskedDescription": null,
+   "fromDatabase": false,
+   "intermediateDestinations": [],
+   "penaltyText": "شرایط کنسلی آنلاین و استرداد وجه (در صورت عدم چاپ فیزیکی بلیط):\nتا یک ساعت پیش از حرکت: 10٪ جریمه\nاز یک ساعت مانده به حرکت به بعد: 50٪ جریمه",
+   "customOrder": 3,
+   "reservable": true,
+   "autoReservable": true,
+   "isCar": false,
+   "shortTitle": "اسکانیا",
+   "features": [
+    "پذیرایی",
+    "برق 220 ولت",
+    "سیستم تهویه مطبوع",
+    "تخت شو"
+   ],
+   "busTypeClass": 0,
+   "needsNationalCode": false,
+   "needsSinglePerson": true,
+   "needsSelectSeat": true,
+   "briefDescription": null,
+   "lables": [],
+   "hasTempReserve": false,
+   "hasNoPassengers": false,
+   "isExclusive": false,
+   "companyCode": "11944",
+   "brandName": "mihannour",
+   "serviceNo": "39993797-31310000",
+   "finalCityCode": null,
+   "finalCityName": null,
+   "providerName": null
+  }
+ ],
+ "filterData": {
+  "corporations": [
+   {
+    "id": 8,
+    "name": "گیتی پیما"
+   },
+   {
+    "id": 28,
+    "name": "پیک معتمد"
+   },
+   {
+    "id": 16,
+    "name": "گیتی نورد"
+   },
+   {
+    "id": 3,
+    "name": "ترابر بی تا "
+   },
+   {
+    "id": 25,
+    "name": "جهان گشت"
+   },
+   {
+    "id": 4,
+    "name": "سیروسفر "
+   },
+   {
+    "id": 15,
+    "name": "ایمن سفر"
+   },
+   {
+    "id": 13,
+    "name": "پیك صبا"
+   },
+   {
+    "id": 12,
+    "name": "میهن نور"
+   },
+   {
+    "id": 21,
+    "name": "پارسیان"
+   },
+   {
+    "id": 10,
+    "name": "عدل"
+   },
+   {
+    "id": 9,
+    "name": "رویال سفر"
+   }
+  ],
+  "minPrice": 13130000,
+  "maxPrice": 13550000,
+  "fromTerminals": [
+   {
+    "id": 11321004,
+    "name": "تهران (غرب)"
+   },
+   {
+    "id": 11321006,
+    "name": "تهران (جنوب)"
+   },
+   {
+    "id": 11321007,
+    "name": "تهران (بیهقی)"
+   }
+  ],
+  "toTerminals": []
+ },
+ "fromLocation": {
+  "latitude": 35.6891975402832,
+  "longitude": 51.388973236083984,
+  "title": "تهران"
+ },
+ "toLocation": {
+  "latitude": 36.25937271118164,
+  "longitude": 59.591190338134766,
+  "title": "مشهد"
+ },
+ "promotions": [],
+ "contentPath": "http://bus.mrbilit.ir"
+}

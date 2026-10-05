@@ -1,0 +1,608 @@
+{
+ "Meta": {
+  "RoutesInfo": [
+   {
+    "Origin": {
+     "PersianTitle": "تهران",
+     "EnglishTitle": "Tehran",
+     "IataCode": "IKA",
+     "Latitude": 35.4086,
+     "Longitude": 51.1548,
+     "IsInternational": true,
+     "CityIataCode": "THR"
+    },
+    "Destination": {
+     "PersianTitle": "استانبول",
+     "EnglishTitle": "Istanbul",
+     "IataCode": "IST",
+     "Latitude": 41.2599,
+     "Longitude": 28.7427,
+     "IsInternational": true,
+     "CityIataCode": "IST"
+    }
+   },
+   {
+    "Origin": {
+     "PersianTitle": "استانبول",
+     "EnglishTitle": "Istanbul",
+     "IataCode": "IST",
+     "Latitude": 41.2599,
+     "Longitude": 28.7427,
+     "IsInternational": true,
+     "CityIataCode": "IST"
+    },
+    "Destination": {
+     "PersianTitle": "تهران",
+     "EnglishTitle": "Tehran",
+     "IataCode": "IKA",
+     "Latitude": 35.4086,
+     "Longitude": 51.1548,
+     "IsInternational": true,
+     "CityIataCode": "THR"
+    }
+   }
+  ],
+  "Airlines": [
+   {
+    "IataCode": "HH",
+    "PersianTitle": "تابان",
+    "EnglishTitle": "Taban",
+    "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/HH.svg",
+    "Title": null
+   },
+   {
+    "IataCode": "V1",
+    "PersianTitle": "وارش",
+    "EnglishTitle": "Varesh",
+    "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/V1.svg",
+    "Title": null
+   }
+  ],
+  "TotalCount": 107,
+  "MinPrice": 505470000,
+  "MaxPrice": 1681960000,
+  "ShowIataCodeOnCard": true,
+  "AveragePrice": null,
+  "HasPriceFreezeOnRote": false,
+  "RouteNotFound": false,
+  "BaggageInfos": [
+   {
+    "Baggage": 30,
+    "BaggageType": "KG",
+    "Title": "30 کیلوگرم"
+   },
+   {
+    "Baggage": 25,
+    "BaggageType": "KG",
+    "Title": "25 کیلوگرم"
+   },
+   {
+    "Baggage": 20,
+    "BaggageType": "KG",
+    "Title": "20 کیلوگرم"
+   },
+   {
+    "Baggage": 40,
+    "BaggageType": "KG",
+    "Title": "40 کیلوگرم"
+   }
+  ],
+  "CabinClasses": [
+   {
+    "ClassOfService": "Economy",
+    "DisplayName": "اکونومی",
+    "Id": 0
+   },
+   {
+    "ClassOfService": "Business",
+    "DisplayName": "بیزینس",
+    "Id": 0
+   }
+  ],
+  "HasHigherPriceCapacityCard": true
+ },
+ "Flights": [
+  {
+   "Id": "21894997",
+   "Score": 0.0,
+   "Prices": [
+    {
+     "Url": null,
+     "UniqueId": "9b2a5230951a46b69751200595874ed5e9d4cb0e47abfcd3af135696098618e2",
+     "ProposalId": "W3siVCI6W3siSSI6IjIxODk0OTk3IiwiUCI6MCwiRCI6IjY4MzA3MTkyIiwiQSI6MjMxNDIwMDAwLCJDIjozNDIwMDAwLCJDQyI6MSwiQiI6dHJ1ZSwiRlMiOjAsIkJDIjoiWSIsIklCIjpmYWxzZSwiQ1BSIjowLCJEUCI6IjA0OjMwOjAwIn0seyJJIjoiMjE5MjQxMDgiLCJQIjowLCJEIjoiNjgzMDI4MjIiLCJBIjoyNzQwNTAwMDAsIkMiOjQwNTAwMDAsIkNDIjoxLCJCIjp0cnVlLCJGUyI6MCwiQkMiOiJZIiwiSUIiOnRydWUsIkNQUiI6MCwiRFAiOiIyMjowMDowMCJ9XX1d",
+     "Capacity": 3,
+     "DiscountToken": null,
+     "BookingClass": null,
+     "PassengerFares": [
+      {
+       "Discount": 0,
+       "TotalFare": 505470000,
+       "PaxType": "ADL",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      },
+      {
+       "Discount": 0,
+       "TotalFare": 505470000,
+       "PaxType": "CHD",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      },
+      {
+       "Discount": 0,
+       "TotalFare": 95410000,
+       "PaxType": "INF",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      }
+     ],
+     "Baggage": 30,
+     "BaggageType": "KG",
+     "ProviderBaggageType": null,
+     "CabinClass": "Economy",
+     "CabinClassDisplayName": "اکونومی",
+     "FareRulesUrl": null,
+     "FareRules": "کنسلی این بلیط مطابق شرایط و مقررات تامین\u200cکننده می\u200cباشد.",
+     "ProviderName": "",
+     "CancellationTernEntities": null,
+     "FlightSpecialOffers": [],
+     "IsCharter": true,
+     "IgnorePriceLimit": false,
+     "ExtraTerms": "<p><strong>صدور بلیط برای اتباع افغانستان ،پاکستان،هند به مقصد ترکیه ممنوع می باشد .مسئولیت توجه نکردن به این شرایط، به طور کامل با رزروکننده بلیط و مسافر است.</strong></p>\n<p>در برخی پروازها و ایرلاین های خارجی خصوصا زمانی که مبدا و مقصد ایران نباشد ، مسافران موظف به ثبت حضور اینترنتی (Online Check in) در سایت ایرلاین می باشند و در صورت عدم ثبت موفق آن، ایرلاین با اخذ مبلغی بعنوان جریمه، کارت پرواز را صادر می نماید. در صورت عدم تکمیل فرآیند ثبت حضور اینترنتی (Online Check in)، مسئولیت عواقب ناشی از آن، بعهده کاربر و مسافر خواهد بود</p>\n<p>مسافر گرامی، اطلاع\u200cرسانی\u200cهای مربوط به پرواز (از جمله تغییر ساعت، تأخیر و موارد مشابه) از طریق تماس یا پیامک به شماره\u200cای که هنگام خرید بلیط ثبت شده انجام می\u200cشود. درصورتی که به آن شماره دسترسی ندارید، لطفا از طریق پشتیبانی شماره جایگزین خود را اعلام کنید تا اطلاع\u200cرسانی\u200cها بدون وقفه در اختیار شما قرار بگیرد. در غیر اینصورت امکان اطلاع\u200cرسانی صحیح وجود نخواهد داشت و مسئولیت آن بر عهده مسافر خواهد بود.</p>\n<p><strong>صدور بلیط برای اتباع افغانستان ،پاکستان،هند به مقصد ترکیه ممنوع می باشد .مسئولیت توجه نکردن به این شرایط، به طور کامل با رزروکننده بلیط و مسافر است</strong></p>",
+     "IncludeLowerCapacity": false,
+     "IncludeHigherCapacity": false,
+     "NeedGetPrice": false,
+     "IsAgencyHasPriorityOnShowingFlight": false,
+     "HasOfficialRatePrice": false
+    }
+   ],
+   "Segments": [
+    {
+     "ConnectionTime": "00:00:00",
+     "TotalTime": "03:30:00",
+     "Legs": [
+      {
+       "Id": 21894997,
+       "FlightNumber": "7281",
+       "Origin": "تهران",
+       "OriginAirport": "امام خمینی",
+       "OriginCode": "IKA",
+       "Destination": "استانبول",
+       "DestinationAirport": "استانبول",
+       "JourneyTime": "03:30:00",
+       "DestinationCode": "IST",
+       "AirCraft": {
+        "Id": 28,
+        "PersianTitle": "",
+        "EnglishTitle": "Airbus A310 all pax models",
+        "Score": 1.0,
+        "Iatacode": "310",
+        "ShortTitle": "Airbus A310"
+       },
+       "AirlineCode": "HH",
+       "OperatingAirlineCode": null,
+       "Airline": {
+        "IataCode": "HH",
+        "PersianTitle": "تابان",
+        "EnglishTitle": "Taban",
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/HH.svg",
+        "Title": null
+       },
+       "OperatingAirline": {
+        "IataCode": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/.svg",
+        "Title": null
+       },
+       "DepartureDateString": "28 مهر",
+       "DepartureWeekDay": "سه شنبه",
+       "DepartureTerminal": "",
+       "ArrivalTerminal": "",
+       "DepartureTime": "2026-10-20T04:30:00+03:30",
+       "ArrivalTime": "2026-10-20T07:30:00+03:30",
+       "Status": 0,
+       "FlightStatus": "Ok",
+       "Stops": 0,
+       "AirplaneCode": "310",
+       "PngLogoPath": null,
+       "SvgLogoPath": null,
+       "SuggestedServices": [],
+       "AirlineAuxiliaryServices": null,
+       "TechnicalStops": null
+      }
+     ],
+     "IsOriginMismatched": false,
+     "IsDestinationMismatched": false
+    },
+    {
+     "ConnectionTime": "00:00:00",
+     "TotalTime": "03:00:00",
+     "Legs": [
+      {
+       "Id": 21924108,
+       "FlightNumber": "6847",
+       "Origin": "استانبول",
+       "OriginAirport": "استانبول",
+       "OriginCode": "IST",
+       "Destination": "تهران",
+       "DestinationAirport": "امام خمینی",
+       "JourneyTime": "03:00:00",
+       "DestinationCode": "IKA",
+       "AirCraft": {
+        "Id": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Score": null,
+        "Iatacode": null,
+        "ShortTitle": null
+       },
+       "AirlineCode": "V1",
+       "OperatingAirlineCode": null,
+       "Airline": {
+        "IataCode": "V1",
+        "PersianTitle": "وارش",
+        "EnglishTitle": "Varesh",
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/V1.svg",
+        "Title": null
+       },
+       "OperatingAirline": {
+        "IataCode": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/.svg",
+        "Title": null
+       },
+       "DepartureDateString": "1 آبان",
+       "DepartureWeekDay": "جمعه",
+       "DepartureTerminal": "",
+       "ArrivalTerminal": "",
+       "DepartureTime": "2026-10-23T22:00:00+03:30",
+       "ArrivalTime": "2026-10-24T01:30:00+03:30",
+       "Status": 0,
+       "FlightStatus": "Ok",
+       "Stops": 0,
+       "AirplaneCode": null,
+       "PngLogoPath": null,
+       "SvgLogoPath": null,
+       "SuggestedServices": [],
+       "AirlineAuxiliaryServices": null,
+       "TechnicalStops": null
+      }
+     ],
+     "IsOriginMismatched": false,
+     "IsDestinationMismatched": false
+    }
+   ],
+   "FareFamilyComponents": null,
+   "UnchangeableInfCount": false,
+   "PassengerCountChangeAllowed": true,
+   "PhoneSale": false,
+   "AutomaticReserve": true,
+   "MustAppearInAutoReserve": false,
+   "MustAppearInPriceTrack": true,
+   "MustAppearInNotifyOnDecreasingPrice": true,
+   "IsFromMultilegSource": false,
+   "SpecialConditions": null,
+   "SpecialConditionTitle": null
+  },
+  {
+   "Id": "21903548",
+   "Score": 0.0,
+   "Prices": [
+    {
+     "Url": null,
+     "UniqueId": "80e3bc409ce712476e2f761c429f2c04ae60510438ba5d509ac7aef1cf4d713d",
+     "ProposalId": "W3siVCI6W3siSSI6IjIxOTAzNTQ4IiwiUCI6MCwiRCI6IjY4MzA4OTExIiwiQSI6MjMxNDIwMDAwLCJDIjozNDIwMDAwLCJDQyI6MSwiQiI6dHJ1ZSwiRlMiOjAsIkJDIjoiWSIsIklCIjpmYWxzZSwiQ1BSIjowLCJEUCI6IjE4OjAwOjAwIn0seyJJIjoiMjE5MjQxMDgiLCJQIjowLCJEIjoiNjgzMDI4MjIiLCJBIjoyNzQwNTAwMDAsIkMiOjQwNTAwMDAsIkNDIjoxLCJCIjp0cnVlLCJGUyI6MCwiQkMiOiJZIiwiSUIiOnRydWUsIkNQUiI6MCwiRFAiOiIyMjowMDowMCJ9XX1d",
+     "Capacity": 3,
+     "DiscountToken": null,
+     "BookingClass": null,
+     "PassengerFares": [
+      {
+       "Discount": 0,
+       "TotalFare": 505470000,
+       "PaxType": "ADL",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      },
+      {
+       "Discount": 0,
+       "TotalFare": 505470000,
+       "PaxType": "CHD",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      },
+      {
+       "Discount": 0,
+       "TotalFare": 75110000,
+       "PaxType": "INF",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      }
+     ],
+     "Baggage": 25,
+     "BaggageType": "KG",
+     "ProviderBaggageType": null,
+     "CabinClass": "Economy",
+     "CabinClassDisplayName": "اکونومی",
+     "FareRulesUrl": null,
+     "FareRules": "کنسلی این بلیط مطابق شرایط و مقررات تامین\u200cکننده می\u200cباشد.",
+     "ProviderName": "",
+     "CancellationTernEntities": null,
+     "FlightSpecialOffers": [],
+     "IsCharter": true,
+     "IgnorePriceLimit": false,
+     "ExtraTerms": "<p>صدور بلیط برای اتباع افغانستان ،پاکستان،هند به مقصد ترکیه ممنوع می باشد .مسئولیت توجه نکردن به این شرایط، به طور کامل با رزروکننده بلیط و مسافر است</p>\n<p>در برخی پروازها و ایرلاین های خارجی خصوصا زمانی که مبدا و مقصد ایران نباشد ، مسافران موظف به ثبت حضور اینترنتی (Online Check in) در سایت ایرلاین می باشند و در صورت عدم ثبت موفق آن، ایرلاین با اخذ مبلغی بعنوان جریمه، کارت پرواز را صادر می نماید. در صورت عدم تکمیل فرآیند ثبت حضور اینترنتی (Online Check in)، مسئولیت عواقب ناشی از آن، بعهده کاربر و مسافر خواهد بود</p>\n<p>مسافر گرامی، اطلاع\u200cرسانی\u200cهای مربوط به پرواز (از جمله تغییر ساعت، تأخیر و موارد مشابه) از طریق تماس یا پیامک به شماره\u200cای که هنگام خرید بلیط ثبت شده انجام می\u200cشود. درصورتی که به آن شماره دسترسی ندارید، لطفا از طریق پشتیبانی شماره جایگزین خود را اعلام کنید تا اطلاع\u200cرسانی\u200cها بدون وقفه در اختیار شما قرار بگیرد. در غیر اینصورت امکان اطلاع\u200cرسانی صحیح وجود نخواهد داشت و مسئولیت آن بر عهده مسافر خواهد بود.</p>\n<p><strong>صدور بلیط برای اتباع افغانستان ،پاکستان،هند به مقصد ترکیه ممنوع می باشد .مسئولیت توجه نکردن به این شرایط، به طور کامل با رزروکننده بلیط و مسافر است</strong></p>",
+     "IncludeLowerCapacity": false,
+     "IncludeHigherCapacity": false,
+     "NeedGetPrice": false,
+     "IsAgencyHasPriorityOnShowingFlight": false,
+     "HasOfficialRatePrice": false
+    }
+   ],
+   "Segments": [
+    {
+     "ConnectionTime": "00:00:00",
+     "TotalTime": "02:55:00",
+     "Legs": [
+      {
+       "Id": 21903548,
+       "FlightNumber": "6619",
+       "Origin": "تهران",
+       "OriginAirport": "امام خمینی",
+       "OriginCode": "IKA",
+       "Destination": "استانبول",
+       "DestinationAirport": "استانبول",
+       "JourneyTime": "02:55:00",
+       "DestinationCode": "IST",
+       "AirCraft": {
+        "Id": 37,
+        "PersianTitle": "ایرباس A321",
+        "EnglishTitle": "Airbus A321-100/200",
+        "Score": 1.0,
+        "Iatacode": "321",
+        "ShortTitle": "Airbus A321"
+       },
+       "AirlineCode": "I3",
+       "OperatingAirlineCode": null,
+       "Airline": {
+        "IataCode": "I3",
+        "PersianTitle": "آتا",
+        "EnglishTitle": "Ata",
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/I3.svg",
+        "Title": null
+       },
+       "OperatingAirline": {
+        "IataCode": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/.svg",
+        "Title": null
+       },
+       "DepartureDateString": "28 مهر",
+       "DepartureWeekDay": "سه شنبه",
+       "DepartureTerminal": "",
+       "ArrivalTerminal": "",
+       "DepartureTime": "2026-10-20T18:00:00+03:30",
+       "ArrivalTime": "2026-10-20T20:25:00+03:30",
+       "Status": 0,
+       "FlightStatus": "Ok",
+       "Stops": 0,
+       "AirplaneCode": "321",
+       "PngLogoPath": null,
+       "SvgLogoPath": null,
+       "SuggestedServices": [],
+       "AirlineAuxiliaryServices": null,
+       "TechnicalStops": null
+      }
+     ],
+     "IsOriginMismatched": false,
+     "IsDestinationMismatched": false
+    },
+    {
+     "ConnectionTime": "00:00:00",
+     "TotalTime": "03:00:00",
+     "Legs": [
+      {
+       "Id": 21924108,
+       "FlightNumber": "6847",
+       "Origin": "استانبول",
+       "OriginAirport": "استانبول",
+       "OriginCode": "IST",
+       "Destination": "تهران",
+       "DestinationAirport": "امام خمینی",
+       "JourneyTime": "03:00:00",
+       "DestinationCode": "IKA",
+       "AirCraft": {
+        "Id": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Score": null,
+        "Iatacode": null,
+        "ShortTitle": null
+       },
+       "AirlineCode": "V1",
+       "OperatingAirlineCode": null,
+       "Airline": {
+        "IataCode": "V1",
+        "PersianTitle": "وارش",
+        "EnglishTitle": "Varesh",
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/V1.svg",
+        "Title": null
+       },
+       "OperatingAirline": {
+        "IataCode": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/.svg",
+        "Title": null
+       },
+       "DepartureDateString": "1 آبان",
+       "DepartureWeekDay": "جمعه",
+       "DepartureTerminal": "",
+       "ArrivalTerminal": "",
+       "DepartureTime": "2026-10-23T22:00:00+03:30",
+       "ArrivalTime": "2026-10-24T01:30:00+03:30",
+       "Status": 0,
+       "FlightStatus": "Ok",
+       "Stops": 0,
+       "AirplaneCode": null,
+       "PngLogoPath": null,
+       "SvgLogoPath": null,
+       "SuggestedServices": [],
+       "AirlineAuxiliaryServices": null,
+       "TechnicalStops": null
+      }
+     ],
+     "IsOriginMismatched": false,
+     "IsDestinationMismatched": false
+    }
+   ],
+   "FareFamilyComponents": null,
+   "UnchangeableInfCount": false,
+   "PassengerCountChangeAllowed": true,
+   "PhoneSale": false,
+   "AutomaticReserve": true,
+   "MustAppearInAutoReserve": false,
+   "MustAppearInPriceTrack": true,
+   "MustAppearInNotifyOnDecreasingPrice": true,
+   "IsFromMultilegSource": false,
+   "SpecialConditions": null,
+   "SpecialConditionTitle": null
+  },
+  {
+   "Id": "13.04214775328531015917385775|||IKA_IST_IST_IKA_2026-10-20_2026-10-23_RoundTrip_1_0_0_Economy_False_all_False|Partner3|False",
+   "Score": 0.0,
+   "Prices": [],
+   "Segments": [
+    {
+     "ConnectionTime": "00:00:00",
+     "TotalTime": "03:00:00",
+     "Legs": [
+      {
+       "Id": 0,
+       "FlightNumber": "719",
+       "Origin": "تهران",
+       "OriginAirport": "امام خمینی",
+       "OriginCode": "IKA",
+       "Destination": "استانبول",
+       "DestinationAirport": "استانبول",
+       "JourneyTime": "03:00:00",
+       "DestinationCode": "IST",
+       "AirCraft": {
+        "Id": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Score": null,
+        "Iatacode": null,
+        "ShortTitle": null
+       },
+       "AirlineCode": "IR",
+       "OperatingAirlineCode": "IR",
+       "Airline": {
+        "IataCode": "IR",
+        "PersianTitle": "ایران ایر",
+        "EnglishTitle": "Iran Air",
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/IR.svg",
+        "Title": null
+       },
+       "OperatingAirline": {
+        "IataCode": "IR",
+        "PersianTitle": "ایران ایر",
+        "EnglishTitle": "Iran Air",
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/IR.svg",
+        "Title": null
+       },
+       "DepartureDateString": "28 مهر",
+       "DepartureWeekDay": "سه شنبه",
+       "DepartureTerminal": "",
+       "ArrivalTerminal": "",
+       "DepartureTime": "2026-10-20T06:30:00+03:30",
+       "ArrivalTime": "2026-10-20T09:00:00+03:30",
+       "Status": 0,
+       "FlightStatus": "Ok",
+       "Stops": 0,
+       "AirplaneCode": null,
+       "PngLogoPath": null,
+       "SvgLogoPath": null,
+       "SuggestedServices": [],
+       "AirlineAuxiliaryServices": null,
+       "TechnicalStops": null
+      }
+     ],
+     "IsOriginMismatched": false,
+     "IsDestinationMismatched": false
+    },
+    {
+     "ConnectionTime": "00:00:00",
+     "TotalTime": "02:50:00",
+     "Legs": [
+      {
+       "Id": 0,
+       "FlightNumber": "7903",
+       "Origin": "استانبول",
+       "OriginAirport": "استانبول",
+       "OriginCode": "IST",
+       "Destination": "تهران",
+       "DestinationAirport": "امام خمینی",
+       "JourneyTime": "02:50:00",
+       "DestinationCode": "IKA",
+       "AirCraft": {
+        "Id": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Score": null,
+        "Iatacode": null,
+        "ShortTitle": null
+       },
+       "AirlineCode": "CPN",
+       "OperatingAirlineCode": "CPN",
+       "Airline": {
+        "IataCode": "CPN",
+        "PersianTitle": "کاسپین",
+        "EnglishTitle": "Caspian",
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/CPN.svg",
+        "Title": null
+       },
+       "OperatingAirline": {
+        "IataCode": "CPN",
+        "PersianTitle": "کاسپین",
+        "EnglishTitle": "Caspian",
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/CPN.svg",
+        "Title": null
+       },
+       "DepartureDateString": "1 آبان",
+       "DepartureWeekDay": "جمعه",
+       "DepartureTerminal": "",
+       "ArrivalTerminal": "",
+       "DepartureTime": "2026-10-23T22:50:00+03:30",
+       "ArrivalTime": "2026-10-24T02:10:00+03:30",
+       "Status": 0,
+       "FlightStatus": "Ok",
+       "Stops": 0,
+       "AirplaneCode": null,
+       "PngLogoPath": null,
+       "SvgLogoPath": null,
+       "SuggestedServices": [],
+       "AirlineAuxiliaryServices": null,
+       "TechnicalStops": null
+      }
+     ],
+     "IsOriginMismatched": false,
+     "IsDestinationMismatched": false
+    }
+   ],
+   "FareFamilyComponents": null,
+   "UnchangeableInfCount": true,
+   "PassengerCountChangeAllowed": false,
+   "PhoneSale": false,
+   "AutomaticReserve": true,
+   "MustAppearInAutoReserve": true,
+   "MustAppearInPriceTrack": true,
+   "MustAppearInNotifyOnDecreasingPrice": true,
+   "IsFromMultilegSource": false,
+   "SpecialConditions": null,
+   "SpecialConditionTitle": null
+  }
+ ]
+}

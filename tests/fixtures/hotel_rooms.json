@@ -1,0 +1,235 @@
+{
+ "rooms": [
+  {
+   "uniqueId": "MjI3ODA5Mjkz",
+   "name": "دو تخته دابل (بدون صبحانه)",
+   "englishName": null,
+   "supplierLimitationsType": "HasRoomTypeLimitation",
+   "capacity": 2,
+   "extraBedCapacity": 0,
+   "hasExtraBed": false,
+   "description": "",
+   "roomConfigs": [],
+   "roomTypeAmenities": [],
+   "prices": [
+    {
+     "roomId": "Tm9ybWFsfDI3OTgxNjU5LDI3OTgxNjY3LDI3OTgxNjc1",
+     "roomServiceTitle": [],
+     "totalPrice": 40020000,
+     "payable": 39270000,
+     "availableRoomCount": 4,
+     "floatingRoomCount": 0,
+     "extraBedPrice": 0,
+     "extraBedChildPrice": 0,
+     "extraBedInfantPrice": 0,
+     "hasEarlyCheckin": false,
+     "earlyCheckinPrice": 0,
+     "hasLateCheckout": false,
+     "lateCheckoutPrice": 0,
+     "hotelProvider": "t9Bwhg==",
+     "providerName": null,
+     "minNights": 1,
+     "maxNights": null,
+     "breakDownRoomPrices": [
+      {
+       "boardPrice": 13340000,
+       "salePrice": 13090000,
+       "extraBedPrice": 0,
+       "date": "2026-10-20T00:00:00"
+      },
+      {
+       "boardPrice": 13340000,
+       "salePrice": 13090000,
+       "extraBedPrice": 0,
+       "date": "2026-10-21T00:00:00"
+      },
+      {
+       "boardPrice": 13340000,
+       "salePrice": 13090000,
+       "extraBedPrice": 0,
+       "date": "2026-10-22T00:00:00"
+      }
+     ]
+    }
+   ],
+   "photo": null
+  },
+  {
+   "uniqueId": "MjI3ODA5MzAx",
+   "name": "دو تخته تویین (بدون صبحانه)",
+   "englishName": null,
+   "supplierLimitationsType": "HasRoomTypeLimitation",
+   "capacity": 2,
+   "extraBedCapacity": 0,
+   "hasExtraBed": false,
+   "description": "",
+   "roomConfigs": [
+    {
+     "singleBedCount": 0,
+     "doubleBedCount": 0,
+     "sofaCount": 0
+    }
+   ],
+   "roomTypeAmenities": [],
+   "prices": [
+    {
+     "roomId": "Tm9ybWFsfDI3OTgxNjU4LDI3OTgxNjY2LDI3OTgxNjc0",
+     "roomServiceTitle": [],
+     "totalPrice": 40020000,
+     "payable": 39270000,
+     "availableRoomCount": 4,
+     "floatingRoomCount": 0,
+     "extraBedPrice": 0,
+     "extraBedChildPrice": 0,
+     "extraBedInfantPrice": 0,
+     "hasEarlyCheckin": false,
+     "earlyCheckinPrice": 0,
+     "hasLateCheckout": false,
+     "lateCheckoutPrice": 0,
+     "hotelProvider": "t9Bwhg==",
+     "providerName": null,
+     "minNights": 1,
+     "maxNights": null,
+     "breakDownRoomPrices": [
+      {
+       "boardPrice": 13340000,
+       "salePrice": 13090000,
+       "extraBedPrice": 0,
+       "date": "2026-10-20T00:00:00"
+      },
+      {
+       "boardPrice": 13340000,
+       "salePrice": 13090000,
+       "extraBedPrice": 0,
+       "date": "2026-10-21T00:00:00"
+      },
+      {
+       "boardPrice": 13340000,
+       "salePrice": 13090000,
+       "extraBedPrice": 0,
+       "date": "2026-10-22T00:00:00"
+      }
+     ]
+    }
+   ],
+   "photo": null
+  },
+  {
+   "uniqueId": "MjI3ODA5MzAy",
+   "name": "سه تخته (بدون صبحانه)",
+   "englishName": null,
+   "supplierLimitationsType": "HasRoomTypeLimitation",
+   "capacity": 3,
+   "extraBedCapacity": 0,
+   "hasExtraBed": false,
+   "description": "نوع تخت: یک تخت دابل و یک تخت سینگل",
+   "roomConfigs": [
+    {
+     "singleBedCount": 0,
+     "doubleBedCount": 0,
+     "sofaCount": 0
+    }
+   ],
+   "roomTypeAmenities": [],
+   "prices": [
+    {
+     "roomId": "Tm9ybWFsfDI3OTgxNjU3LDI3OTgxNjY1LDI3OTgxNjcz",
+     "roomServiceTitle": [],
+     "totalPrice": 60000000,
+     "payable": 58920000,
+     "availableRoomCount": 4,
+     "floatingRoomCount": 0,
+     "extraBedPrice": 0,
+     "extraBedChildPrice": 0,
+     "extraBedInfantPrice": 0,
+     "hasEarlyCheckin": false,
+     "earlyCheckinPrice": 0,
+     "hasLateCheckout": false,
+     "lateCheckoutPrice": 0,
+     "hotelProvider": "t9Bwhg==",
+     "providerName": null,
+     "minNights": 1,
+     "maxNights": null,
+     "breakDownRoomPrices": [
+      {
+       "boardPrice": 20000000,
+       "salePrice": 19640000,
+       "extraBedPrice": 0,
+       "date": "2026-10-20T00:00:00"
+      },
+      {
+       "boardPrice": 20000000,
+       "salePrice": 19640000,
+       "extraBedPrice": 0,
+       "date": "2026-10-21T00:00:00"
+      },
+      {
+       "boardPrice": 20000000,
+       "salePrice": 19640000,
+       "extraBedPrice": 0,
+       "date": "2026-10-22T00:00:00"
+      }
+     ]
+    }
+   ],
+   "photo": null
+  },
+  {
+   "uniqueId": "MjI4MDgyNzE2",
+   "name": "دو تخته تویین",
+   "englishName": null,
+   "supplierLimitationsType": "HasRoomTypeLimitation",
+   "capacity": 2,
+   "extraBedCapacity": 0,
+   "hasExtraBed": false,
+   "description": "",
+   "roomConfigs": [],
+   "roomTypeAmenities": [],
+   "prices": [
+    {
+     "roomId": "Tm9ybWFsfDI3MjQwODM0LDI3MjQwODU0LDI3MjQwODc0",
+     "roomServiceTitle": [
+      "صبحانه"
+     ],
+     "totalPrice": 62240000,
+     "payable": 61100000,
+     "availableRoomCount": 4,
+     "floatingRoomCount": 0,
+     "extraBedPrice": 0,
+     "extraBedChildPrice": 0,
+     "extraBedInfantPrice": 0,
+     "hasEarlyCheckin": false,
+     "earlyCheckinPrice": 0,
+     "hasLateCheckout": false,
+     "lateCheckoutPrice": 0,
+     "hotelProvider": "t9Bwhg==",
+     "providerName": null,
+     "minNights": 1,
+     "maxNights": null,
+     "breakDownRoomPrices": [
+      {
+       "boardPrice": 17780000,
+       "salePrice": 17460000,
+       "extraBedPrice": 0,
+       "date": "2026-10-20T00:00:00"
+      },
+      {
+       "boardPrice": 22230000,
+       "salePrice": 21820000,
+       "extraBedPrice": 0,
+       "date": "2026-10-21T00:00:00"
+      },
+      {
+       "boardPrice": 22230000,
+       "salePrice": 21820000,
+       "extraBedPrice": 0,
+       "date": "2026-10-22T00:00:00"
+      }
+     ]
+    }
+   ],
+   "photo": null
+  }
+ ],
+ "cancellationRules": "رزروهای این هتل غیر قابل استرداد می باشد."
+}

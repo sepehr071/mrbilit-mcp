@@ -1,0 +1,354 @@
+[
+ {
+  "cities": [
+   {
+    "id": 11330000,
+    "title": "اسلامشهر",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "اسلامشهر",
+    "englishTitle": "Islamshahr",
+    "code": "islamshahr"
+   },
+   {
+    "id": 11391035,
+    "title": "اندیشه",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "اندیشه",
+    "englishTitle": "Thought",
+    "code": "thought"
+   },
+   {
+    "id": 11392000,
+    "title": "شهرک قدس ",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "شهرک قدس ",
+    "englishTitle": "Shahrak Qods (Qaleh Hasan Khan)",
+    "code": "shahrak_qods_qaleh_hasan_khan"
+   },
+   {
+    "id": 11390000,
+    "title": "شهریار",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "شهریار",
+    "englishTitle": "Shahriar",
+    "code": "shahriar"
+   },
+   {
+    "id": 11440000,
+    "title": "پاکدشت",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "پاکدشت",
+    "englishTitle": "Pakdasht",
+    "code": "pakdasht"
+   },
+   {
+    "id": 11320000,
+    "title": "تهران - همه پایانه\u200cها",
+    "isDomestic": true,
+    "isForeign": true,
+    "terminals": null,
+    "persianTitle": "تهران - همه پایانه\u200cها",
+    "englishTitle": "Tehran - All Terminals",
+    "code": "tehran"
+   },
+   {
+    "id": 11321007,
+    "title": "تهران (بیهقی)",
+    "isDomestic": true,
+    "isForeign": true,
+    "terminals": null,
+    "persianTitle": "تهران - پایانه بیهقی",
+    "englishTitle": "تهران - Tehran (Beyhaqi)",
+    "code": "tehran_beyhaqi"
+   },
+   {
+    "id": 11321006,
+    "title": "تهران (جنوب)",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "تهران - پایانه جنوب",
+    "englishTitle": "تهران - Tehran (South)",
+    "code": "tehran_south"
+   },
+   {
+    "id": 11321005,
+    "title": "تهران (شرق)",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "تهران - پایانه شرق",
+    "englishTitle": "تهران - Tehran (East)",
+    "code": "tehran_east"
+   },
+   {
+    "id": 11321004,
+    "title": "تهران (غرب)",
+    "isDomestic": true,
+    "isForeign": true,
+    "terminals": null,
+    "persianTitle": "تهران - پایانه غرب",
+    "englishTitle": "تهران - Tehran (West)",
+    "code": "tehran_west"
+   },
+   {
+    "id": 11411027,
+    "title": "سلطان آباد",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "سلطان آباد ",
+    "englishTitle": "Sultanabad",
+    "code": "sultanabad"
+   },
+   {
+    "id": 11460000,
+    "title": "شهر قدس ",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "شهر قدس ",
+    "englishTitle": "Qods City (Hassan Khan Castle)",
+    "code": "qods_city_hassan_khan_castle"
+   },
+   {
+    "id": 11362023,
+    "title": "فرودگاه امام خمینی",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "فرودگاه امام خمینی",
+    "englishTitle": "Imam Khomeini International Airport",
+    "code": "imam_khomeini_international_airport"
+   },
+   {
+    "id": 11510000,
+    "title": "قرچک",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "قرچک",
+    "englishTitle": "Gharchak",
+    "code": "gharchak"
+   },
+   {
+    "id": 11470000,
+    "title": "ملارد",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "ملارد",
+    "englishTitle": "Mallard2",
+    "code": "malard"
+   },
+   {
+    "id": 11491021,
+    "title": "نسیم شهر",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "نسیم شهر",
+    "englishTitle": "Nasim Shahr",
+    "code": "nasim_shahr"
+   }
+  ],
+  "provinceName": "استان تهران",
+  "provinceID": 0
+ },
+ {
+  "cities": [
+   {
+    "id": 31660000,
+    "title": "بجستان",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "بجستان",
+    "englishTitle": "Bajestan",
+    "code": "bajestan"
+   },
+   {
+    "id": 31530000,
+    "title": "برداسکن",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "برداسکن",
+    "englishTitle": "Bardaskan",
+    "code": "bardaskan"
+   },
+   {
+    "id": 31360000,
+    "title": "تایباد",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "تایباد",
+    "englishTitle": "Taybad",
+    "code": "taybad"
+   },
+   {
+    "id": 31370000,
+    "title": "تربت جام",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "تربت جام",
+    "englishTitle": "Torbat",
+    "code": "torbat"
+   },
+   {
+    "id": 31380000,
+    "title": "تربت حیدریه",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "تربت حیدریه",
+    "englishTitle": "Torbat Heydariye",
+    "code": "torbat_heydariye"
+   },
+   {
+    "id": 31390000,
+    "title": "چناران",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "چناران",
+    "englishTitle": "Chenaran",
+    "code": "chenaran"
+   },
+   {
+    "id": 31410000,
+    "title": "خواف",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "خواف",
+    "englishTitle": "Khaaf",
+    "code": "khaaf"
+   },
+   {
+    "id": 31413000,
+    "title": "زوزن",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "زوزن",
+    "englishTitle": "Zuzan",
+    "code": "zuzan"
+   },
+   {
+    "id": 31420000,
+    "title": "درگز",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "درگز",
+    "englishTitle": "Dargaz",
+    "code": "dargaz"
+   },
+   {
+    "id": 31573021,
+    "title": "درود ",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "درود ",
+    "englishTitle": "Dorud (Khorasan)",
+    "code": "dorud_khorasan"
+   },
+   {
+    "id": 31570000,
+    "title": "نیشابور",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "نیشابور",
+    "englishTitle": "neyshabour",
+    "code": "neyshabour"
+   },
+   {
+    "id": 31430000,
+    "title": "سبزوار",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "سبزوار",
+    "englishTitle": "Sabzevar",
+    "code": "sabzevar"
+   },
+   {
+    "id": 31480000,
+    "title": "فریمان",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "فریمان",
+    "englishTitle": "Fariman",
+    "code": "fariman"
+   },
+   {
+    "id": 31520000,
+    "title": "قوچان",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "قوچان",
+    "englishTitle": "Ghoochan",
+    "code": "ghoochan"
+   },
+   {
+    "id": 31540000,
+    "title": "کاشمر",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "کاشمر",
+    "englishTitle": "Kashmar",
+    "code": "kashmar"
+   },
+   {
+    "id": 31740000,
+    "title": "گلبهار",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "گلبهار",
+    "englishTitle": "",
+    "code": "golbahaar"
+   },
+   {
+    "id": 31550000,
+    "title": "گناباد",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "گناباد",
+    "englishTitle": "Gonabad",
+    "code": "gonabad"
+   },
+   {
+    "id": 31310000,
+    "title": "مشهد",
+    "isDomestic": true,
+    "isForeign": true,
+    "terminals": null,
+    "persianTitle": "مشهد ",
+    "englishTitle": "Mashhad",
+    "code": "mashhad"
+   }
+  ],
+  "provinceName": "استان خراسان رضوی",
+  "provinceID": 0
+ }
+]

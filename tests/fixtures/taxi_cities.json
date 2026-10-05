@@ -1,0 +1,104 @@
+[
+ {
+  "cities": [
+   {
+    "id": 11320000,
+    "title": "تهران",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "تهران",
+    "englishTitle": "Tehran",
+    "code": "tehran"
+   },
+   {
+    "id": 11340000,
+    "title": "دماوند",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "دماوند",
+    "englishTitle": "Damavand",
+    "code": "damavand"
+   },
+   {
+    "id": 11362023,
+    "title": "فرودگاه امام خمینی",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "فرودگاه امام خمینی",
+    "englishTitle": "Imam Khomeini International Airport",
+    "code": "imam_khomeini_international_airport"
+   }
+  ],
+  "provinceName": "استان تهران",
+  "provinceID": 0
+ },
+ {
+  "cities": [
+   {
+    "id": 54320000,
+    "title": "آستارا",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "آستارا",
+    "englishTitle": "Astara",
+    "code": "astara"
+   },
+   {
+    "id": 54330000,
+    "title": "بندرانزلی",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "بندرانزلی",
+    "englishTitle": "Bandar Anzali",
+    "code": "bandar_anzali"
+   },
+   {
+    "id": 54310000,
+    "title": "رشت",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "رشت",
+    "englishTitle": "Rasht",
+    "code": "rasht"
+   },
+   {
+    "id": 54360000,
+    "title": "رودسر",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "رودسر",
+    "englishTitle": "Rudsar",
+    "code": "rudsar"
+   },
+   {
+    "id": 54450000,
+    "title": "لاهیجان",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "لاهیجان ",
+    "englishTitle": "Lahijan",
+    "code": "lahijan"
+   },
+   {
+    "id": 54470000,
+    "title": "لنگرود",
+    "isDomestic": true,
+    "isForeign": false,
+    "terminals": null,
+    "persianTitle": "لنگرود",
+    "englishTitle": "Langrud",
+    "code": "langrud"
+   }
+  ],
+  "provinceName": "استان گیلان",
+  "provinceID": 0
+ }
+]

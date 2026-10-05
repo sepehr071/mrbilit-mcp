@@ -1,0 +1,696 @@
+{
+ "Meta": {
+  "RoutesInfo": [
+   {
+    "Origin": {
+     "PersianTitle": "تهران",
+     "EnglishTitle": "Tehran",
+     "IataCode": "THR",
+     "Latitude": 35.6915,
+     "Longitude": 51.3219,
+     "IsInternational": false,
+     "CityIataCode": "THR"
+    },
+    "Destination": {
+     "PersianTitle": "مشهد",
+     "EnglishTitle": "Mashhad",
+     "IataCode": "MHD",
+     "Latitude": 36.2272,
+     "Longitude": 59.6417,
+     "IsInternational": false,
+     "CityIataCode": "MHD"
+    }
+   }
+  ],
+  "Airlines": [
+   {
+    "IataCode": "MEH",
+    "PersianTitle": "مهر",
+    "EnglishTitle": "Mehr Air",
+    "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/MEH.svg",
+    "Title": null
+   },
+   {
+    "IataCode": "CPN",
+    "PersianTitle": "کاسپین",
+    "EnglishTitle": "Caspian",
+    "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/CPN.svg",
+    "Title": null
+   },
+   {
+    "IataCode": "AXV",
+    "PersianTitle": "آوا ایر",
+    "EnglishTitle": "Ava Air",
+    "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/AXV.svg",
+    "Title": null
+   }
+  ],
+  "TotalCount": 16,
+  "MinPrice": 118560000,
+  "MaxPrice": 123280000,
+  "ShowIataCodeOnCard": false,
+  "AveragePrice": null,
+  "HasPriceFreezeOnRote": true,
+  "RouteNotFound": false,
+  "BaggageInfos": [
+   {
+    "Baggage": 20,
+    "BaggageType": "KG",
+    "Title": "20 کیلوگرم"
+   }
+  ],
+  "CabinClasses": [
+   {
+    "ClassOfService": "Economy",
+    "DisplayName": "اکونومی",
+    "Id": 0
+   }
+  ],
+  "HasHigherPriceCapacityCard": false
+ },
+ "Flights": [
+  {
+   "Id": "21919377",
+   "Score": 0.0,
+   "Prices": [
+    {
+     "Url": null,
+     "UniqueId": "b79e8e0895b2a77591a153bf6b71d9534593abed625d3ba6ae7498f55e8618da",
+     "ProposalId": "W3siVCI6W3siSSI6IjIxOTE5Mzc3IiwiUCI6MCwiRCI6IjY4MjU1NjI3IiwiQSI6MTIwMDAwMDAwLCJDIjo2MDAwMDAwLCJDQyI6MSwiQiI6dHJ1ZSwiRlMiOjAsIkJDIjoiVyIsIklCIjpmYWxzZSwiQ1BSIjowLCJEUCI6IjA4OjMwOjAwIn1dfV0=",
+     "Capacity": 2,
+     "DiscountToken": null,
+     "BookingClass": "W",
+     "PassengerFares": [
+      {
+       "Discount": 0,
+       "TotalFare": 118560000,
+       "PaxType": "ADL",
+       "SpecialDiscountAllowed": true,
+       "DiscountPercent": null
+      },
+      {
+       "Discount": 0,
+       "TotalFare": 118560000,
+       "PaxType": "CHD",
+       "SpecialDiscountAllowed": true,
+       "DiscountPercent": null
+      },
+      {
+       "Discount": 0,
+       "TotalFare": 12480000,
+       "PaxType": "INF",
+       "SpecialDiscountAllowed": true,
+       "DiscountPercent": null
+      }
+     ],
+     "Baggage": 20,
+     "BaggageType": "KG",
+     "ProviderBaggageType": null,
+     "CabinClass": "Economy",
+     "CabinClassDisplayName": "اکونومی",
+     "FareRulesUrl": null,
+     "FareRules": "کنسلی و استرداد این پرواز مطابق شرایط و مقررات تامین کننده می باشد. این هواپیمایی برای استرداد بدون جریمه به علت پروازهای مرتبط، با سایر هواپیمایی ها قرارداد ندارد.",
+     "ProviderName": "",
+     "CancellationTernEntities": [],
+     "FlightSpecialOffers": [
+      {
+       "Title": "عدم ارائه ویلچر",
+       "StartOffer": "2025-06-02T11:03:00",
+       "EndOffer": null,
+       "BadgeColorOnCard": "#fff8e5",
+       "Icon": null,
+       "Description": "متاسفانه در این پرواز ارایه ویلچر امکان پذیر\u200c نمی\u200cباشد.",
+       "ShowOnCard": true
+      }
+     ],
+     "IsCharter": true,
+     "IgnorePriceLimit": false,
+     "ExtraTerms": "",
+     "IncludeLowerCapacity": false,
+     "IncludeHigherCapacity": false,
+     "NeedGetPrice": false,
+     "IsAgencyHasPriorityOnShowingFlight": false,
+     "HasOfficialRatePrice": false
+    }
+   ],
+   "Segments": [
+    {
+     "ConnectionTime": "00:00:00",
+     "TotalTime": "01:00:00",
+     "Legs": [
+      {
+       "Id": 21919377,
+       "FlightNumber": "4200",
+       "Origin": "تهران",
+       "OriginAirport": "مهرآباد",
+       "OriginCode": "THR",
+       "Destination": "مشهد",
+       "DestinationAirport": "شهید هاشمی نژاد",
+       "JourneyTime": "01:00:00",
+       "DestinationCode": "MHD",
+       "AirCraft": {
+        "Id": 70,
+        "PersianTitle": "بوئینگ 737",
+        "EnglishTitle": "Boeing 737 all pax models",
+        "Score": 1.0,
+        "Iatacode": "737",
+        "ShortTitle": "Boeing 737"
+       },
+       "AirlineCode": "MEH",
+       "OperatingAirlineCode": null,
+       "Airline": {
+        "IataCode": "MEH",
+        "PersianTitle": "مهر",
+        "EnglishTitle": "Mehr Air",
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/MEH.svg",
+        "Title": null
+       },
+       "OperatingAirline": {
+        "IataCode": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/.svg",
+        "Title": null
+       },
+       "DepartureDateString": "28 مهر",
+       "DepartureWeekDay": "سه شنبه",
+       "DepartureTerminal": "",
+       "ArrivalTerminal": "",
+       "DepartureTime": "2026-10-20T08:30:00+03:30",
+       "ArrivalTime": "2026-10-20T09:30:00+03:30",
+       "Status": 0,
+       "FlightStatus": "Ok",
+       "Stops": 0,
+       "AirplaneCode": "737",
+       "PngLogoPath": null,
+       "SvgLogoPath": null,
+       "SuggestedServices": [],
+       "AirlineAuxiliaryServices": null,
+       "TechnicalStops": null
+      }
+     ],
+     "IsOriginMismatched": false,
+     "IsDestinationMismatched": false
+    }
+   ],
+   "FareFamilyComponents": null,
+   "UnchangeableInfCount": false,
+   "PassengerCountChangeAllowed": true,
+   "PhoneSale": false,
+   "AutomaticReserve": true,
+   "MustAppearInAutoReserve": false,
+   "MustAppearInPriceTrack": true,
+   "MustAppearInNotifyOnDecreasingPrice": true,
+   "IsFromMultilegSource": false,
+   "SpecialConditions": null,
+   "SpecialConditionTitle": null
+  },
+  {
+   "Id": "21911427",
+   "Score": 0.0,
+   "Prices": [
+    {
+     "Url": null,
+     "UniqueId": "877caf6111ae2a7c3ef979b64370160800f8e150bd61b7b1c821841ddfcbc912",
+     "ProposalId": "W3siVCI6W3siSSI6IjIxOTExNDI3IiwiUCI6MSwiRCI6IjIxOTExNDI3fFkyMjA3ODd8MTIzMjAwMDAwfDEwNDgwMDAwMHwyNDkwMDAwMHxZfHwiLCJBIjoxMjMyMDAwMDAsIkMiOjU1OTIyNTAsIkNDIjoxLCJCIjp0cnVlLCJGUyI6MCwiQkMiOiJZMjIwNzg3IiwiSUIiOmZhbHNlLCJDUFIiOjAsIkRQIjoiMTg6NDA6MDAifV19XQ==",
+     "Capacity": 7,
+     "DiscountToken": null,
+     "BookingClass": "Y220787",
+     "PassengerFares": [
+      {
+       "Discount": 0,
+       "TotalFare": 123200000,
+       "PaxType": "ADL",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      },
+      {
+       "Discount": 0,
+       "TotalFare": 104800000,
+       "PaxType": "CHD",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      },
+      {
+       "Discount": 0,
+       "TotalFare": 24900000,
+       "PaxType": "INF",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      }
+     ],
+     "Baggage": 20,
+     "BaggageType": "KG",
+     "ProviderBaggageType": "",
+     "CabinClass": "Economy",
+     "CabinClassDisplayName": "اکونومی",
+     "FareRulesUrl": null,
+     "FareRules": "این بلیط تا 72 ساعت قبل از پرواز با 30% جریمه، تا 48 ساعت قبل از پرواز با 50% جریمه، تا 24 ساعت قبل از پرواز با 70% جریمه و پس از آن با 85% جریمه به صورت اینترنتی قابل کنسل می باشد.",
+     "ProviderName": "",
+     "CancellationTernEntities": [
+      {
+       "Amount": null,
+       "PercentAmount": 30,
+       "Title": "از لحظه صدور تا 3 روز قبل از پرواز",
+       "TimeTitle": "تا 3 روز",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "30% جریمه",
+       "PenaltyAmountTextEn": "30% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 50,
+       "Title": "تا 2 روز قبل از پرواز",
+       "TimeTitle": "تا 2 روز",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "50% جریمه",
+       "PenaltyAmountTextEn": "50% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 70,
+       "Title": "تا 1 روز قبل از پرواز",
+       "TimeTitle": "تا 1 روز",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "70% جریمه",
+       "PenaltyAmountTextEn": "70% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 85,
+       "Title": "از 1 روز قبل از پرواز به بعد",
+       "TimeTitle": null,
+       "DayBeforeTitle": "پس از پرواز",
+       "PenaltyAmountTextFa": "85% جریمه",
+       "PenaltyAmountTextEn": "85% penalty"
+      }
+     ],
+     "FlightSpecialOffers": [],
+     "IsCharter": false,
+     "IgnorePriceLimit": false,
+     "ExtraTerms": "",
+     "IncludeLowerCapacity": false,
+     "IncludeHigherCapacity": false,
+     "NeedGetPrice": false,
+     "IsAgencyHasPriorityOnShowingFlight": false,
+     "HasOfficialRatePrice": true
+    }
+   ],
+   "Segments": [
+    {
+     "ConnectionTime": "00:00:00",
+     "TotalTime": "01:30:00",
+     "Legs": [
+      {
+       "Id": 21911427,
+       "FlightNumber": "4310",
+       "Origin": "تهران",
+       "OriginAirport": "مهرآباد",
+       "OriginCode": "THR",
+       "Destination": "مشهد",
+       "DestinationAirport": "شهید هاشمی نژاد",
+       "JourneyTime": "01:30:00",
+       "DestinationCode": "MHD",
+       "AirCraft": {
+        "Id": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Score": null,
+        "Iatacode": null,
+        "ShortTitle": null
+       },
+       "AirlineCode": "IS",
+       "OperatingAirlineCode": null,
+       "Airline": {
+        "IataCode": "IS",
+        "PersianTitle": "سپهران ایر",
+        "EnglishTitle": "Sepehran Air",
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/IS.svg",
+        "Title": null
+       },
+       "OperatingAirline": {
+        "IataCode": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/.svg",
+        "Title": null
+       },
+       "DepartureDateString": "28 مهر",
+       "DepartureWeekDay": "سه شنبه",
+       "DepartureTerminal": "",
+       "ArrivalTerminal": "",
+       "DepartureTime": "2026-10-20T18:40:00+03:30",
+       "ArrivalTime": "2026-10-20T20:10:00+03:30",
+       "Status": 0,
+       "FlightStatus": "Ok",
+       "Stops": 0,
+       "AirplaneCode": null,
+       "PngLogoPath": null,
+       "SvgLogoPath": null,
+       "SuggestedServices": [],
+       "AirlineAuxiliaryServices": null,
+       "TechnicalStops": null
+      }
+     ],
+     "IsOriginMismatched": false,
+     "IsDestinationMismatched": false
+    }
+   ],
+   "FareFamilyComponents": null,
+   "UnchangeableInfCount": false,
+   "PassengerCountChangeAllowed": true,
+   "PhoneSale": false,
+   "AutomaticReserve": true,
+   "MustAppearInAutoReserve": false,
+   "MustAppearInPriceTrack": true,
+   "MustAppearInNotifyOnDecreasingPrice": true,
+   "IsFromMultilegSource": false,
+   "SpecialConditions": null,
+   "SpecialConditionTitle": null
+  },
+  {
+   "Id": "21921948",
+   "Score": 0.0,
+   "Prices": [
+    {
+     "Url": null,
+     "UniqueId": "aa7725b754338636bb9cb387a598d5c409686f148faa57eced02e2c4394ff1d5",
+     "ProposalId": "W3siVCI6W3siSSI6IjIxOTIxOTQ4IiwiUCI6MSwiRCI6IjIxOTIxOTQ4fFRBfDEyMzIzMDAwMHw5MjQ0OTAwMHwxMjM4NDAwMHxZfDIwfEtHIiwiQSI6MTIzMjMwMDAwLCJDIjo1NTkzNjUwLCJDQyI6MSwiQiI6dHJ1ZSwiRlMiOjAsIkJDIjoiVEEiLCJJQiI6ZmFsc2UsIkNQUiI6MCwiRFAiOiIxNDowMDowMCJ9XX0seyJUIjpbeyJJIjoiMjE5MjE5NDgiLCJQIjowLCJEIjoiNjgzMDQzNzciLCJBIjoxMjMyMzAwMDAsIkMiOjAsIkNDIjoxLCJCIjp0cnVlLCJGUyI6MCwiQkMiOiJZIiwiSUIiOmZhbHNlLCJDUFIiOjAsIkRQIjoiMTQ6MDA6MDAifV19XQ==",
+     "Capacity": 9,
+     "DiscountToken": null,
+     "BookingClass": "TA",
+     "PassengerFares": [
+      {
+       "Discount": 0,
+       "TotalFare": 123230000,
+       "PaxType": "ADL",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      },
+      {
+       "Discount": 0,
+       "TotalFare": 92449000,
+       "PaxType": "CHD",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      },
+      {
+       "Discount": 0,
+       "TotalFare": 12384000,
+       "PaxType": "INF",
+       "SpecialDiscountAllowed": false,
+       "DiscountPercent": null
+      }
+     ],
+     "Baggage": 20,
+     "BaggageType": "KG",
+     "ProviderBaggageType": "",
+     "CabinClass": "Economy",
+     "CabinClassDisplayName": "اکونومی",
+     "FareRulesUrl": null,
+     "FareRules": "این بلیط تا 168 ساعت قبل از پرواز با 30% جریمه، تا 72 ساعت قبل از پرواز با 50% جریمه، تا 24 ساعت قبل از پرواز با 70% جریمه، تا 8 ساعت قبل از پرواز با 85% جریمه و پس از آن با 100% جریمه به صورت اینترنتی قابل کنسل می باشد.",
+     "ProviderName": "",
+     "CancellationTernEntities": [
+      {
+       "Amount": null,
+       "PercentAmount": 30,
+       "Title": "از لحظه صدور تا 7 روز قبل از پرواز",
+       "TimeTitle": "تا 7 روز",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "30% جریمه",
+       "PenaltyAmountTextEn": "30% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 50,
+       "Title": "تا 3 روز قبل از پرواز",
+       "TimeTitle": "تا 3 روز",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "50% جریمه",
+       "PenaltyAmountTextEn": "50% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 70,
+       "Title": "تا 1 روز قبل از پرواز",
+       "TimeTitle": "تا 1 روز",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "70% جریمه",
+       "PenaltyAmountTextEn": "70% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 85,
+       "Title": "تا 8 ساعت قبل از پرواز",
+       "TimeTitle": "تا 8 ساعت",
+       "DayBeforeTitle": "قبل از پرواز",
+       "PenaltyAmountTextFa": "85% جریمه",
+       "PenaltyAmountTextEn": "85% penalty"
+      },
+      {
+       "Amount": null,
+       "PercentAmount": 100,
+       "Title": "از 8 ساعت قبل از پرواز به بعد",
+       "TimeTitle": null,
+       "DayBeforeTitle": "پس از پرواز",
+       "PenaltyAmountTextFa": "100% جریمه",
+       "PenaltyAmountTextEn": "100% penalty"
+      }
+     ],
+     "FlightSpecialOffers": [],
+     "IsCharter": false,
+     "IgnorePriceLimit": false,
+     "ExtraTerms": "",
+     "IncludeLowerCapacity": false,
+     "IncludeHigherCapacity": false,
+     "NeedGetPrice": true,
+     "IsAgencyHasPriorityOnShowingFlight": false,
+     "HasOfficialRatePrice": true
+    }
+   ],
+   "Segments": [
+    {
+     "ConnectionTime": "00:00:00",
+     "TotalTime": "01:25:00",
+     "Legs": [
+      {
+       "Id": 21921948,
+       "FlightNumber": "5840",
+       "Origin": "تهران",
+       "OriginAirport": "مهرآباد",
+       "OriginCode": "THR",
+       "Destination": "مشهد",
+       "DestinationAirport": "شهید هاشمی نژاد",
+       "JourneyTime": "01:25:00",
+       "DestinationCode": "MHD",
+       "AirCraft": {
+        "Id": 68,
+        "PersianTitle": "بوئینگ 737",
+        "EnglishTitle": "Boeing 737-500 pax",
+        "Score": 1.0,
+        "Iatacode": "735",
+        "ShortTitle": "Boeing 737"
+       },
+       "AirlineCode": "V1",
+       "OperatingAirlineCode": null,
+       "Airline": {
+        "IataCode": "V1",
+        "PersianTitle": "وارش",
+        "EnglishTitle": "Varesh",
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/V1.svg",
+        "Title": null
+       },
+       "OperatingAirline": {
+        "IataCode": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/.svg",
+        "Title": null
+       },
+       "DepartureDateString": "28 مهر",
+       "DepartureWeekDay": "سه شنبه",
+       "DepartureTerminal": "",
+       "ArrivalTerminal": "",
+       "DepartureTime": "2026-10-20T14:00:00+03:30",
+       "ArrivalTime": "2026-10-20T15:25:00+03:30",
+       "Status": 0,
+       "FlightStatus": "Ok",
+       "Stops": 0,
+       "AirplaneCode": "735",
+       "PngLogoPath": null,
+       "SvgLogoPath": null,
+       "SuggestedServices": [],
+       "AirlineAuxiliaryServices": null,
+       "TechnicalStops": null
+      }
+     ],
+     "IsOriginMismatched": false,
+     "IsDestinationMismatched": false
+    }
+   ],
+   "FareFamilyComponents": null,
+   "UnchangeableInfCount": false,
+   "PassengerCountChangeAllowed": true,
+   "PhoneSale": false,
+   "AutomaticReserve": true,
+   "MustAppearInAutoReserve": false,
+   "MustAppearInPriceTrack": true,
+   "MustAppearInNotifyOnDecreasingPrice": true,
+   "IsFromMultilegSource": false,
+   "SpecialConditions": null,
+   "SpecialConditionTitle": null
+  },
+  {
+   "Id": "21807249",
+   "Score": 0.0,
+   "Prices": [],
+   "Segments": [
+    {
+     "ConnectionTime": "00:00:00",
+     "TotalTime": "01:30:00",
+     "Legs": [
+      {
+       "Id": 21807249,
+       "FlightNumber": "602",
+       "Origin": "تهران",
+       "OriginAirport": "مهرآباد",
+       "OriginCode": "THR",
+       "Destination": "مشهد",
+       "DestinationAirport": "شهید هاشمی نژاد",
+       "JourneyTime": "01:30:00",
+       "DestinationCode": "MHD",
+       "AirCraft": {
+        "Id": 70,
+        "PersianTitle": "بوئینگ 737",
+        "EnglishTitle": "Boeing 737 all pax models",
+        "Score": 1.0,
+        "Iatacode": "737",
+        "ShortTitle": "Boeing 737"
+       },
+       "AirlineCode": "EP",
+       "OperatingAirlineCode": null,
+       "Airline": {
+        "IataCode": "EP",
+        "PersianTitle": "آسمان",
+        "EnglishTitle": "Aseman",
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/EP.svg",
+        "Title": null
+       },
+       "OperatingAirline": {
+        "IataCode": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/.svg",
+        "Title": null
+       },
+       "DepartureDateString": "28 مهر",
+       "DepartureWeekDay": "سه شنبه",
+       "DepartureTerminal": "",
+       "ArrivalTerminal": "",
+       "DepartureTime": "2026-10-20T17:30:00+03:30",
+       "ArrivalTime": "2026-10-20T19:00:00+03:30",
+       "Status": 2,
+       "FlightStatus": "Cancelled",
+       "Stops": 0,
+       "AirplaneCode": "737",
+       "PngLogoPath": null,
+       "SvgLogoPath": null,
+       "SuggestedServices": [],
+       "AirlineAuxiliaryServices": null,
+       "TechnicalStops": null
+      }
+     ],
+     "IsOriginMismatched": false,
+     "IsDestinationMismatched": false
+    }
+   ],
+   "FareFamilyComponents": null,
+   "UnchangeableInfCount": false,
+   "PassengerCountChangeAllowed": true,
+   "PhoneSale": false,
+   "AutomaticReserve": false,
+   "MustAppearInAutoReserve": false,
+   "MustAppearInPriceTrack": true,
+   "MustAppearInNotifyOnDecreasingPrice": true,
+   "IsFromMultilegSource": false,
+   "SpecialConditions": null,
+   "SpecialConditionTitle": null
+  },
+  {
+   "Id": "21868045",
+   "Score": 0.0,
+   "Prices": [],
+   "Segments": [
+    {
+     "ConnectionTime": "00:00:00",
+     "TotalTime": "01:25:00",
+     "Legs": [
+      {
+       "Id": 21868045,
+       "FlightNumber": "2804",
+       "Origin": "تهران",
+       "OriginAirport": "مهرآباد",
+       "OriginCode": "THR",
+       "Destination": "مشهد",
+       "DestinationAirport": "شهید هاشمی نژاد",
+       "JourneyTime": "01:25:00",
+       "DestinationCode": "MHD",
+       "AirCraft": {
+        "Id": 32,
+        "PersianTitle": "ایرباس A319",
+        "EnglishTitle": "Airbus A319",
+        "Score": 1.0,
+        "Iatacode": "319",
+        "ShortTitle": "Airbus A319"
+       },
+       "AirlineCode": "J1",
+       "OperatingAirlineCode": null,
+       "Airline": {
+        "IataCode": "J1",
+        "PersianTitle": "معراج",
+        "EnglishTitle": "Meraj",
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/J1.svg",
+        "Title": null
+       },
+       "OperatingAirline": {
+        "IataCode": null,
+        "PersianTitle": null,
+        "EnglishTitle": null,
+        "Logo": "https://static.mrbilit.com/img/AirlineLogos/svg/.svg",
+        "Title": null
+       },
+       "DepartureDateString": "28 مهر",
+       "DepartureWeekDay": "سه شنبه",
+       "DepartureTerminal": "",
+       "ArrivalTerminal": "",
+       "DepartureTime": "2026-10-20T04:30:00+03:30",
+       "ArrivalTime": "2026-10-20T05:55:00+03:30",
+       "Status": 0,
+       "FlightStatus": "Ok",
+       "Stops": 0,
+       "AirplaneCode": "319",
+       "PngLogoPath": null,
+       "SvgLogoPath": null,
+       "SuggestedServices": [],
+       "AirlineAuxiliaryServices": null,
+       "TechnicalStops": null
+      }
+     ],
+     "IsOriginMismatched": false,
+     "IsDestinationMismatched": false
+    }
+   ],
+   "FareFamilyComponents": null,
+   "UnchangeableInfCount": false,
+   "PassengerCountChangeAllowed": true,
+   "PhoneSale": false,
+   "AutomaticReserve": true,
+   "MustAppearInAutoReserve": true,
+   "MustAppearInPriceTrack": true,
+   "MustAppearInNotifyOnDecreasingPrice": true,
+   "IsFromMultilegSource": false,
+   "SpecialConditions": null,
+   "SpecialConditionTitle": null
+  }
+ ]
+}

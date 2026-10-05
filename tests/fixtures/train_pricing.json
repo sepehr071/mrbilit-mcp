@@ -1,0 +1,31 @@
+{
+ "adultPrice": {
+  "price": 7600000,
+  "discount": 0,
+  "stationService": 363000,
+  "baseFare": 6032614,
+  "hallPrice": 215000,
+  "foodPrice": 0,
+  "commission": 93714
+ },
+ "childPrice": {
+  "price": 4101500,
+  "discount": 0,
+  "stationService": 363000,
+  "baseFare": 3016307,
+  "hallPrice": 215000,
+  "foodPrice": 0,
+  "commission": 48470
+ },
+ "infantPrice": {
+  "price": 709000,
+  "discount": 0,
+  "stationService": 0,
+  "baseFare": 603261,
+  "hallPrice": 215000,
+  "foodPrice": 0,
+  "commission": 12274
+ },
+ "emptySeatPrice": null,
+ "foreignerPrice": null
+}

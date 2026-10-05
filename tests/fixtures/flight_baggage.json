@@ -1,0 +1,6 @@
+{
+ "HasBaggage": true,
+ "Baggage": 20,
+ "BaggageType": "KG",
+ "BookingClass": "TA"
+}

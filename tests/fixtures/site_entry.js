@@ -1,0 +1,2 @@
+ndexUrl(){return this.isDomestic?"/plane-ticket":"/international-flights"}async loadLocalDomesticAirports(){return(await se(async()=>{const{default:n}=await import("./CJolaB_0.js");return{default:n}},[],import.meta.url)).default}async searchLocations(n,r
+ns(){this.trainStations.length||(this.isLoadingLocations=!0,this.trainStations=(await se(async()=>{const{default:n}=await import("./Dzr3BWXP.js");return{default:n}},[],import.meta.url)).default,this.isLoadingLocations=!1)}get

@@ -1,0 +1,68 @@
+[
+ {
+  "id": 1,
+  "title": "ایران پیما",
+  "englishTitle": "Iran Peyma",
+  "localeTitle": "ایران پیما"
+ },
+ {
+  "id": 2,
+  "title": "همسفر",
+  "englishTitle": "Hamsafar",
+  "localeTitle": "همسفر"
+ },
+ {
+  "id": 3,
+  "title": "ترابر بی تا ",
+  "englishTitle": "Trabar Bita",
+  "localeTitle": "ترابر بی تا "
+ },
+ {
+  "id": 4,
+  "title": "سیروسفر ",
+  "englishTitle": "Seirosafar",
+  "localeTitle": "سیروسفر "
+ },
+ {
+  "id": 5,
+  "title": "آریا سفر ",
+  "englishTitle": "Ariasafar",
+  "localeTitle": "آریا سفر "
+ },
+ {
+  "id": 7,
+  "title": "لوان نور ",
+  "englishTitle": "Levan Noor",
+  "localeTitle": "لوان نور "
+ },
+ {
+  "id": 8,
+  "title": "گیتی پیما",
+  "englishTitle": "Giti Pima",
+  "localeTitle": "گیتی پیما"
+ },
+ {
+  "id": 9,
+  "title": "رویال سفر",
+  "englishTitle": "Royal Safar",
+  "localeTitle": "رویال سفر"
+ },
+ {
+  "id": 276,
+  "title": "وی\u200cآی\u200cپی",
+  "englishTitle": null,
+  "localeTitle": "وی\u200cآی\u200cپی"
+ },
+ {
+  "id": 278,
+  "title": "اکونومی",
+  "englishTitle": null,
+  "localeTitle": "اکونومی"
+ },
+ {
+  "id": 280,
+  "title": "تشریفاتی",
+  "englishTitle": null,
+  "localeTitle": "تشریفاتی"
+ }
+]

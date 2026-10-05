@@ -1,0 +1,464 @@
+{
+ "hotels": [
+  {
+   "id": 8778,
+   "name": "هتل انقلاب",
+   "englishName": "enghelab",
+   "cityName": "مشهد",
+   "englishCityName": "mashhad",
+   "countryName": null,
+   "englishCountryName": null,
+   "hotelTypeId": 4,
+   "hotelTypeTitle": "هتل 2 ستاره",
+   "hotelTypeStars": 2,
+   "hotelEmail": null,
+   "hotelAddress": "مشهد، خیابان امام رضا٬ امام رضا 8، چهار راه دوم، سمت چپ",
+   "hotelPhoneNumber": "05137244398",
+   "photo": null,
+   "numberOfComments": 20,
+   "isMrBilitOffer": false,
+   "shortAddress": "خیابان امام رضا 8",
+   "totalPrice": 40020000,
+   "minRoomPriceCapacity": 2,
+   "payable": 39270000,
+   "buyPrice": 36360330,
+   "discountType": "Numerical",
+   "amenities": [
+    {
+     "id": 20,
+     "title": "لابی",
+     "englishTitle": "Lobby",
+     "showOnCard": true,
+     "iconHexCode": "e991"
+    },
+    {
+     "id": 24,
+     "title": "آسانسور",
+     "englishTitle": "Elevator",
+     "showOnCard": true,
+     "iconHexCode": "e987"
+    }
+   ],
+   "rating": 3.5,
+   "saleCount": 0,
+   "photos": null,
+   "hotelSpecialOffers": [
+    {
+     "id": 75,
+     "title": "پیشنهاد مستربلیط",
+     "startTrip": "2026-06-08T16:58:00",
+     "endTrip": "2027-08-22T16:58:00",
+     "badgeColorOnCard": "#fff2f0",
+     "priority": 1,
+     "icon": null,
+     "description": null,
+     "showOnCard": true,
+     "showOnPage": true,
+     "showPriorityImpactOnSorting": false,
+     "showLabelsInFilterBox": false
+    }
+   ],
+   "bannerPhotos": [],
+   "idOfProvider": null,
+   "providerId": 25,
+   "providerName": null,
+   "hasFreeTransfer": false,
+   "sortWeight": 1.81,
+   "latitude": 36.280205,
+   "longitude": 59.613224,
+   "refundable": false,
+   "checkIn": "0001-01-01T00:00:00",
+   "checkOut": "0001-01-01T00:00:00",
+   "hotelTypeName": "هتل 2 ستاره",
+   "serviceLevel": {
+    "id": 1,
+    "title": "بدون وعده غذایی"
+   },
+   "closed": false
+  },
+  {
+   "id": 5326,
+   "name": "هتل مجلل درویشی",
+   "englishName": "darvishi",
+   "cityName": "مشهد",
+   "englishCityName": "mashhad",
+   "countryName": null,
+   "englishCountryName": null,
+   "hotelTypeId": 1,
+   "hotelTypeTitle": "هتل 5 ستاره",
+   "hotelTypeStars": 5,
+   "hotelEmail": "info@darvishihotel.com",
+   "hotelAddress": "مشهد، خیابان امام رضا(ع) ،  بین امام رضا 24 و 26\n-",
+   "hotelPhoneNumber": "05138080000",
+   "photo": null,
+   "numberOfComments": 80,
+   "isMrBilitOffer": false,
+   "shortAddress": "خیابان امام رضا",
+   "totalPrice": 256500000,
+   "minRoomPriceCapacity": 1,
+   "payable": 250110000,
+   "buyPrice": 231565500,
+   "discountType": "Numerical",
+   "amenities": [
+    {
+     "id": 4,
+     "title": "پارکینگ",
+     "englishTitle": "Parking",
+     "showOnCard": true,
+     "iconHexCode": "e994"
+    },
+    {
+     "id": 20,
+     "title": "لابی",
+     "englishTitle": "Lobby",
+     "showOnCard": true,
+     "iconHexCode": "e991"
+    }
+   ],
+   "rating": 4,
+   "saleCount": 0,
+   "photos": null,
+   "hotelSpecialOffers": [
+    {
+     "id": 75,
+     "title": "پیشنهاد مستربلیط",
+     "startTrip": "2026-06-08T16:58:00",
+     "endTrip": "2027-08-22T16:58:00",
+     "badgeColorOnCard": "#fff2f0",
+     "priority": 1,
+     "icon": null,
+     "description": null,
+     "showOnCard": true,
+     "showOnPage": true,
+     "showPriorityImpactOnSorting": false,
+     "showLabelsInFilterBox": false
+    }
+   ],
+   "bannerPhotos": [],
+   "idOfProvider": null,
+   "providerId": 25,
+   "providerName": null,
+   "hasFreeTransfer": false,
+   "sortWeight": 1.46,
+   "latitude": 36.275234,
+   "longitude": 59.60512,
+   "refundable": false,
+   "checkIn": "0001-01-01T00:00:00",
+   "checkOut": "0001-01-01T00:00:00",
+   "hotelTypeName": "هتل 5 ستاره",
+   "serviceLevel": {
+    "id": 2,
+    "title": "صبحانه"
+   },
+   "closed": false
+  },
+  {
+   "id": 3462,
+   "name": "هتل الماس 2",
+   "englishName": "almas-2",
+   "cityName": "مشهد",
+   "englishCityName": "mashhad",
+   "countryName": null,
+   "englishCountryName": null,
+   "hotelTypeId": 1,
+   "hotelTypeTitle": "هتل 5 ستاره",
+   "hotelTypeStars": 5,
+   "hotelEmail": "info2@hotelalmas.com",
+   "hotelAddress": "مشهد، خیابان امام رضا، امام رضا 20",
+   "hotelPhoneNumber": "05131414000",
+   "photo": null,
+   "numberOfComments": 55,
+   "isMrBilitOffer": false,
+   "shortAddress": "خیابان امام رضا 20",
+   "totalPrice": 232750000,
+   "minRoomPriceCapacity": 1,
+   "payable": 223000000,
+   "buyPrice": 202708100,
+   "discountType": "Numerical",
+   "amenities": [
+    {
+     "id": 4,
+     "title": "پارکینگ",
+     "englishTitle": "Parking",
+     "showOnCard": true,
+     "iconHexCode": "e994"
+    },
+    {
+     "id": 20,
+     "title": "لابی",
+     "englishTitle": "Lobby",
+     "showOnCard": true,
+     "iconHexCode": "e991"
+    }
+   ],
+   "rating": 4.2,
+   "saleCount": 0,
+   "photos": null,
+   "hotelSpecialOffers": [
+    {
+     "id": 75,
+     "title": "پیشنهاد مستربلیط",
+     "startTrip": "2026-06-08T16:58:00",
+     "endTrip": "2027-08-22T16:58:00",
+     "badgeColorOnCard": "#fff2f0",
+     "priority": 1,
+     "icon": null,
+     "description": null,
+     "showOnCard": true,
+     "showOnPage": true,
+     "showPriorityImpactOnSorting": false,
+     "showLabelsInFilterBox": false
+    }
+   ],
+   "bannerPhotos": [],
+   "idOfProvider": null,
+   "providerId": 25,
+   "providerName": null,
+   "hasFreeTransfer": false,
+   "sortWeight": 1.24,
+   "latitude": 36.277496,
+   "longitude": 59.60762,
+   "refundable": false,
+   "checkIn": "0001-01-01T00:00:00",
+   "checkOut": "0001-01-01T00:00:00",
+   "hotelTypeName": "هتل 5 ستاره",
+   "serviceLevel": {
+    "id": 2,
+    "title": "صبحانه"
+   },
+   "closed": false
+  },
+  {
+   "id": 8194,
+   "name": "هتل آپارتمان جمالی",
+   "englishName": "jamali-mashhad",
+   "cityName": "مشهد",
+   "englishCityName": "mashhad",
+   "countryName": null,
+   "englishCountryName": null,
+   "hotelTypeId": 9,
+   "hotelTypeTitle": "هتل آپارتمان",
+   "hotelTypeStars": 1,
+   "hotelEmail": null,
+   "hotelAddress": "مشهد - خیابان امام رضا - امام رضا 8 \n کوچه دوم - سمت چپ",
+   "hotelPhoneNumber": "05138596302",
+   "photo": null,
+   "numberOfComments": 38,
+   "isMrBilitOffer": false,
+   "shortAddress": "خیابان امام رضا 8",
+   "totalPrice": 48000000,
+   "minRoomPriceCapacity": 1,
+   "payable": 46020000,
+   "buyPrice": 42601320,
+   "discountType": "Numerical",
+   "amenities": [
+    {
+     "id": 13,
+     "title": "خدمات گردشگری",
+     "englishTitle": "Tourism services",
+     "showOnCard": true,
+     "iconHexCode": "e985"
+    },
+    {
+     "id": 20,
+     "title": "لابی",
+     "englishTitle": "Lobby",
+     "showOnCard": true,
+     "iconHexCode": "e991"
+    }
+   ],
+   "rating": 3.3,
+   "saleCount": 0,
+   "photos": null,
+   "hotelSpecialOffers": [
+    {
+     "id": 75,
+     "title": "پیشنهاد مستربلیط",
+     "startTrip": "2026-06-08T16:58:00",
+     "endTrip": "2027-08-22T16:58:00",
+     "badgeColorOnCard": "#fff2f0",
+     "priority": 1,
+     "icon": null,
+     "description": null,
+     "showOnCard": true,
+     "showOnPage": true,
+     "showPriorityImpactOnSorting": false,
+     "showLabelsInFilterBox": false
+    }
+   ],
+   "bannerPhotos": [],
+   "idOfProvider": null,
+   "providerId": 25,
+   "providerName": null,
+   "hasFreeTransfer": false,
+   "sortWeight": 4.0,
+   "latitude": 36.279568,
+   "longitude": 59.612217,
+   "refundable": false,
+   "checkIn": "0001-01-01T00:00:00",
+   "checkOut": "0001-01-01T00:00:00",
+   "hotelTypeName": "هتل آپارتمان",
+   "serviceLevel": {
+    "id": 1,
+    "title": "بدون وعده غذایی"
+   },
+   "closed": false
+  }
+ ],
+ "hotelTypes": [
+  {
+   "id": 1,
+   "title": "هتل 5 ستاره",
+   "englishTitle": "type-5-star-hotels",
+   "stars": 5,
+   "minPrice": null
+  },
+  {
+   "id": 2,
+   "title": "هتل 4 ستاره",
+   "englishTitle": "type-4-star-hotels",
+   "stars": 4,
+   "minPrice": null
+  },
+  {
+   "id": 3,
+   "title": "هتل 3 ستاره",
+   "englishTitle": "type-3-star-hotels",
+   "stars": 3,
+   "minPrice": null
+  },
+  {
+   "id": 4,
+   "title": "هتل 2 ستاره",
+   "englishTitle": "type-2-star-hotels",
+   "stars": 2,
+   "minPrice": null
+  },
+  {
+   "id": 5,
+   "title": "هتل 1 ستاره",
+   "englishTitle": "type-1-star-hotels",
+   "stars": 1,
+   "minPrice": null
+  },
+  {
+   "id": 9,
+   "title": "هتل آپارتمان",
+   "englishTitle": "type-hotel-apartments",
+   "stars": 1,
+   "minPrice": null
+  },
+  {
+   "id": 10,
+   "title": "اقامتگاه بوم گردی",
+   "englishTitle": "type-eco-loge",
+   "stars": 3,
+   "minPrice": null
+  },
+  {
+   "id": 11,
+   "title": "مهمانپذیر",
+   "englishTitle": "type-home-pasenger",
+   "stars": 1,
+   "minPrice": null
+  },
+  {
+   "id": 12,
+   "title": "هتل سنتی",
+   "englishTitle": "type-traditional-hotel",
+   "stars": 1,
+   "minPrice": null
+  },
+  {
+   "id": 13,
+   "title": "مجتمع اقامتی",
+   "englishTitle": "type-residential-complex",
+   "stars": 1,
+   "minPrice": null
+  },
+  {
+   "id": 14,
+   "title": "سایر",
+   "englishTitle": "type-other-accomodations",
+   "stars": 3,
+   "minPrice": null
+  },
+  {
+   "id": 15,
+   "title": "هتل آپارتمان 2 ستاره",
+   "englishTitle": "Type-2-Star-ApartementHotel",
+   "stars": 2,
+   "minPrice": null
+  },
+  {
+   "id": 18,
+   "title": "هتل آپارتمان 3 ستاره",
+   "englishTitle": "type-3-star-apartment",
+   "stars": 3,
+   "minPrice": null
+  },
+  {
+   "id": 23,
+   "title": "بوتیک هتل",
+   "englishTitle": "type-boutique-hotel",
+   "stars": 1,
+   "minPrice": null
+  },
+  {
+   "id": 24,
+   "title": "اقامتگاه سنتی",
+   "englishTitle": "type-traditional-stay",
+   "stars": 1,
+   "minPrice": null
+  },
+  {
+   "id": 25,
+   "title": "مهمان\u200cسرا",
+   "englishTitle": "type-guest-house",
+   "stars": 2,
+   "minPrice": null
+  },
+  {
+   "id": 27,
+   "title": "خانه مسافر",
+   "englishTitle": "type-passenger-house",
+   "stars": 1,
+   "minPrice": null
+  }
+ ],
+ "hotelAmenities": [
+  {
+   "id": 4,
+   "title": "پارکینگ",
+   "englishTitle": "Parking",
+   "showOnCard": true,
+   "iconHexCode": "e994"
+  },
+  {
+   "id": 24,
+   "title": "آسانسور",
+   "englishTitle": "Elevator",
+   "showOnCard": true,
+   "iconHexCode": "e987"
+  }
+ ],
+ "serviceLevels": [
+  {
+   "id": 1,
+   "title": "بدون وعده غذایی"
+  },
+  {
+   "id": 2,
+   "title": "صبحانه"
+  },
+  {
+   "id": 3,
+   "title": "صبحانه ، ناهار ، شام "
+  }
+ ],
+ "hotelSpecialOffers": [],
+ "minPrice": 17370000,
+ "maxPrice": 708750000,
+ "totalCountHotels": 0,
+ "isFloatingReserveEnabled": false
+}

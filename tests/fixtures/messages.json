@@ -1,0 +1,30 @@
+[
+ {
+  "type": null,
+  "urlPattern": "^/hotel/[^/]+/[^/?]+.*",
+  "closeAction": null,
+  "privacy": "all",
+  "androidWebApp": true,
+  "iosWebApp": false,
+  "searchMode": null,
+  "_id": "69d4a350f3f000001bbe2724",
+  "ios": true,
+  "text": "امکان پرداخت قسطی برای این هتل فراهم است.",
+  "android": true,
+  "web": true,
+  "createdAt": "2026-04-07T06:25:20.033Z",
+  "updatedAt": "2026-04-07T06:25:20.055Z",
+  "__v": 0,
+  "created_by": {
+   "id": "redacted",
+   "email": "redacted@example.invalid",
+   "password": "redacted"
+  },
+  "updated_by": {
+   "id": "redacted",
+   "email": "redacted@example.invalid",
+   "password": "redacted"
+  },
+  "id": "69d4a350f3f000001bbe2724"
+ }
+]

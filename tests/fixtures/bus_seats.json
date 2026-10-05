@@ -1,0 +1,224 @@
+{
+ "columns": 3,
+ "rows": 11,
+ "spacePlace": 2,
+ "seats": [
+  [
+   {
+    "status": 3,
+    "number": 0,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 3,
+    "number": 0,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 5,
+    "number": 0,
+    "passengerNationalCode": null
+   }
+  ],
+  [
+   {
+    "status": 2,
+    "number": 1,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 2,
+    "number": 2,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 2,
+    "number": 3,
+    "passengerNationalCode": null
+   }
+  ],
+  [
+   {
+    "status": 2,
+    "number": 4,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 2,
+    "number": 5,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 2,
+    "number": 6,
+    "passengerNationalCode": null
+   }
+  ],
+  [
+   {
+    "status": 0,
+    "number": 7,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 0,
+    "number": 8,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 0,
+    "number": 9,
+    "passengerNationalCode": null
+   }
+  ],
+  [
+   {
+    "status": 0,
+    "number": 10,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 0,
+    "number": 11,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 0,
+    "number": 12,
+    "passengerNationalCode": null
+   }
+  ],
+  [
+   {
+    "status": 3,
+    "number": 0,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 3,
+    "number": 0,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 0,
+    "number": 13,
+    "passengerNationalCode": null
+   }
+  ],
+  [
+   {
+    "status": 3,
+    "number": 0,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 3,
+    "number": 0,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 0,
+    "number": 14,
+    "passengerNationalCode": null
+   }
+  ],
+  [
+   {
+    "status": 0,
+    "number": 15,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 0,
+    "number": 16,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 0,
+    "number": 17,
+    "passengerNationalCode": null
+   }
+  ],
+  [
+   {
+    "status": 0,
+    "number": 18,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 0,
+    "number": 19,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 0,
+    "number": 20,
+    "passengerNationalCode": null
+   }
+  ],
+  [
+   {
+    "status": 0,
+    "number": 21,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 0,
+    "number": 22,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 0,
+    "number": 23,
+    "passengerNationalCode": null
+   }
+  ],
+  [
+   {
+    "status": 0,
+    "number": 24,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 0,
+    "number": 25,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 0,
+    "number": 26,
+    "passengerNationalCode": null
+   }
+  ],
+  [
+   {
+    "status": 0,
+    "number": 27,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 0,
+    "number": 28,
+    "passengerNationalCode": null
+   },
+   {
+    "status": 0,
+    "number": 29,
+    "passengerNationalCode": null
+   }
+  ]
+ ],
+ "price": null,
+ "departureTime": null,
+ "newDepartureDateTime": null,
+ "priceChanged": false,
+ "departureTimeChanged": false,
+ "commissionPercent": null,
+ "discount": null,
+ "customSeatsMessage": "انتخاب صندلی ردیف اول برای خانم ها و صندلی مجاور جنسیت مخالف امکان پذیر نیست.",
+ "needsSelectSeat": true,
+ "hasTempReserve": true,
+ "busType": {
+  "type": 1
+ }
+}

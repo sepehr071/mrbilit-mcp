@@ -1,0 +1,72 @@
+[
+ {
+  "AirlineCode": "AXV",
+  "SpecialDiscountAllowed": null,
+  "TotalFare": 120000000,
+  "BaseFare": null,
+  "Date": "2026-10-04T00:00:00"
+ },
+ {
+  "AirlineCode": "B9",
+  "SpecialDiscountAllowed": null,
+  "TotalFare": 78004000,
+  "BaseFare": null,
+  "Date": "2026-10-05T00:00:00"
+ },
+ {
+  "AirlineCode": "CPN",
+  "SpecialDiscountAllowed": null,
+  "TotalFare": 97844000,
+  "BaseFare": null,
+  "Date": "2026-10-06T00:00:00"
+ },
+ {
+  "AirlineCode": "AXV",
+  "SpecialDiscountAllowed": null,
+  "TotalFare": 93000000,
+  "BaseFare": null,
+  "Date": "2026-10-07T00:00:00"
+ },
+ {
+  "AirlineCode": "NSN",
+  "SpecialDiscountAllowed": null,
+  "TotalFare": 82722000,
+  "BaseFare": null,
+  "Date": "2026-10-08T00:00:00"
+ },
+ {
+  "AirlineCode": "AXV",
+  "SpecialDiscountAllowed": null,
+  "TotalFare": 77000000,
+  "BaseFare": null,
+  "Date": "2026-10-09T00:00:00"
+ },
+ {
+  "AirlineCode": "W5",
+  "SpecialDiscountAllowed": null,
+  "TotalFare": 100875000,
+  "BaseFare": null,
+  "Date": "2026-10-10T00:00:00"
+ },
+ {
+  "AirlineCode": "AXV",
+  "SpecialDiscountAllowed": null,
+  "TotalFare": 113000000,
+  "BaseFare": null,
+  "Date": "2026-10-11T00:00:00"
+ },
+ {
+  "AirlineCode": "FP",
+  "SpecialDiscountAllowed": null,
+  "TotalFare": 114400000,
+  "BaseFare": null,
+  "Date": "2026-10-12T00:00:00"
+ },
+ {
+  "AirlineCode": "CPN",
+  "SpecialDiscountAllowed": null,
+  "TotalFare": 114400000,
+  "BaseFare": null,
+  "Date": "2026-10-13T00:00:00"
+ }
+]

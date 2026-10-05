@@ -1,0 +1,615 @@
+{
+ "trains": [
+  {
+   "id": 3359479,
+   "from": 1,
+   "to": 191,
+   "fromName": "تهران",
+   "toName": "مشهد",
+   "trainNumber": 172,
+   "departureTime": "2026-10-14T18:45:00",
+   "arrivalTime": "2026-10-15T05:35:00",
+   "provider": 3,
+   "providerName": "رجا",
+   "corporationID": 15,
+   "corporationIds": [
+    15
+   ],
+   "corporationName": "ریل ترابر سبا",
+   "weekday": "چهارشنبه",
+   "dateString": "22 مهر",
+   "arrivalDateString": "23 مهر",
+   "fromCache": false,
+   "cancellable": true,
+   "isForeign": false,
+   "prices": [
+    {
+     "sellType": 3,
+     "classes": [
+      {
+       "id": 9847164,
+       "price": 0,
+       "capacity": 0,
+       "wagonName": "5 ستاره رویال ( باپذیرایی شام یا ناهار )",
+       "shortTitle": "رویال",
+       "compartmentType": "کوپه 4 نفره",
+       "class": "پنج ستاره",
+       "features": [
+        "پذیرایی شام یا ناهار"
+       ],
+       "airConditioning": true,
+       "media": true,
+       "isCompartment": true,
+       "compartmentCapacity": 4,
+       "discount": 0,
+       "wagonID": 5347,
+       "capacityString": "0",
+       "hasHotel": false,
+       "isAvailable": false,
+       "cancellationTerms": "قوانین کنسلی توسط راه\u200cآهن جمهوری اسلامی ایران تعیین می\u200cگردد. لطفا تا پایان سفر، ",
+       "reservationAvailable": true,
+       "pngLogoPath": "Logos/png/default.png",
+       "svgLogoPath": "Logos/svg/default.svg",
+       "minPersons": 1,
+       "owner": 15,
+       "ownerName": "ریل ترابر سبا",
+       "hasCompartmentCapacity": false,
+       "hotelId": null,
+       "hotelName": null,
+       "roundTrip": false,
+       "hasSpecialDiscount": false,
+       "score": null,
+       "cancellationTermEntries": [
+        {
+         "amount": null,
+         "percentAmount": 0,
+         "title": "تا یک ساعت پس از صدور (به شرط عدم حرکت قطار)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 10,
+         "title": "تا 3 روز مانده به حرکت (تا 12 ظهر)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 20,
+         "title": "تا 2 روز مانده به حرکت (تا 12 ظهر)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 40,
+         "title": "تا 1 روز مانده به حرکت (تا 12 ظهر)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 50,
+         "title": "از 12 ظهر روز قبل تا 3 ساعت مانده به حرکت"
+        },
+        {
+         "amount": null,
+         "percentAmount": 90,
+         "title": "از 3 ساعت مانده تا لحظه حرکت"
+        },
+        {
+         "amount": null,
+         "percentAmount": 100,
+         "title": "بعد از حرکت قطار"
+        }
+       ],
+       "suggestedServices": [],
+       "wagonServices": [
+        {
+         "hasService": true,
+         "title": "صوتی و تصویری"
+        },
+        {
+         "hasService": true,
+         "title": "تهویه"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "score": null
+  },
+  {
+   "id": 3359458,
+   "from": 1,
+   "to": 191,
+   "fromName": "تهران",
+   "toName": "مشهد",
+   "trainNumber": 318,
+   "departureTime": "2026-10-14T09:20:00",
+   "arrivalTime": "2026-10-14T21:45:00",
+   "provider": 1,
+   "providerName": "رجا",
+   "corporationID": 1,
+   "corporationIds": [
+    1,
+    12
+   ],
+   "corporationName": "رجا",
+   "weekday": "چهارشنبه",
+   "dateString": "22 مهر",
+   "arrivalDateString": "22 مهر",
+   "fromCache": false,
+   "cancellable": true,
+   "isForeign": false,
+   "prices": [
+    {
+     "sellType": 3,
+     "classes": [
+      {
+       "id": 9847134,
+       "price": 7600000,
+       "capacity": 18,
+       "wagonName": "4 ستاره اتوبوسی صبا",
+       "shortTitle": "صبا",
+       "compartmentType": "اتوبوسی",
+       "class": "چهار ستاره",
+       "features": [],
+       "airConditioning": true,
+       "media": false,
+       "isCompartment": false,
+       "compartmentCapacity": 4,
+       "discount": 0,
+       "wagonID": 1093,
+       "capacityString": "18",
+       "hasHotel": false,
+       "isAvailable": true,
+       "cancellationTerms": "قوانین کنسلی توسط راه\u200cآهن جمهوری اسلامی ایران تعیین می\u200cگردد. لطفا تا پایان سفر، ",
+       "reservationAvailable": true,
+       "pngLogoPath": "Logos/png/default.png",
+       "svgLogoPath": "Logos/svg/default.svg",
+       "minPersons": 1,
+       "owner": 1,
+       "ownerName": "رجا",
+       "hasCompartmentCapacity": true,
+       "hotelId": null,
+       "hotelName": null,
+       "roundTrip": false,
+       "hasSpecialDiscount": false,
+       "score": null,
+       "cancellationTermEntries": [
+        {
+         "amount": null,
+         "percentAmount": 0,
+         "title": "تا یک ساعت پس از صدور (به شرط عدم حرکت قطار)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 10,
+         "title": "تا 3 روز مانده به حرکت (تا 12 ظهر)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 20,
+         "title": "تا 2 روز مانده به حرکت (تا 12 ظهر)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 40,
+         "title": "تا 1 روز مانده به حرکت (تا 12 ظهر)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 50,
+         "title": "از 12 ظهر روز قبل تا 3 ساعت مانده به حرکت"
+        },
+        {
+         "amount": null,
+         "percentAmount": 90,
+         "title": "از 3 ساعت مانده تا لحظه حرکت"
+        },
+        {
+         "amount": null,
+         "percentAmount": 100,
+         "title": "بعد از حرکت قطار"
+        }
+       ],
+       "suggestedServices": [],
+       "wagonServices": [
+        {
+         "hasService": false,
+         "title": "صوتی و تصویری"
+        },
+        {
+         "hasService": true,
+         "title": "تهویه"
+        }
+       ]
+      },
+      {
+       "id": 9866050,
+       "price": 0,
+       "capacity": 0,
+       "wagonName": "4 ستاره اتوبوسی صبا",
+       "shortTitle": "صبا",
+       "compartmentType": "اتوبوسی",
+       "class": "چهار ستاره",
+       "features": [],
+       "airConditioning": true,
+       "media": false,
+       "isCompartment": false,
+       "compartmentCapacity": 4,
+       "discount": 0,
+       "wagonID": 1093,
+       "capacityString": "0",
+       "hasHotel": false,
+       "isAvailable": false,
+       "cancellationTerms": "قوانین کنسلی توسط راه\u200cآهن جمهوری اسلامی ایران تعیین می\u200cگردد. لطفا تا پایان سفر، ",
+       "reservationAvailable": true,
+       "pngLogoPath": "Logos/png/default.png",
+       "svgLogoPath": "Logos/svg/default.svg",
+       "minPersons": 1,
+       "owner": 1,
+       "ownerName": "رجا",
+       "hasCompartmentCapacity": true,
+       "hotelId": null,
+       "hotelName": null,
+       "roundTrip": false,
+       "hasSpecialDiscount": false,
+       "score": null,
+       "cancellationTermEntries": [
+        {
+         "amount": null,
+         "percentAmount": 0,
+         "title": "تا یک ساعت پس از صدور (به شرط عدم حرکت قطار)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 10,
+         "title": "تا 3 روز مانده به حرکت (تا 12 ظهر)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 20,
+         "title": "تا 2 روز مانده به حرکت (تا 12 ظهر)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 40,
+         "title": "تا 1 روز مانده به حرکت (تا 12 ظهر)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 50,
+         "title": "از 12 ظهر روز قبل تا 3 ساعت مانده به حرکت"
+        },
+        {
+         "amount": null,
+         "percentAmount": 90,
+         "title": "از 3 ساعت مانده تا لحظه حرکت"
+        },
+        {
+         "amount": null,
+         "percentAmount": 100,
+         "title": "بعد از حرکت قطار"
+        }
+       ],
+       "suggestedServices": [],
+       "wagonServices": [
+        {
+         "hasService": false,
+         "title": "صوتی و تصویری"
+        },
+        {
+         "hasService": true,
+         "title": "تهویه"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "score": null
+  },
+  {
+   "id": 3359498,
+   "from": 1,
+   "to": 191,
+   "fromName": "تهران",
+   "toName": "مشهد",
+   "trainNumber": 350,
+   "departureTime": "2026-10-14T23:59:00",
+   "arrivalTime": "2026-10-15T10:30:00",
+   "provider": 3,
+   "providerName": "رجا",
+   "corporationID": 14,
+   "corporationIds": [
+    14
+   ],
+   "corporationName": "مهتاب سیر جم",
+   "weekday": "چهارشنبه",
+   "dateString": "22 مهر",
+   "arrivalDateString": "23 مهر",
+   "fromCache": false,
+   "cancellable": true,
+   "isForeign": false,
+   "prices": [
+    {
+     "sellType": 3,
+     "classes": [
+      {
+       "id": 9847186,
+       "price": 10200000,
+       "capacity": 12,
+       "wagonName": "سه ستاره 6 تخته مهدیس ",
+       "shortTitle": "مهدیس شش\u200cتخته",
+       "compartmentType": "کوپه 6 نفره",
+       "class": "سه ستاره",
+       "features": [],
+       "airConditioning": true,
+       "media": false,
+       "isCompartment": true,
+       "compartmentCapacity": 6,
+       "discount": 0,
+       "wagonID": 5441,
+       "capacityString": "12",
+       "hasHotel": false,
+       "isAvailable": true,
+       "cancellationTerms": "قوانین کنسلی توسط راه\u200cآهن جمهوری اسلامی ایران تعیین می\u200cگردد. لطفا تا پایان سفر، ",
+       "reservationAvailable": true,
+       "pngLogoPath": "Logos/png/default.png",
+       "svgLogoPath": "Logos/svg/default.svg",
+       "minPersons": 1,
+       "owner": 14,
+       "ownerName": "مهتاب سیر جم",
+       "hasCompartmentCapacity": true,
+       "hotelId": null,
+       "hotelName": null,
+       "roundTrip": false,
+       "hasSpecialDiscount": false,
+       "score": null,
+       "cancellationTermEntries": [
+        {
+         "amount": null,
+         "percentAmount": 0,
+         "title": "تا یک ساعت پس از صدور (به شرط عدم حرکت قطار)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 10,
+         "title": "تا 3 روز مانده به حرکت (تا 12 ظهر)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 20,
+         "title": "تا 2 روز مانده به حرکت (تا 12 ظهر)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 40,
+         "title": "تا 1 روز مانده به حرکت (تا 12 ظهر)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 50,
+         "title": "از 12 ظهر روز قبل تا 3 ساعت مانده به حرکت"
+        },
+        {
+         "amount": null,
+         "percentAmount": 90,
+         "title": "از 3 ساعت مانده تا لحظه حرکت"
+        },
+        {
+         "amount": null,
+         "percentAmount": 100,
+         "title": "بعد از حرکت قطار"
+        }
+       ],
+       "suggestedServices": [],
+       "wagonServices": [
+        {
+         "hasService": false,
+         "title": "صوتی و تصویری"
+        },
+        {
+         "hasService": true,
+         "title": "تهویه"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "score": null
+  },
+  {
+   "id": 3359466,
+   "from": 1,
+   "to": 191,
+   "fromName": "تهران",
+   "toName": "مشهد",
+   "trainNumber": 368,
+   "departureTime": "2026-10-14T16:50:00",
+   "arrivalTime": "2026-10-15T03:00:00",
+   "provider": 3,
+   "providerName": "رجا",
+   "corporationID": 14,
+   "corporationIds": [
+    14
+   ],
+   "corporationName": "مهتاب سیر جم",
+   "weekday": "چهارشنبه",
+   "dateString": "22 مهر",
+   "arrivalDateString": "23 مهر",
+   "fromCache": false,
+   "cancellable": true,
+   "isForeign": false,
+   "prices": [
+    {
+     "sellType": 3,
+     "classes": [
+      {
+       "id": 9847149,
+       "price": 10200000,
+       "capacity": 137,
+       "wagonName": "سه ستاره 6 تخته مهدیس ",
+       "shortTitle": "مهدیس شش\u200cتخته",
+       "compartmentType": "کوپه 6 نفره",
+       "class": "سه ستاره",
+       "features": [],
+       "airConditioning": true,
+       "media": false,
+       "isCompartment": true,
+       "compartmentCapacity": 6,
+       "discount": 0,
+       "wagonID": 5441,
+       "capacityString": "+100",
+       "hasHotel": false,
+       "isAvailable": true,
+       "cancellationTerms": "قوانین کنسلی توسط راه\u200cآهن جمهوری اسلامی ایران تعیین می\u200cگردد. لطفا تا پایان سفر، ",
+       "reservationAvailable": true,
+       "pngLogoPath": "Logos/png/default.png",
+       "svgLogoPath": "Logos/svg/default.svg",
+       "minPersons": 1,
+       "owner": 14,
+       "ownerName": "مهتاب سیر جم",
+       "hasCompartmentCapacity": true,
+       "hotelId": null,
+       "hotelName": null,
+       "roundTrip": false,
+       "hasSpecialDiscount": false,
+       "score": null,
+       "cancellationTermEntries": [
+        {
+         "amount": null,
+         "percentAmount": 0,
+         "title": "تا یک ساعت پس از صدور (به شرط عدم حرکت قطار)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 10,
+         "title": "تا 3 روز مانده به حرکت (تا 12 ظهر)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 20,
+         "title": "تا 2 روز مانده به حرکت (تا 12 ظهر)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 40,
+         "title": "تا 1 روز مانده به حرکت (تا 12 ظهر)"
+        },
+        {
+         "amount": null,
+         "percentAmount": 50,
+         "title": "از 12 ظهر روز قبل تا 3 ساعت مانده به حرکت"
+        },
+        {
+         "amount": null,
+         "percentAmount": 90,
+         "title": "از 3 ساعت مانده تا لحظه حرکت"
+        },
+        {
+         "amount": null,
+         "percentAmount": 100,
+         "title": "بعد از حرکت قطار"
+        }
+       ],
+       "suggestedServices": [],
+       "wagonServices": [
+        {
+         "hasService": false,
+         "title": "صوتی و تصویری"
+        },
+        {
+         "hasService": true,
+         "title": "تهویه"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "score": null
+  }
+ ],
+ "filters": {
+  "corporations": [
+   {
+    "id": 15,
+    "name": "ریل ترابر سبا",
+    "ids": [
+     15
+    ]
+   },
+   {
+    "id": 2,
+    "name": "بن ریل",
+    "ids": [
+     2
+    ]
+   },
+   {
+    "id": 10,
+    "name": "ریل سیر کوثر",
+    "ids": [
+     10,
+     21
+    ]
+   },
+   {
+    "id": 1,
+    "name": "رجا",
+    "ids": [
+     1,
+     12
+    ]
+   },
+   {
+    "id": 22,
+    "name": "جوپار",
+    "ids": [
+     22,
+     31
+    ]
+   },
+   {
+    "id": 14,
+    "name": "مهتاب سیر جم",
+    "ids": [
+     14
+    ]
+   },
+   {
+    "id": 17,
+    "name": "نورالرضا",
+    "ids": [
+     17
+    ]
+   }
+  ],
+  "minPrice": 7600000,
+  "maxPrice": 15200000,
+  "wagonTypes": [
+   {
+    "id": 5347,
+    "name": "5 ستاره رويال ( باپذيرايي شام يا ناهار )"
+   },
+   {
+    "id": 1085,
+    "name": "4 ستاره 4 تخته سروش "
+   }
+  ]
+ },
+ "toLocation": {
+  "latitude": 36.30437469482422,
+  "longitude": 59.624202728271484,
+  "title": "مشهد"
+ },
+ "fromLocation": {
+  "latitude": 35.65814208984375,
+  "longitude": 51.398014068603516,
+  "title": "تهران"
+ },
+ "contentPath": "https://train.mrbilit.com/Content/",
+ "meta": {
+  "alwaysHasTrain": false,
+  "routeNotFound": false
+ },
+ "trainPackages": []
+}
