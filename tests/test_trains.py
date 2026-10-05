@@ -120,6 +120,14 @@ async def test_mb_train_price_expired_class(client, api):
     assert result.is_error and "Run mb_search_trains again" in result.content[0].text
 
 
+async def test_mb_train_price_zero_fare_is_unknown_class(client, api):
+    # Seen 2026-10-05 while the rail service was down: class 1 answered 200 with a price and every part 0.
+    parts = {"discount": 0, "stationService": 0, "baseFare": 0, "hallPrice": 0, "foodPrice": 0, "commission": 0}
+    api["train.mrbilit.com/api/GetPricing"] = {"adultPrice": {"price": 956000, **parts}, "childPrice": None}
+    result = await client.call_tool("mb_train_price", {"class_id": 1})
+    assert result.is_error and "Run mb_search_trains again" in result.content[0].text
+
+
 async def test_train_tools_reject_past_date(client, api):
     for name in ("mb_search_trains", "mb_alternative_routes"):
         result = await client.call_tool(name, {"origin": 1, "destination": 191, "date": "2026-10-03"})

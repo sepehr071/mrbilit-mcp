@@ -8,13 +8,13 @@
     "source": "github"
   },
   "websiteUrl": "https://github.com/sepehr071/mrbilit-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "packages": [
     {
       "registryType": "pypi",
       "registryBaseUrl": "https://pypi.org",
       "identifier": "mrbilit-mcp",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "runtimeHint": "uvx",
       "transport": {
         "type": "stdio"
@@ -22,7 +22,7 @@
       "environmentVariables": [
         {
           "name": "MRBILIT_MCP_PROXY",
-          "description": "Optional HTTP proxy URL for every request (needed where MrBilit's API resets connections, often outside Iran). System proxy settings are ignored.",
+          "description": "Optional HTTP proxy URL for every request (only needed if your network cannot reach MrBilit's API servers). System proxy settings are ignored.",
           "isRequired": false,
           "isSecret": false
         }

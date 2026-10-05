@@ -162,7 +162,10 @@ async def mb_hotel(
         # The detail has no English city slug (cityEnglishName is Persian), so only a slug input gives the ref.
         "hotel": hotel if "/" in hotel else None,
         "slug": h.get("englishTitle"),
-        "stars": h.get("stars"),
+        # The detail has no type id: match _stars (hotels, and 2-3 star hotel apartments; 1 there is a placeholder).
+        "stars": h.get("stars")
+        if h.get("hotelTypeName") == "هتل" or (h.get("hotelTypeName") == "هتل آپارتمان" and (h.get("stars") or 0) >= 2)
+        else None,
         "rating": h.get("rating") or None,
         "city": h.get("cityName"),
         "address": h.get("address"),

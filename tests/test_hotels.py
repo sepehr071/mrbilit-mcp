@@ -94,6 +94,14 @@ async def test_mb_hotel(client, api):
     assert data["faq"] == [{"q": "هتل انقلاب مشهد کجاست؟", "a": "خیابان امام رضا"}]  # site-wide questions dropped
 
 
+async def test_mb_hotel_unrated_apartment_has_no_stars(client, api):
+    page = fixture("hotel_detail.json")
+    page["hotel"].update(hotelTypeName="هتل آپارتمان", stars=1)  # Dalahou: unrated type 9, 1 is a placeholder
+    api["hotel.mrbilit.ir/api/hotel/mashhad/enghelab/static"] = page
+    data = (await client.call_tool("mb_hotel", {"hotel": "mashhad/enghelab"})).structured_content
+    assert data["stars"] is None
+
+
 async def test_mb_hotel_by_id_and_unknown(client, api):
     api["hotel.mrbilit.ir/api/hotel/8778/static"] = fixture("hotel_detail.json")
     api["hotel.mrbilit.ir/api/hotel/999999/static"] = {"hotel": None}

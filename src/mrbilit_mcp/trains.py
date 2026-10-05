@@ -214,6 +214,9 @@ async def mb_train_price(
                 f"Unknown or expired class_id {class_id}. Run mb_search_trains again and use a fresh class_id.", 500
             ) from e
         raise
+    adult = body.get("adultPrice") or {}
+    if not adult.get("baseFare"):  # while the rail service is down an unknown id answers 200 with all parts 0
+        raise ApiError(f"Unknown or expired class_id {class_id}. Run mb_search_trains again and use a fresh class_id.")
     counts = {
         "adultPrice": ("adult", adults),
         "childPrice": ("child", children),
@@ -223,7 +226,6 @@ async def mb_train_price(
     }
     units = {k: toman((body.get(field) or {}).get("price")) for field, (k, _) in counts.items()}
     total = sum((units[k] or 0) * n for k, n in counts.values())
-    adult = body.get("adultPrice") or {}
     return {
         "class_id": class_id,
         "unit_price_toman": {k: units[k] for k, n in counts.values() if n},
