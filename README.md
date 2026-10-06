@@ -38,8 +38,8 @@ a dozen page loads. An agent with `mrbilit-mcp` does it in one go:
 >
 > | Mode | Cheapest option | Departs | Price (Toman) |
 > |---|---|---|---|
-> | Bus | Peyk Saba VIP, Tehran South terminal, 17 seats left | 21:00, arrives 09:00 | **1,313,000** |
-> | Train | cheapest seat that day | | 760,000 |
+> | Bus | Peyk Saba VIP, Tehran South terminal, 17 seats left | 21:00, arrives 09:00 | 1,313,000 |
+> | Train | cheapest seat that day | | **760,000** |
 > | Flight | Mehr Air MEH 4200, Mehrabad, 2 seats left | 08:30, arrives 09:30 | 11,856,000 |
 >
 > The train is cheapest; want me to list that day's trains and free seats with `mb_search_trains`?
