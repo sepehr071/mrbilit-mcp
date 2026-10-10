@@ -27,7 +27,7 @@ async def test_mb_bus_seats(client):
 
 async def test_mb_search_taxis(client):
     data = await call(
-        client, "mb_search_taxis", {"origin": 11320000, "destination": 54310000, "date": days(16)}
-    )  # Tehran -> Rasht
+        client, "mb_search_taxis", {"origin": 11320000, "destination": 54310000, "date": days(3)}
+    )  # Tehran -> Rasht; taxis sell only a few days ahead (16 days out had none on 2026-10-10)
     assert data["offers"] and all(o["max_passengers"] <= 4 for o in data["offers"])
     assert 1_000_000 < min(c["from_price_toman"] for c in data["classes"]) < 50_000_000

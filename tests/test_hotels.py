@@ -8,7 +8,9 @@ STAY = {"check_in": "2026-10-20", "check_out": "2026-10-23"}
 
 
 async def test_mb_search_hotels(client, api):
-    api["hotel.mrbilit.ir/api/hotels/v2/hotels/search"] = fixture("hotel_search.json")
+    page = fixture("hotel_search.json")
+    page["hotels"][0]["photo"] = "https://s.mrbilit.com/mrhotel/2A.jpeg"  # trimmed from the fixture
+    api["hotel.mrbilit.ir/api/hotels/v2/hotels/search"] = page
     data = (await client.call_tool("mb_search_hotels", {"city": "mashhad", **STAY})).structured_content
     assert (data["nights"], data["available_hotels"], data["matching"]) == (3, 4, 4)
     assert [h["id"] for h in data["hotels"]] == [3462, 5326, 8778, 8194]  # highest rating first
@@ -21,6 +23,7 @@ async def test_mb_search_hotels(client, api):
         "rating": 3.5,
         "reviews": 20,
         "address": "خیابان امام رضا 8",
+        "photo": "https://s.mrbilit.com/mrhotel/2A.jpeg",
         "price_toman": 3927000,
         "per_night_toman": 1309000,
         "before_discount_toman": 4002000,
@@ -47,6 +50,11 @@ async def test_mb_search_hotels_filters(client, api):
     args = {"city": "mashhad", **STAY, "hotel_type": "hotel_apartment"}
     data = (await client.call_tool("mb_search_hotels", args)).structured_content
     assert [h["id"] for h in data["hotels"]] == [8194]
+    args = {"city": "mashhad", **STAY, "breakfast_only": True, "amenities": ["پارکینگ"]}
+    data = (await client.call_tool("mb_search_hotels", args)).structured_content
+    assert sorted(h["id"] for h in data["hotels"]) == [3462, 5326]
+    args = {"city": "mashhad", **STAY, "amenities": ["استخر"]}
+    assert (await client.call_tool("mb_search_hotels", args)).structured_content["hotels"] == []
 
 
 async def test_mb_search_hotels_rejects_bad_stay(client, api):
@@ -78,6 +86,7 @@ async def test_mb_hotel(client, api):
     data = (await client.call_tool("mb_hotel", {"hotel": "mashhad/enghelab", "reviews": 2})).structured_content
     assert (data["id"], data["name"], data["stars"], data["rating"]) == (8778, "هتل انقلاب", 2, 3.6)
     assert data["hotel"] == "mashhad/enghelab"  # ready for mb_hotel_rooms
+    assert data["photo"].startswith("https://ipx.mrbilit.com/eCHS4qEsj3brEfrXdBgfMfBJMXZ3YRaFnBGhOfxHzg8/")
     assert (data["check_in_from"], data["check_out_by"], data["lat"]) == ("14:00", "12:00", 36.280205)
     assert data["landmarks"][0] == {"name": "بازار رضا", "km": 0.9, "minutes": 2}
     assert data["reviews_available"] == 3 and len(data["reviews"]) == 2
@@ -177,6 +186,7 @@ async def test_mb_city_hotels(client, api):
         "rating": 4.1,
         "reviews": 0,
         "address": "خیابان امام رضا",
+        "photo": "https://s.mrbilit.com/mrhotel/C8DC5E96F2081B0B4393581D21825BB7.jpeg",
     }
     assert "note" in data  # 6 hotels on a page that should hold 90: a short page from the server cache
     sent = api.calls[0].url.params

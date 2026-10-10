@@ -63,12 +63,20 @@ async def mb_search_hotels(
         int | None, Field(ge=0, description="Highest price per night for one room in Toman, e.g. 3000000.")
     ] = None,
     refundable_only: Annotated[bool, Field(description="Only refundable stays.")] = False,
+    amenities: Annotated[
+        list[Annotated[str, Field(min_length=2, max_length=30)]] | None,
+        Field(
+            max_length=5,
+            description="Only hotels with an amenity whose Persian title contains each word, e.g. ['استخر'] (pool, jacuzzi or sauna), ['پارکینگ'].",
+        ),
+    ] = None,
+    breakfast_only: Annotated[bool, Field(description="Only stays whose cheapest room includes breakfast.")] = False,
     limit: Annotated[int, Field(ge=1, le=50, description="Max hotels.")] = 20,
 ) -> dict[str, Any]:
     """Hotels and stays with a free room in a city for the dates, with the cheapest room price for the whole stay.
 
     price_toman is the cheapest room for all nights (one room, after discount); per_night_toman
-    divides it by the nights; cheapest_room_sleeps is how many that room sleeps (often 1).
+    divides it by the nights; cheapest_room_sleeps is how many that room sleeps (often 1); photo is the cover image.
     Guest count does not change prices: pick a room that fits with mb_hotel_rooms(guests=...). Sold-out hotels are not listed (mb_city_hotels lists every hotel). Next:
     mb_hotel (reviews, location), mb_hotel_rooms (every room and exact price),
     mb_hotel_calendar (cheapest nights).
@@ -95,6 +103,8 @@ async def mb_search_hotels(
             or (hotel_type != "any" and h.get("hotelTypeId") not in TYPE_IDS[hotel_type])
             or (max_price_per_night_toman is not None and price / nights > max_price_per_night_toman)
             or (refundable_only and not h.get("refundable"))
+            or (breakfast_only and "صبحانه" not in ((h.get("serviceLevel") or {}).get("title") or ""))
+            or any(not any(w in (a.get("title") or "") for a in h.get("amenities") or []) for w in amenities or [])
         ):
             continue
         rows.append(
@@ -171,6 +181,7 @@ async def mb_hotel(
         "address": h.get("address"),
         "lat": h.get("latitude"),
         "lon": h.get("longitude"),
+        "photo": next((p.get("large") for p in h.get("allPhotos") or [] if p.get("large")), None),  # `photos` is empty
         "check_in_from": h.get("checkinHour"),
         "check_out_by": h.get("checkoutHour"),
         "free_airport_transfer": h.get("hasFreeTransfer"),
@@ -347,6 +358,7 @@ def _card(h: dict[str, Any]) -> dict[str, Any]:
         "rating": h.get("rating") or None,
         "reviews": h.get("numberOfComments"),
         "address": h.get("shortAddress") or h.get("hotelAddress"),
+        "photo": h.get("photo") or None,
     }
 
 
