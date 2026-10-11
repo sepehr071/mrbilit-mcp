@@ -194,8 +194,8 @@ trains (Tehran `1`, Mashhad `191`), 8-digit city ids for buses and taxis (Tehran
 
 | Tool | What it does |
 |---|---|
-| `mb_search_hotels` | Available hotels in a city for dates with the cheapest stay price; stars, type, price and refund filters |
-| `mb_hotel` | One hotel: rating, latest reviews with per-criterion scores, location, landmarks, rules, amenities |
+| `mb_search_hotels` | Available hotels in a city for dates with the cheapest stay price and cover photo; stars, type, price, refund, amenity (Persian words, e.g. `['استخر']`) and breakfast filters |
+| `mb_hotel` | One hotel: cover photo, rating, latest reviews with per-criterion scores, location, landmarks, rules, amenities |
 | `mb_hotel_rooms` | Every room with its exact price for the dates, per night, rooms left, meals |
 | `mb_hotel_calendar` | Cheapest one-night price per night, up to ~48 nights ahead |
 | `mb_city_hotels` | Every hotel of a city, sold out ones included, filtered by stars, type or name (no prices) |
