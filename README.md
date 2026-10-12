@@ -2,11 +2,11 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/sepehr071/mrbilit-mcp/main/.github/banner.png" alt="mrbilit-mcp: let your AI agent find the cheapest way to travel in Iran" width="100%">
+<img src="https://raw.githubusercontent.com/sepehr071/mrbilit-mcp/main/.github/banner.png" alt="mrbilit-mcp: unofficial MrBilit MCP server for Claude, Cursor and Copilot" width="100%">
 
-# ✈️ mrbilit-mcp
+# ✈️ mrbilit-mcp: MrBilit MCP server for AI agents
 
-**Let your AI agent plan trips in Iran with MrBilit.**<br>
+**Unofficial, read-only MCP server for MrBilit (مستربلیط): let your AI agent plan trips in Iran.**<br>
 Find the cheapest flight, train, bus or private taxi on a date or over a month, see seats, baggage and refund rules,<br>
 and compare hotels with exact room prices, all from Claude, Cursor or Copilot.
 
@@ -25,7 +25,19 @@ and compare hotels with exact room prices, all from Claude, Cursor or Copilot.
 
 ---
 
-## Why
+## For AI agents
+
+- **What:** unofficial, read-only MCP server for MrBilit (مستربلیط), an Iranian travel site: flights, trains, intercity buses, private taxis and hotels. Queries work in Persian and English; prices are in Toman.
+- **Install:** `claude mcp add mrbilit -- uvx mrbilit-mcp` (stdio transport; needs Python 3.10+ and [uv](https://docs.astral.sh/uv/getting-started/installation/)).
+- **Auth:** none, no API key. Optional `MRBILIT_MCP_PROXY` (HTTP proxy), only if your network cannot reach MrBilit's API servers.
+- **Access:** read-only. No login, seat hold, booking or payment, so no confirmation is needed before calling tools.
+- **Tools:** 22, all prefixed `mb_*`. Call `mb_find_place` first for the codes every search takes, then a price calendar (`mb_flight_price_calendar`, `mb_train_price_calendar`, `mb_bus_price_calendar`) → `mb_search_flights` / `mb_search_trains` / `mb_search_buses` → `mb_flight_fare_details`, `mb_train_price` or `mb_bus_seats`. Hotels: `mb_search_hotels` → `mb_hotel_rooms`.
+- **Use when:** comparing the cheapest plane, train, bus or taxi between Iranian cities, or hotel prices, with seats and refund rules.
+- **Do not use when:** you need to book, hold a seat or pay (the user does that on mrbilit.com).
+- **Output:** compact JSON. Prices in Toman in `*_toman` fields, dates Gregorian `YYYY-MM-DD`, ratings 0-5. Ids such as `flight_id`, `class_id` and `bus_id` come from a fresh search and expire.
+- **Machine-readable:** [`server.json`](https://github.com/sepehr071/mrbilit-mcp/blob/main/server.json); catalog of all Iranian MCP servers: [awesome-iran-mcp](https://github.com/sepehr071/awesome-iran-mcp) ([TOOLS.md](https://github.com/sepehr071/awesome-iran-mcp/blob/main/TOOLS.md), [servers.json](https://github.com/sepehr071/awesome-iran-mcp/blob/main/servers.json), [llms.txt](https://github.com/sepehr071/awesome-iran-mcp/blob/main/llms.txt)).
+
+## Why use MrBilit MCP
 
 MrBilit (mrbilit.com, مستربلیط) sells flights, trains, intercity buses, private taxis and hotels in one place, but
 each one has its own search, calendar and rules. Comparing "plane or train or bus, which day, which seat" means
@@ -231,6 +243,27 @@ All 22 tools are annotated `readOnlyHint: true` and return compact structured JS
 ## FAQ
 
 <details>
+<summary><b>Is there a MrBilit API or MCP server for AI agents?</b></summary>
+
+`mrbilit-mcp` is an unofficial MCP server for MrBilit: it exposes the public endpoints of the mrbilit.com website
+as 22 read-only tools, so an agent can compare flights, trains, buses, taxis and hotels.
+</details>
+
+<details>
+<summary><b>How do I use MrBilit with Claude, Cursor or Copilot?</b></summary>
+
+Install it with `uvx mrbilit-mcp` (see [Quick start](#quick-start)), then ask in Persian or English, for example
+"cheapest way from Tehran to Mashhad on 20 October, plane, train or bus".
+</details>
+
+<details>
+<summary><b>Is it official, safe and free?</b></summary>
+
+It is unofficial and MIT licensed, so free to use. It is read-only: no login, no API key, no booking or payment,
+and it runs on your machine.
+</details>
+
+<details>
 <summary><b>Do I need a proxy?</b></summary>
 
 Usually not: direct calls from an Iranian connection work. If your network cannot reach MrBilit's API servers
@@ -285,11 +318,13 @@ npx @modelcontextprotocol/inspector uvx mrbilit-mcp
 - Admin fields (`created_by`, `updated_by`) of the content CMS are never passed through.
 - Always sends a browser User-Agent and at most two requests at a time, since the API hosts share one server.
 
-## فارسی
+<a id="فارسی"></a>
+
+## فارسی: سرور MCP مستربلیط
 
 <div dir="rtl">
 
-**mrbilit-mcp** به دستیار هوش مصنوعی شما (Claude، Cursor، Copilot و ...) اجازه می&zwnj;دهد در مستربلیط ارزان&zwnj;ترین
+**mrbilit-mcp** یک سرور MCP غیررسمی برای مستربلیط در ایران است که به دستیار هوش مصنوعی شما (Claude، Cursor، Copilot و ...) اجازه می&zwnj;دهد در مستربلیط ارزان&zwnj;ترین
 پرواز، قطار، اتوبوس یا تاکسی دربستی را برای یک روز یا یک ماه پیدا کند، صندلی&zwnj;های خالی، بار مجاز و قوانین استرداد را ببیند
 و هتل&zwnj;ها را با قیمت دقیق اتاق و نظرات مسافران مقایسه کند.
 
@@ -297,6 +332,7 @@ npx @modelcontextprotocol/inspector uvx mrbilit-mcp
 - همه قیمت&zwnj;ها به تومان است.
 - روی سیستم خود شما اجرا می&zwnj;شود و به هیچ سرور واسطی داده نمی&zwnj;فرستد.
 - در ایران معمولاً نیازی به پروکسی نیست؛ اگر سرورهای مستربلیط پاسخ ندادند، `MRBILIT_MCP_PROXY` را تنظیم کنید.
+- برای پیدا کردن آن در گوگل یا رجیستری MCP، «سرور MCP مستربلیط» یا «mrbilit mcp» را جستجو کنید.
 
 **نصب در Claude Code:**
 
@@ -328,6 +364,15 @@ especially new tools and fixes for API changes.
 
 Releases: bump the version in `pyproject.toml` and `server.json`, then push a `v*` tag. GitHub Actions tests,
 publishes to PyPI and the [MCP Registry](https://registry.modelcontextprotocol.io), and creates the GitHub Release.
+
+## Related servers
+
+- [Flytoday MCP server](https://github.com/sepehr071/flytoday-mcp) for flights, hotels, trains and buses
+- [Jabama MCP server](https://github.com/sepehr071/jabama-mcp) for villas, tours and events
+- [Otaghak MCP server](https://github.com/sepehr071/otaghak-mcp) for villa, cottage and apartment stays
+- All servers: [awesome-iran-mcp](https://github.com/sepehr071/awesome-iran-mcp), the catalog of Iranian MCP servers
+
+If this saves you clicks, a star helps others find it.
 
 ## Disclaimer
 
