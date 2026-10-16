@@ -52,6 +52,13 @@ async def test_mb_help(client, api):
     assert "query" in body(api.calls[2])
 
 
+async def test_mb_help_cached(client, api):
+    api["content.mrbilit.ir/faqs"] = fixture("faqs.json")
+    for _ in range(2):
+        await client.call_tool("mb_help", {"query": "خرید بلیط قطار", "source": "faq"})
+    assert len(api.calls) == 1  # the second call reads the per-process passage cache
+
+
 async def test_mb_help_faq_only(client, api):
     api["content.mrbilit.ir/faqs"] = fixture("faqs.json")
     data = (await client.call_tool("mb_help", {"query": "خرید بلیط قطار", "source": "faq"})).structured_content

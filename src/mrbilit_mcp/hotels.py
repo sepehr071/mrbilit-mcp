@@ -10,7 +10,7 @@ from urllib.parse import quote
 from mcp.server.mcpserver.exceptions import ToolError
 from pydantic import Field
 
-from .content import html_text
+from .content import FullText, html_text
 from .http import HOTEL, ApiError, fetch, not_past, obj, toman
 from .registry import tool
 
@@ -145,10 +145,12 @@ async def mb_hotel(
         ),
     ],
     reviews: Annotated[int, Field(ge=0, le=15, description="How many of the latest guest reviews to include.")] = 5,
+    full_text: FullText = False,
 ) -> dict[str, Any]:
     """One hotel: stars, guest rating (0-5) and latest reviews, location, landmarks, check-in rules, amenities, FAQ.
 
-    The site shows ratings x2 out of 10. landmarks: distance in km (drive minutes). For room
+    The site shows ratings x2 out of 10. landmarks: distance in km (drive minutes). Review text is cut at
+    400 characters unless full_text. For room
     prices on dates call mb_hotel_rooms with `hotel` (null after a numeric id: get the
     'city/hotel' ref from mb_find_place(mode='hotel') with the name); for the cheapest nights
     mb_hotel_calendar.
@@ -194,8 +196,8 @@ async def mb_hotel(
             }
             for p in (h.get("popularPlaces") or [])[:10]
         ],
-        "description": html_text(h.get("description") or h.get("shortDescription"))[:1500],
-        "rules": (h.get("termsAndConditions") or "").strip()[:1500],
+        "description": html_text(h.get("description") or h.get("shortDescription"))[: None if full_text else 1500],
+        "rules": (h.get("termsAndConditions") or "").strip()[: None if full_text else 1500],
         # The other FAQ rows are the same site-wide questions (voucher, pets, invoice) on every hotel.
         "faq": [
             {"q": f.get("question"), "a": f.get("answer")}
@@ -208,7 +210,7 @@ async def mb_hotel(
                 "date": (c.get("postedOn") or "")[:10],
                 "author": " ".join((c.get("customer") or "").split()),
                 "rating": c.get("rating"),
-                "text": (c.get("comment") or "").strip(),
+                "text": _clip((c.get("comment") or "").strip(), None if full_text else 400),
                 "booked_here": c.get("reserved"),
                 "scores": {
                     (r.get("ratingFactor") or {}).get("name"): r.get("rating") for r in c.get("commentRatings") or []
@@ -312,7 +314,7 @@ async def mb_city_hotels(
         str | None, Field(max_length=60, description="Only names containing this text, e.g. 'درویشی'.")
     ] = None,
     page: Annotated[int, Field(ge=1, le=50, description="Page of 90 hotels (the site's ranking order).")] = 1,
-    limit: Annotated[int, Field(ge=1, le=90, description="Max hotels returned from the page.")] = 40,
+    limit: Annotated[int, Field(ge=1, le=90, description="Max hotels returned from the page.")] = 20,
 ) -> dict[str, Any]:
     """Every listed hotel of a city, sold out ones included, with stars, rating and address; no prices.
 
@@ -360,6 +362,10 @@ def _card(h: dict[str, Any]) -> dict[str, Any]:
         "address": h.get("shortAddress") or h.get("hotelAddress"),
         "photo": h.get("photo") or None,
     }
+
+
+def _clip(text: str, n: int | None) -> str:
+    return text if n is None or len(text) <= n else text[:n] + "…[cut]"
 
 
 def _stars(h: dict[str, Any]) -> int | None:

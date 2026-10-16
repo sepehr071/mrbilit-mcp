@@ -9,7 +9,7 @@ from urllib.parse import urlsplit
 
 from pydantic import Field
 
-from .content import html_text
+from .content import FullText, html_text
 from .http import CHARTER, FLIGHT, ApiError, fetch, not_past, obj, toman
 from .places import domestic_airports
 from .registry import tool
@@ -67,15 +67,12 @@ async def mb_search_flights(
 ) -> dict[str, Any]:
     """Search flights for a date: every bookable flight with price, seats left, baggage and times.
 
-    price_toman is one adult's fare (taxes included); total_toman is the whole party (adult,
-    child and infant fares). Fares without enough seats for the party are dropped by the site.
-    Domestic round trips come back as two lists (`outbound`, `return`, each its own ticket);
-    international round trips as packages whose price covers both ways (flight_id names both
-    legs). Times are local to each airport, even though they all carry the API's +03:30 suffix;
-    international flights from Tehran can leave from IKA when THR is asked (segments show the
-    real airports). Flights not on sale (sold out or auto-reserve only) are counted in
-    not_on_sale. For refund penalties, exact baggage and fare rules call mb_flight_fare_details
-    with the flight_id; for the cheapest day use mb_flight_price_calendar first.
+    price_toman is one adult's fare (taxes included); total_toman the whole party. Domestic round
+    trips come back as two lists (`outbound`, `return`, separate tickets); international ones as
+    packages priced for both ways (flight_id names both legs). International flights from Tehran
+    can leave from IKA when THR is asked (segments show the real airports). Flights not on sale
+    are counted in not_on_sale. Next: mb_flight_fare_details with the flight_id (refunds, exact
+    baggage, rules); to pick the day first, mb_flight_price_calendar.
     """
     not_past(date)
     o, d = origin.upper(), destination.upper()
@@ -168,14 +165,14 @@ async def mb_flight_fare_details(
     adults: Adults = 1,
     children: Children = 0,
     infants: Infants = 0,
+    full_text: FullText = False,
 ) -> dict[str, Any]:
     """Every fare of one flight with refund penalties, confirmed baggage, fare rules, notes and per-passenger prices.
 
-    Re-runs the search of mb_search_flights (same route, date and party) and returns the chosen
-    flight. baggage_checked_with_airline is true when the site re-checked the baggage with the
-    airline (false = the search value, usually right). refund_penalties: penalty percent of the
-    ticket price per time window before departure, refund = paid x (100 - penalty_pct) / 100;
-    penalty_text when there is no percent (e.g. the supplier's terms).
+    Re-runs the mb_search_flights search (same route, date, party). baggage_checked_with_airline
+    true = re-checked with the airline (false = search value, usually right). refund_penalties:
+    penalty percent per window before departure, refund = paid x (100 - penalty_pct) / 100;
+    penalty_text when there is no percent.
     """
     not_past(date)
     o, d = origin.upper(), destination.upper()
@@ -187,9 +184,7 @@ async def mb_flight_fare_details(
             f"Flight {flight_id} is not in the current results for {o}-{d} on {date}. Ids change between searches: "
             "run mb_search_flights again with the same route, date and party, and pass its flight_id."
         )
-    fares = []
-    for p in flight.get("Prices") or []:
-        fares.append(await _fare(p))
+    fares = await asyncio.gather(*(_fare(p, full_text) for p in flight.get("Prices") or []))  # fetch() caps concurrency
     return {
         "flight_id": flight_id,
         "segments": [_segment(s, full=True) for s in flight.get("Segments") or []],
@@ -338,7 +333,7 @@ def _segment(s: dict[str, Any], full: bool = False) -> dict[str, Any]:
     return out
 
 
-async def _fare(p: dict[str, Any]) -> dict[str, Any]:
+async def _fare(p: dict[str, Any], full_text: bool = False) -> dict[str, Any]:
     baggage, confirmed, booking_class = _baggage(p.get("Baggage"), p.get("BaggageType")), False, p.get("BookingClass")
     if p.get("NeedGetPrice") and p.get("ProposalId"):
         # The search value can be wrong for these fares (40 KG in search, 30 KG confirmed); 204 = keep it.
@@ -348,9 +343,10 @@ async def _fare(p: dict[str, Any]) -> dict[str, Any]:
             booking_class, confirmed = info.get("BookingClass") or booking_class, True
     rules = p.get("FareRules")
     url = p.get("FareRulesUrl") or ""
-    if urlsplit(url).hostname == urlsplit(CHARTER).hostname:  # international charter: rules text behind a URL
+    parts = urlsplit(url)
+    if parts.scheme == "https" and parts.hostname == urlsplit(CHARTER).hostname:  # charter: rules text behind a URL
         try:
-            rules = (await fetch(url, text=True)).strip()[:2000] or rules
+            rules = (await fetch(url, text=True, redirects=False)).strip()[: None if full_text else 2000] or rules
         except ApiError:
             pass
     return {
@@ -376,6 +372,6 @@ async def _fare(p: dict[str, Any]) -> dict[str, Any]:
             for c in p.get("CancellationTernEntities") or []
         ],
         "rules": rules,
-        "notes": html_text(p.get("ExtraTerms"))[:1500] or None,
+        "notes": html_text(p.get("ExtraTerms"))[: None if full_text else 1500] or None,
         "badges": [f"{o.get('Title')}: {o.get('Description')}" for o in p.get("FlightSpecialOffers") or []],
     }

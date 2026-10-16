@@ -95,4 +95,13 @@ def bundled(api):
 @pytest.fixture
 async def client():
     async with Client(mcp, raise_exceptions=True) as c:
+        call_tool = c.call_tool
+
+        async def parsed(*args, **kwargs):
+            result = await call_tool(*args, **kwargs)
+            if not result.is_error:  # tools return one compact JSON text block, no structured content
+                result.structured_content = json.loads(result.content[0].text)
+            return result
+
+        c.call_tool = parsed
         yield c

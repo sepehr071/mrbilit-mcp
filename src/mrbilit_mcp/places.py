@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import re
+import time
 from importlib.resources import files
 from typing import Annotated, Any, Literal
 
@@ -24,7 +25,8 @@ CHUNK_RE = {
     "stations": r'this\.trainStations=\(await \w+\(async\(\)=>\{const\{default:\w+\}=await import\("\./([\w-]+)\.js"\)',
 }
 
-_cache: dict[str, Any] = {}  # process-wide: bundled lists, city lists, company lists
+CACHE_TTL = 6 * 3600  # seconds; a long session still sees site changes
+_cache: dict[str, tuple[float, Any]] = {}  # process-wide: bundled lists, city lists, company lists, help texts
 
 Query = Annotated[
     str,
@@ -47,12 +49,11 @@ async def mb_find_place(
 ) -> dict[str, Any]:
     """Turn a city, airport, station or hotel name into the code a search takes.
 
-    flight: `airports` (Iranian airports, IATA code for domestic flights; Tehran domestic is THR,
-    not IKA; prefer these to XXXALL codes for domestic routes) and `cities` (any country,
-    `XXXALL` city code = all its airports, plus each airport).
+    flight: `airports` (Iranian, IATA code; Tehran domestic is THR, not IKA; prefer these to
+    XXXALL for domestic routes) and `cities` (any country; `XXXALL` = all its airports).
     train: station ids (Tehran 1, Mashhad 191). bus / taxi: 8-digit city ids (Tehran 11320000 =
-    all terminals; terminal ids such as 11321006 Tehran South). hotel: city slugs for
-    mb_search_hotels / mb_city_hotels and hotel slugs for mb_hotel / mb_hotel_rooms.
+    all terminals; 11321006 = Tehran South). hotel: city slugs (mb_search_hotels,
+    mb_city_hotels) and hotel slugs (mb_hotel, mb_hotel_rooms).
     Next: mb_search_flights, mb_search_trains, mb_search_buses, mb_search_taxis or mb_search_hotels.
     """
     q = norm(query)
@@ -195,20 +196,23 @@ async def road_cities(mode: str) -> list[dict[str, Any]]:
 
 
 async def _cached(key: str, load: Any) -> Any:
-    if key not in _cache:
-        _cache[key] = await load()
-    return _cache[key]
+    hit = _cache.get(key)
+    if hit is None or time.monotonic() - hit[0] > CACHE_TTL:
+        hit = _cache[key] = (time.monotonic(), await load())
+    return hit[1]
 
 
 async def _bundled(name: str) -> list[dict[str, Any]]:
     async def load() -> list[dict[str, Any]]:
         try:
-            if "chunk_names" not in _cache:
+
+            async def names() -> dict[str, str]:
                 html = await fetch(f"{SITE}/", text=True)
                 entry = re.search(r'<script[^>]+type="module"[^>]+src="/_nuxt/([\w-]+\.js)"', html)
                 js = await fetch(f"{SITE}/_nuxt/{entry[1]}", text=True)  # type: ignore[index]
-                _cache["chunk_names"] = {k: m[1] for k, p in CHUNK_RE.items() if (m := re.search(p, js))}
-            chunk = _cache["chunk_names"][name]
+                return {k: m[1] for k, p in CHUNK_RE.items() if (m := re.search(p, js))}
+
+            chunk = (await _cached("chunk_names", names))[name]
             return parse_chunk(await fetch(f"{SITE}/_nuxt/{chunk}.js", text=True))
         except (ApiError, TypeError, KeyError, AttributeError, ValueError):
             # ponytail: snapshot of build 60f4c50c; refresh it when the recipe breaks on a redesign

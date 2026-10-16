@@ -6,6 +6,7 @@ here copies only the fields it needs, so those two never leave this module.
 
 from __future__ import annotations
 
+import asyncio
 import re
 from html import unescape
 from html.parser import HTMLParser
@@ -15,10 +16,11 @@ from mcp.server.mcpserver.exceptions import ToolError
 from pydantic import Field
 
 from .http import CONTENT, SITE, fetch, gql
-from .places import norm
+from .places import _cached, norm
 from .registry import tool
 
 Service = Literal["flight", "train", "bus", "hotel"]  # route guides exist for these only
+FullText = Annotated[bool, Field(description="Return long texts uncut instead of clipped.")]
 RouteCode = Annotated[
     str | None,
     Field(
@@ -58,7 +60,7 @@ async def mb_notices(
     notices = []
     for m in rows or []:
         pattern = m.get("urlPattern") or ""
-        if path is not None and pattern:
+        if path is not None and 0 < len(pattern) <= 200:  # upstream regex: bound its length (ReDoS)
             try:
                 if not re.search(pattern, path):
                     continue
@@ -73,6 +75,59 @@ async def mb_notices(
             }
         )
     return {"path": path, "site_wide_active": len(rows or []), "notices": notices}
+
+
+async def _help_faq() -> list[dict[str, str]]:
+    passages = []
+    for row in await fetch(f"{CONTENT}/faqs", {"whitelabel": "mrbilit"}) or []:
+        for item in row.get("FaqItem") or []:
+            passages.append(
+                {"source": "faq", "section": item.get("question") or "", "text": html_text(item.get("answer"))}
+            )
+    return passages
+
+
+async def _help_terms() -> list[dict[str, str]]:
+    passages = []
+    for row in await fetch(f"{CONTENT}/terms-and-conditions", {"whitelabel": ""}) or []:
+        section = ""
+        for line in html_text(re.sub(r"<h2[^>]*>(.*?)</h2>", r"<h2>## \1</h2>", row.get("body") or "")).splitlines():
+            if line.startswith("## "):
+                section = line[3:]
+            else:
+                passages.append({"source": "terms", "section": section, "text": line})
+    return passages
+
+
+async def _help_support() -> list[dict[str, str]]:
+    passages = []
+    data = await gql(SUPPORT)
+    for s in data.get("TicketingSection") or []:
+        for t in s.get("Tutorials") or []:
+            tut = t.get("TicketingTutorials_id") or {}
+            passages.append(
+                {
+                    "source": "support",
+                    "section": f"{s.get('Title')}: {(tut.get('Title') or '').strip()}",
+                    "text": html_text(tut.get("Tutorial")),
+                }
+            )
+        for f in s.get("Faqs") or []:
+            passages.append(
+                {
+                    "source": "support",
+                    "section": f"{s.get('Title')}: {(f.get('Title') or '').strip()}",
+                    "text": html_text(f.get("Description")),
+                }
+            )
+    return passages
+
+
+HELP_LOADERS = {
+    "faq": _help_faq,
+    "terms": _help_terms,
+    "support": _help_support,
+}  # cached per process via places._cached
 
 
 @tool("Help center search")
@@ -92,6 +147,7 @@ async def mb_help(
         ),
     ] = "all",
     limit: Annotated[int, Field(ge=1, le=10, description="Max passages.")] = 5,
+    full_text: FullText = False,
 ) -> dict[str, Any]:
     """Search MrBilit's official rules, FAQ and help-center guides; returns the best matching passages.
 
@@ -99,43 +155,9 @@ async def mb_help(
     request a change, etc. Passages are plain text with the section they come from. Rules of
     one fare are in mb_flight_fare_details / mb_search_trains / mb_search_buses instead.
     """
-    passages: list[dict[str, str]] = []
-    if source in ("all", "faq"):
-        for row in await fetch(f"{CONTENT}/faqs", {"whitelabel": "mrbilit"}) or []:
-            for item in row.get("FaqItem") or []:
-                passages.append(
-                    {"source": "faq", "section": item.get("question") or "", "text": html_text(item.get("answer"))}
-                )
-    if source in ("all", "terms"):
-        for row in await fetch(f"{CONTENT}/terms-and-conditions", {"whitelabel": ""}) or []:
-            section = ""
-            for line in html_text(
-                re.sub(r"<h2[^>]*>(.*?)</h2>", r"<h2>## \1</h2>", row.get("body") or "")
-            ).splitlines():
-                if line.startswith("## "):
-                    section = line[3:]
-                else:
-                    passages.append({"source": "terms", "section": section, "text": line})
-    if source in ("all", "support"):
-        data = await gql(SUPPORT)
-        for s in data.get("TicketingSection") or []:
-            for t in s.get("Tutorials") or []:
-                tut = t.get("TicketingTutorials_id") or {}
-                passages.append(
-                    {
-                        "source": "support",
-                        "section": f"{s.get('Title')}: {(tut.get('Title') or '').strip()}",
-                        "text": html_text(tut.get("Tutorial")),
-                    }
-                )
-            for f in s.get("Faqs") or []:
-                passages.append(
-                    {
-                        "source": "support",
-                        "section": f"{s.get('Title')}: {(f.get('Title') or '').strip()}",
-                        "text": html_text(f.get("Description")),
-                    }
-                )
+    wanted = [src for src in HELP_LOADERS if source in ("all", src)]
+    loaded = await asyncio.gather(*(_cached(f"help:{src}", HELP_LOADERS[src]) for src in wanted))
+    passages = [p for part in loaded for p in part]
     words = [w for w in norm(query).split() if len(w) > 1]
     scored = []
     for p in passages:
@@ -146,7 +168,7 @@ async def mb_help(
     scored.sort(key=lambda sp: -sp[0])
     return {
         "matches": len(scored),
-        "results": [{**p, "text": p["text"][:1200]} for _, p in scored[:limit]],
+        "results": [{**p, "text": p["text"][: None if full_text else 1200]} for _, p in scored[:limit]],
     }
 
 
@@ -160,6 +182,7 @@ async def mb_travel_guide(
         Field(min_length=2, max_length=100, description="Magazine search, e.g. 'کیش' or 'جاهای دیدنی مشهد'."),
     ] = None,
     limit: Annotated[int, Field(ge=1, le=10, description="Max magazine posts.")] = 5,
+    full_text: FullText = False,
 ) -> dict[str, Any]:
     """MrBilit's guide for a route or city (summary, FAQ, article) and matching travel-magazine posts.
 
@@ -184,9 +207,10 @@ async def mb_travel_guide(
             out["guide"] = {
                 "summary": c.get("description"),
                 "faq": [
-                    {"q": f.get("question"), "a": html_text(f.get("answer"))[:500]} for f in (c.get("faqs") or [])[:10]
+                    {"q": f.get("question"), "a": html_text(f.get("answer"))[: None if full_text else 500]}
+                    for f in (c.get("faqs") or [])[:10]
                 ],
-                "article": html_text(c.get("content"))[:2500],
+                "article": html_text(c.get("content"))[: None if full_text else 2500],
             }
         else:
             out["guide"] = None
@@ -200,7 +224,7 @@ async def mb_travel_guide(
                 "title": unescape((p.get("title") or {}).get("rendered") or ""),
                 "date": (p.get("date") or "")[:10],
                 "url": p.get("link"),
-                "summary": html_text((p.get("excerpt") or {}).get("rendered"))[:400],
+                "summary": html_text((p.get("excerpt") or {}).get("rendered"))[: None if full_text else 400],
             }
             for p in posts or []
         ]

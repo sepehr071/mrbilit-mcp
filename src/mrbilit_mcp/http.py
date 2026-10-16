@@ -93,11 +93,12 @@ async def fetch(
     headers: dict[str, str] | None = None,
     timeout: float | None = None,
     text: bool = False,
+    redirects: bool = True,
 ) -> Any:
     """Call an endpoint and return the parsed JSON body (the text with `text=True`, None for 204)."""
     client, limit = _get_client()
     host = urlsplit(url).hostname
-    kwargs: dict[str, Any] = {"params": params, "json": json, "headers": headers}
+    kwargs: dict[str, Any] = {"params": params, "json": json, "headers": headers, "follow_redirects": redirects}
     if timeout:
         kwargs["timeout"] = timeout
     r = None
