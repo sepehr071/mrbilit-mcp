@@ -350,14 +350,8 @@ async def _journeys(origin: int, destination: int, date: dt.date) -> list[dict[s
         "childCount": 0,
         "infantCount": 0,
     }
-    # masir hangs at random (60-90 s) and answers in under 2 s on retry: short timeout, retry twice.
-    for attempt in range(3):
-        try:
-            body = await fetch(f"{MASIR}/api/GetAvailable", params, headers=TOKEN_HEADERS, timeout=25)
-            break
-        except ApiError as e:
-            if e.status is not None or attempt == 2:
-                raise
+    # masir hangs at random (60-90 s) and answers in under 2 s on retry: short timeout, fetch retries twice.
+    body = await fetch(f"{MASIR}/api/GetAvailable", params, headers=TOKEN_HEADERS, timeout=25)
     journeys = [
         {
             "price_toman": toman(j.get("price")),

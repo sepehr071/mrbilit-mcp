@@ -281,7 +281,7 @@ best option; you book on mrbilit.com.
 <details>
 <summary><b>I get "did not answer in time" or "Could not reach"</b></summary>
 
-The server retries a reset connection once. If it keeps failing, set `MRBILIT_MCP_PROXY` (see above). The one-change
+The server retries timeouts, resets, 5xx and 429 twice with backoff. If it keeps failing, set `MRBILIT_MCP_PROXY` (see above). The one-change
 trip search (`mb_alternative_routes`) is known to hang now and then; it is retried and its other parts are still returned.
 </details>
 
@@ -309,14 +309,15 @@ npx @modelcontextprotocol/inspector uvx mrbilit-mcp
 
 | Variable | Default | Meaning |
 |---|---|---|
-| `MRBILIT_MCP_PROXY` | unset | HTTP proxy for every request, e.g. `http://user:pass@host:port`. Usually not needed in Iran |
+| `MRBILIT_MCP_PROXY` | unset | HTTP proxy for every request, e.g. `http://user:pass@host:port`; a comma-separated list is used one at a time and rotated on a block or connect error. Usually not needed in Iran |
 
 ## Safety
 
 - Read-only: no login or OTP, no seat hold, reservation, order, payment, wallet, price alert or review posting.
   The only POSTs are searches and price lookups the site itself makes before booking.
 - Admin fields (`created_by`, `updated_by`) of the content CMS are never passed through.
-- Always sends a browser User-Agent and at most two requests at a time, since the API hosts share one server.
+- Sends a real Chrome TLS fingerprint and headers (via curl_cffi) and at most two requests at a time with a short random delay, since the API hosts share one server.
+- If MrBilit serves a bot-check page, the server can clear it in a headless browser: `pip install mrbilit-mcp[browser]`, then `patchright install chromium`.
 
 <a id="فارسی"></a>
 
@@ -353,8 +354,8 @@ claude mcp add mrbilit -- uvx mrbilit-mcp
 ```bash
 git clone https://github.com/sepehr071/mrbilit-mcp && cd mrbilit-mcp
 uv sync
-uv run pytest            # offline, against recorded responses
-uv run pytest -m live    # real API (set MRBILIT_MCP_PROXY if needed)
+uv run python -m pytest  # offline, against recorded responses
+uv run python -m pytest -m live  # real API (set MRBILIT_MCP_PROXY if needed)
 uv run ruff check .
 ```
 

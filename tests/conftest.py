@@ -46,6 +46,8 @@ def fresh_state(request, monkeypatch):
     """The shared httpx client is bound to one event loop; each test gets a new loop and empty list caches."""
     if "live" not in request.keywords:  # unit tests use the fixtures' dates: pin "today" to their recording day
         monkeypatch.setattr(http, "today", lambda: datetime.date(2026, 10, 4))
+    monkeypatch.setattr(http, "RETRY_DELAY", 0)
+    monkeypatch.setattr(http, "JITTER", (0, 0))
     http.set_transport(None)
     places._cache.clear()
     yield
