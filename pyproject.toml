@@ -35,6 +35,7 @@ Homepage = "https://github.com/sepehr071/mrbilit-mcp"
 Source = "https://github.com/sepehr071/mrbilit-mcp"
 Changelog = "https://github.com/sepehr071/mrbilit-mcp/releases"
 Issues = "https://github.com/sepehr071/mrbilit-mcp/issues"
+Website = "https://mcpfarsi.ir/servers/mrbilit/"
 
 [project.scripts]
 mrbilit-mcp = "mrbilit_mcp.server:main"

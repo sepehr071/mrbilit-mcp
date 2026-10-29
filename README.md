@@ -15,6 +15,7 @@ find the cheapest option on a date or over a month, see seats, baggage and refun
 [![CI](https://github.com/sepehr071/mrbilit-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/sepehr071/mrbilit-mcp/actions/workflows/ci.yml)
 [![MCP Registry](https://img.shields.io/badge/MCP_Registry-io.github.sepehr071%2Fmrbilit--mcp-7c3aed)](https://registry.modelcontextprotocol.io/?q=mrbilit-mcp)
 [![License: MIT](https://img.shields.io/badge/license-MIT-16a34a)](https://github.com/sepehr071/mrbilit-mcp/blob/main/LICENSE)
+[![mcpfarsi](https://mcpfarsi.ir/badge/mrbilit.svg)](https://mcpfarsi.ir/servers/mrbilit/)
 
 [![Install in Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=mrbilit&config=eyJjb21tYW5kIjoidXZ4IiwiYXJncyI6WyJtcmJpbGl0LW1jcCJdfQ==)
 [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_mrbilit--mcp-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=mrbilit&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22mrbilit-mcp%22%5D%7D)
@@ -431,6 +432,7 @@ publishes to PyPI and the [MCP Registry](https://registry.modelcontextprotocol.i
 - [flytoday-mcp](https://github.com/sepehr071/flytoday-mcp) for flights, hotels, trains and buses on Flytoday
 - [jabama-mcp](https://github.com/sepehr071/jabama-mcp) for villas, tours and events on Jabama
 - [otaghak-mcp](https://github.com/sepehr071/otaghak-mcp) for villa, cottage and apartment stays on Otaghak
+- Listed on [mcpfarsi.ir](https://mcpfarsi.ir/servers/mrbilit/), the Persian MCP marketplace
 
 If this saves you clicks, a star helps others find it.
 
