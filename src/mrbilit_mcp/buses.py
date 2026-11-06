@@ -15,7 +15,7 @@ City = Annotated[
     Field(
         ge=100_000,
         le=99_999_999,
-        description="Bus city or terminal id from mb_find_place(mode='bus'), e.g. 11320000 (Tehran, all terminals) or 31310000 (Mashhad).",
+        description="Bus city or terminal id from mb_find_place(mode='bus'), e.g. 11320000 (Tehran).",
     ),
 ]
 TaxiCity = Annotated[
@@ -23,10 +23,10 @@ TaxiCity = Annotated[
     Field(
         ge=100_000,
         le=99_999_999,
-        description="City id from mb_find_place(mode='taxi'), e.g. 11320000 (Tehran) or 54310000 (Rasht).",
+        description="City id from mb_find_place(mode='taxi'), e.g. 11320000 (Tehran).",
     ),
 ]
-Date = Annotated[dt.date, Field(description="Departure date YYYY-MM-DD, e.g. '2026-10-20'.")]
+Date = Annotated[dt.date, Field(description="Departure date YYYY-MM-DD.")]
 HHMM = Annotated[str | None, Field(pattern=r"^([01]\d|2[0-3]):[0-5]\d$", description="Local time HH:MM, e.g. '18:00'.")]
 SEARCH_FLAGS = {
     "includeClosed": True,
@@ -49,7 +49,7 @@ async def mb_search_buses(
         list[Annotated[int, Field(ge=1)]] | None,
         Field(
             max_length=10,
-            description="Only these company ids, from `companies` of a result or mb_companies(mode='bus'), e.g. [4, 16].",
+            description="Only these company ids from `companies` of a result, e.g. [4, 16].",
         ),
     ] = None,
     depart_after: HHMM = None,
@@ -59,12 +59,9 @@ async def mb_search_buses(
 ) -> dict[str, Any]:
     """Intercity buses on a date: company, terminal, times, price per seat, free seats, bus type, stops, refund penalties.
 
-    A city id covers all its terminals; a terminal id only that terminal. price_toman is per
-    seat (a party pays it once per seat). refund_penalties apply to every bus unless a bus lists
-    its own: until_hours_before = the step applies until that many hours before departure
-    (null = up to departure); free_cancel_minutes = free cancellation within that many minutes
-    after purchase. Next: mb_bus_seats with a bus_id for seat numbers and women/men seats; other
-    days: mb_bus_price_calendar.
+    A city id covers all its terminals. price_toman is per seat. Top-level refund_penalties
+    apply to every bus unless a bus lists its own (until_hours_before: step applies until then,
+    null = up to departure). Next: mb_bus_seats with a bus_id; other days: mb_bus_price_calendar.
     """
     not_past(date)
     body = obj(
@@ -106,6 +103,7 @@ async def mb_search_buses(
                 "free_cancel_minutes": b.get("freeCancellationMins"),
             }
         )
+        rows[-1] = {k: v for k, v in rows[-1].items() if k == "refund_penalties" or v not in (None, [])}
     rows.sort(
         key=(lambda r: (r["price_toman"] or 0, r["departure"] or ""))
         if sort == "cheapest"
@@ -113,10 +111,10 @@ async def mb_search_buses(
     )
     shown = rows[:limit]
     # Most buses share one of two penalty tables: list the one that saves most text once, as mb_search_trains does.
-    tiers = [r["refund_penalties"] for r in shown]
+    tiers = [r.get("refund_penalties", []) for r in shown]
     common = max(tiers, key=lambda t: tiers.count(t) * len(str(t))) if tiers else []
     for r in shown:
-        if r["refund_penalties"] == common:
+        if r.get("refund_penalties") == common:
             del r["refund_penalties"]
     fd = body.get("filterData") or {}
     out: dict[str, Any] = {
@@ -137,16 +135,13 @@ async def mb_search_buses(
 async def mb_bus_price_calendar(
     origin: City,
     destination: City,
-    start_date: Annotated[
-        dt.date | None, Field(description="First day YYYY-MM-DD, e.g. '2026-10-10'; default today.")
-    ] = None,
+    start_date: Annotated[dt.date | None, Field(description="First day YYYY-MM-DD; default today.")] = None,
     days: Annotated[int, Field(ge=1, le=90, description="Number of days to cover.")] = 30,
     seats: Annotated[int, Field(ge=1, le=10, description="Seats needed.")] = 1,
 ) -> dict[str, Any]:
     """Cheapest bus seat per day for a route; days without buses (or not on sale yet) are left out.
 
-    Use to find the cheapest day, then mb_search_buses for that day. Bus sales usually open
-    about a month ahead.
+    Then mb_search_buses for the chosen day.
     """
     start = start_date or dt.date.today()
     prices = await fetch(
@@ -168,15 +163,13 @@ async def mb_bus_price_calendar(
 
 @tool("Bus seat map")
 async def mb_bus_seats(
-    bus_id: Annotated[int, Field(ge=1, description="bus_id from a fresh mb_search_buses result, e.g. 55983988.")],
+    bus_id: Annotated[int, Field(ge=1, description="bus_id from a fresh mb_search_buses result.")],
 ) -> dict[str, Any]:
     """Seat map of one bus: free seat numbers, seats sold to women and to men, and a row-by-row layout.
 
-    layout: one line per row from the front; each seat is its number plus a mark: none = free,
-    w = sold to a woman, m = sold to a man, x = not sold online; '|' = the aisle (seats on the
-    same side of it are neighbours), '--' = no seat, 'DR' = driver. Rule text (who may sit
-    where) is in seat_rules. price_toman is null for most buses: use the search price. bus_id
-    expires: take it from a fresh search.
+    layout: one line per row from the front; seat = number + mark (none free, w woman, m man,
+    x not sold online); '|' aisle, '--' no seat, 'DR' driver. price_toman is null for most
+    buses: use the search price.
     """
     try:
         d = await fetch(
@@ -224,7 +217,7 @@ async def mb_search_taxis(
     date: Date,
     car_class: Annotated[
         Literal["any", "economy", "vip", "formal"],
-        Field(description="Car class: economy (Samand/Peugeot), vip, formal (top cars)."),
+        Field(description="Car class."),
     ] = "any",
     depart_after: HHMM = None,
     depart_before: HHMM = None,
@@ -232,9 +225,7 @@ async def mb_search_taxis(
 ) -> dict[str, Any]:
     """Private door-to-door intercity taxis (whole car, up to 3 passengers) for a date, one offer per pick-up slot.
 
-    price_toman is for the whole car, not per person. `classes` summarises each car class
-    (cars, cheapest price, slots). Many city pairs have no taxis (Tehran-Mashhad, Tehran-Qom):
-    the empty result then says so. Taxi cities: mb_find_place(mode='taxi').
+    price_toman is for the whole car. Many city pairs have no taxis (e.g. Tehran-Mashhad).
     """
     not_past(date)
     body = obj(
@@ -286,7 +277,11 @@ async def mb_search_taxis(
 def _penalties(b: dict[str, Any]) -> list[dict[str, Any]]:
     out = []
     for p in b.get("penaltyRates") or []:
-        row = {"until_hours_before": p.get("hoursBefore"), "penalty_pct": p.get("percent")}
+        hours = p.get("hoursBefore")
+        row = {
+            "until_hours_before": int(hours) if isinstance(hours, float) and hours.is_integer() else hours,
+            "penalty_pct": p.get("percent"),
+        }
         if p.get("customText"):
             row["condition"] = p["customText"]
         out.append(row)

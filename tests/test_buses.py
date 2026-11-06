@@ -28,7 +28,6 @@ async def test_mb_search_buses(client, api):
         "bus": "وی آی پی29نفره صندلی تخت شو همراه باشارژراختصاصی",
         "features": ["تخت شو", "شارژر دار"],
         "stops": ["سبزوار", "نیشابور"],
-        "free_cancel_minutes": None,
     }
     assert data["refund_penalties"] == [  # the most common table, listed once
         {"until_hours_before": 1.0, "penalty_pct": 10},

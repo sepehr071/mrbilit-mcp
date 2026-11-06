@@ -30,7 +30,6 @@ async def test_mb_search_hotels(client, api):
         "meals": "بدون وعده غذایی",
         "cheapest_room_sleeps": 2,
         "refundable": False,
-        "mrbilit_offer": False,
     }
     assert data["hotels"][3]["stars"] is None  # a hotel apartment has no star rating
     sent = api.calls[0].url.params

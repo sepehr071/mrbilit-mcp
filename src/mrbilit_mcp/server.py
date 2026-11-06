@@ -1,6 +1,7 @@
 """MCP server entry point: registers every read-only MrBilit tool."""
 
 import functools
+import inspect
 import json
 import logging
 
@@ -15,8 +16,7 @@ intercity buses, private taxis, Iranian hotels. Nothing here logs in, holds a se
 
 Start with mb_find_place(query, mode): each search takes its own ids (flight IATA code, Tehran domestic
 THR; train station id, Tehran 1; bus/taxi 8-digit city id, Tehran 11320000; hotel slugs 'mashhad',
-'mashhad/enghelab'). Each tool's description names the next call; mb_notices, mb_help, mb_travel_guide
-and mb_companies give context.
+'mashhad/enghelab'). mb_notices, mb_help, mb_travel_guide and mb_companies give context.
 
 Conventions: every price is Toman (the API's Rial / 10), in fields named *_toman. Flight and train
 price_toman is per adult (flight total_toman = whole party), bus per seat, taxi per car, hotel the
@@ -53,9 +53,20 @@ def compact(fn):
 for fn, title in TOOLS:
     mcp.add_tool(compact(fn), title=title, annotations=READ_ONLY, structured_output=False)
 
-for t in mcp._tool_manager.list_tools():  # drop pydantic's auto "title" on every parameter (~1 KB per tools/list)
+for t in mcp._tool_manager.list_tools():  # pydantic adds a redundant "title" to every property
+    t.description = inspect.cleandoc(t.description or "")  # docstring indentation costs tokens per request
+    t.parameters.pop("title", None)
     for prop in t.parameters.get("properties", {}).values():
         prop.pop("title", None)
+        # `X | None` comes out as anyOf [X, null]; the same schema as {"type": [X's type, "null"]} is shorter
+        branches = prop.get("anyOf") or []
+        if len(branches) == 2 and {"type": "null"} in branches:
+            other = next(b for b in branches if b != {"type": "null"})
+            if isinstance(other.get("type"), str):
+                del prop["anyOf"]
+                prop.update(other, type=[other["type"], "null"])
+                if "enum" in prop:
+                    prop["enum"] = [*prop["enum"], None]
 
 
 def main() -> None:

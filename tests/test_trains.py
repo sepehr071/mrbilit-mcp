@@ -29,7 +29,6 @@ async def test_mb_search_trains_bookable_only(client, api):
                 "price_toman": 760000,
                 "seats_left": 18,
                 "bookable": True,
-                "features": [],
             }
         ],
     }

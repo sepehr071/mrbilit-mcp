@@ -28,11 +28,11 @@ HotelRef = Annotated[
     Field(
         pattern=rf"^{REF}$",
         max_length=120,
-        description="Hotel as 'city_slug/hotel_slug' from mb_search_hotels, mb_city_hotels or mb_find_place, e.g. 'mashhad/enghelab'.",
+        description="Hotel as 'city_slug/hotel_slug' from mb_search_hotels, e.g. 'mashhad/enghelab'.",
     ),
 ]
-CheckIn = Annotated[dt.date, Field(description="Check-in date YYYY-MM-DD, e.g. '2026-10-20'.")]
-CheckOut = Annotated[dt.date, Field(description="Check-out date YYYY-MM-DD, e.g. '2026-10-23' (1 to 30 nights).")]
+CheckIn = Annotated[dt.date, Field(description="Check-in date YYYY-MM-DD.")]
+CheckOut = Annotated[dt.date, Field(description="Check-out date YYYY-MM-DD (1 to 30 nights).")]
 HotelType = Literal["any", "hotel", "hotel_apartment", "traditional", "eco_lodge", "guest_house", "boutique", "other"]
 TYPE_IDS = {
     "hotel": {1, 2, 3, 4, 5},
@@ -67,7 +67,7 @@ async def mb_search_hotels(
         list[Annotated[str, Field(min_length=2, max_length=30)]] | None,
         Field(
             max_length=5,
-            description="Only hotels with an amenity whose Persian title contains each word, e.g. ['استخر'] (pool, jacuzzi or sauna), ['پارکینگ'].",
+            description="Persian words, each matching an amenity title, e.g. ['استخر'] (pool), ['پارکینگ'].",
         ),
     ] = None,
     breakfast_only: Annotated[bool, Field(description="Only stays whose cheapest room includes breakfast.")] = False,
@@ -75,11 +75,10 @@ async def mb_search_hotels(
 ) -> dict[str, Any]:
     """Hotels and stays with a free room in a city for the dates, with the cheapest room price for the whole stay.
 
-    price_toman is the cheapest room for all nights (one room, after discount); per_night_toman
-    divides it by the nights; cheapest_room_sleeps is how many that room sleeps (often 1); photo is the cover image.
-    Guest count does not change prices: pick a room that fits with mb_hotel_rooms(guests=...). Sold-out hotels are not listed (mb_city_hotels lists every hotel). Next:
-    mb_hotel (reviews, location), mb_hotel_rooms (every room and exact price),
-    mb_hotel_calendar (cheapest nights).
+    price_toman is the cheapest room for all nights (one room, after discount);
+    cheapest_room_sleeps is how many that room sleeps (often 1). Guest count does not change
+    prices: pick a fitting room with mb_hotel_rooms(guests=...). Next: mb_hotel, mb_hotel_rooms,
+    mb_hotel_calendar.
     """
     nights = _nights(check_in, check_out)
     body = await fetch(
@@ -107,16 +106,17 @@ async def mb_search_hotels(
             or any(not any(w in (a.get("title") or "") for a in h.get("amenities") or []) for w in amenities or [])
         ):
             continue
+        before = toman(h.get("totalPrice"))
         rows.append(
             {
                 **_card(h),
                 "price_toman": price,
                 "per_night_toman": round(price / nights),
-                "before_discount_toman": toman(h.get("totalPrice")),
+                **({"before_discount_toman": before} if before != price else {}),
                 "meals": (h.get("serviceLevel") or {}).get("title"),
                 "cheapest_room_sleeps": h.get("minRoomPriceCapacity"),
                 "refundable": h.get("refundable"),
-                "mrbilit_offer": h.get("isMrBilitOffer"),
+                **({"mrbilit_offer": True} if h.get("isMrBilitOffer") else {}),
             }
         )
     if sort == "rating":
@@ -141,7 +141,7 @@ async def mb_hotel(
         Field(
             pattern=rf"^(\d{{1,9}}|{REF})$",
             max_length=120,
-            description="Hotel as 'city_slug/hotel_slug' (e.g. 'mashhad/enghelab') or its numeric id (e.g. '8778').",
+            description="'city_slug/hotel_slug' (e.g. 'mashhad/enghelab') or numeric id.",
         ),
     ],
     reviews: Annotated[int, Field(ge=0, le=15, description="How many of the latest guest reviews to include.")] = 5,
@@ -149,11 +149,9 @@ async def mb_hotel(
 ) -> dict[str, Any]:
     """One hotel: stars, guest rating (0-5) and latest reviews, location, landmarks, check-in rules, amenities, FAQ.
 
-    The site shows ratings x2 out of 10. landmarks: distance in km (drive minutes). Review text is cut at
-    400 characters unless full_text. For room
-    prices on dates call mb_hotel_rooms with `hotel` (null after a numeric id: get the
-    'city/hotel' ref from mb_find_place(mode='hotel') with the name); for the cheapest nights
-    mb_hotel_calendar.
+    landmarks: distance in km (drive minutes). Review text is cut at 400 characters unless
+    full_text. `hotel` is null after a numeric id: get the 'city/hotel' ref from
+    mb_find_place(mode='hotel'). Prices: mb_hotel_rooms, mb_hotel_calendar.
     """
     try:
         body = await fetch(f"{HOTEL}/api/hotel/{_path(hotel)}/static")
@@ -196,7 +194,7 @@ async def mb_hotel(
             }
             for p in (h.get("popularPlaces") or [])[:10]
         ],
-        "description": html_text(h.get("description") or h.get("shortDescription"))[: None if full_text else 1500],
+        "description": html_text(h.get("description") or h.get("shortDescription"))[: None if full_text else 800],
         "rules": (h.get("termsAndConditions") or "").strip()[: None if full_text else 1500],
         # The other FAQ rows are the same site-wide questions (voucher, pets, invoice) on every hotel.
         "faq": [
@@ -233,10 +231,9 @@ async def mb_hotel_rooms(
 ) -> dict[str, Any]:
     """Every room of a hotel with its exact price for the dates: whole stay, per night, rooms left, meals.
 
-    price_toman is the whole stay for one room after discount (prices do not depend on the
-    guest count; choose rooms whose sleeps fits, and add up several rooms for a group).
-    rooms_left 0 = full. cancellation is the hotel's refund rule. Empty rooms list = nothing
-    free for these dates (try mb_hotel_calendar).
+    price_toman is the whole stay for one room after discount (independent of guest count:
+    choose rooms whose sleeps fits). rooms_left 0 = full. Empty rooms = nothing free (try
+    mb_hotel_calendar).
     """
     nights = _nights(check_in, check_out)
     try:
@@ -263,13 +260,14 @@ async def mb_hotel_rooms(
             continue
         for p in r.get("prices") or []:
             nightly = [toman(n.get("salePrice")) for n in p.get("breakDownRoomPrices") or []]
+            before = toman(p.get("totalPrice"))
             rows.append(
                 {
                     "room": r.get("name"),
                     "sleeps": r.get("capacity"),
                     "extra_beds": r.get("extraBedCapacity") or 0,
                     "price_toman": toman(p.get("payable")),
-                    "before_discount_toman": toman(p.get("totalPrice")),
+                    **({"before_discount_toman": before} if before != toman(p.get("payable")) else {}),
                     "per_night_toman": nightly[0] if len(set(nightly)) == 1 else nightly,
                     "extra_bed_toman": toman(p.get("extraBedPrice")) or None,
                     "rooms_left": p.get("availableRoomCount"),
@@ -286,9 +284,8 @@ async def mb_hotel_rooms(
 async def mb_hotel_calendar(hotel: HotelRef) -> dict[str, Any]:
     """Cheapest one-night room price per night from today, up to about 48 days (often fewer).
 
-    Use to find the cheapest or the next free nights, then mb_hotel_rooms for exact prices.
-    Nights missing inside the range have no free room; nights after the last one listed are
-    not loaded yet (not the same as sold out).
+    Then mb_hotel_rooms for exact prices. Nights missing inside the range have no free room;
+    nights after the last one are not loaded yet.
     """
     rows = await fetch(f"{HOTEL}/api/hotel/{_path(hotel)}/calendar")
     days = sorted(
@@ -318,9 +315,8 @@ async def mb_city_hotels(
 ) -> dict[str, Any]:
     """Every listed hotel of a city, sold out ones included, with stars, rating and address; no prices.
 
-    Use to browse or find a hotel by stars or type regardless of dates; filters apply to one
-    page of 90 hotels at a time, so check `pages`. Prices: mb_search_hotels (dates) or
-    mb_hotel_calendar (one hotel).
+    Filters apply to one page of 90 hotels at a time, so check `pages`. Prices:
+    mb_search_hotels or mb_hotel_calendar.
     """
     # The server caches this list on cityName + pageNumber only and then ignores stars/tag/pageSize:
     # send neither, filter here.

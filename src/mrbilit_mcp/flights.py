@@ -18,13 +18,11 @@ Airport = Annotated[
     str,
     Field(
         pattern=r"^[A-Za-z]{3}([Aa][Ll][Ll])?$",
-        description="IATA airport or city code from mb_find_place(mode='flight'), e.g. 'THR', 'MHD', 'IKA' or 'ISTALL' (all Istanbul airports).",
+        description="IATA airport or city code from mb_find_place(mode='flight'), e.g. 'THR', 'MHD', 'ISTALL' (all Istanbul airports).",
     ),
 ]
-Date = Annotated[dt.date, Field(description="Gregorian date YYYY-MM-DD, e.g. '2026-10-20'.")]
-ReturnDate = Annotated[
-    dt.date | None, Field(description="Return date YYYY-MM-DD for a round trip, e.g. '2026-10-23'; omit for one-way.")
-]
+Date = Annotated[dt.date, Field(description="Gregorian date YYYY-MM-DD.")]
+ReturnDate = Annotated[dt.date | None, Field(description="Return date YYYY-MM-DD; omit for one-way.")]
 Adults = Annotated[int, Field(ge=1, le=9, description="Adults (12+).")]
 Children = Annotated[int, Field(ge=0, le=8, description="Children (2-11).")]
 Infants = Annotated[int, Field(ge=0, le=8, description="Infants (under 2).")]
@@ -50,14 +48,14 @@ async def mb_search_flights(
     infants: Infants = 0,
     cabin: Annotated[
         Literal["any", "economy", "economy_plus", "premium_economy", "business", "first"],
-        Field(description="Cabin class filter (applied here; the API itself ignores it)."),
+        Field(description="Cabin class filter."),
     ] = "any",
     sort: Annotated[Literal["cheapest", "earliest"], Field(description="Order of the flights.")] = "cheapest",
     airlines: Annotated[
         list[Annotated[str, Field(pattern=r"^[A-Za-z0-9]{2,3}$")]] | None,
         Field(
             max_length=10,
-            description="Only these airline codes, e.g. ['IR', 'W5'] (codes from results or mb_companies).",
+            description="Only these airline codes, e.g. ['IR', 'W5'].",
         ),
     ] = None,
     direct_only: Annotated[bool, Field(description="Only flights without a connection.")] = False,
@@ -68,11 +66,9 @@ async def mb_search_flights(
     """Search flights for a date: every bookable flight with price, seats left, baggage and times.
 
     price_toman is one adult's fare (taxes included); total_toman the whole party. Domestic round
-    trips come back as two lists (`outbound`, `return`, separate tickets); international ones as
-    packages priced for both ways (flight_id names both legs). International flights from Tehran
-    can leave from IKA when THR is asked (segments show the real airports). Flights not on sale
-    are counted in not_on_sale. Next: mb_flight_fare_details with the flight_id (refunds, exact
-    baggage, rules); to pick the day first, mb_flight_price_calendar.
+    trips come back as two lists (`outbound`, `return`); international ones as packages priced
+    for both ways. Unpriced flights are only counted in not_on_sale. Next: mb_flight_fare_details
+    with the flight_id; to pick the day first, mb_flight_price_calendar.
     """
     not_past(date)
     o, d = origin.upper(), destination.upper()
@@ -103,16 +99,13 @@ async def mb_search_flights(
 async def mb_flight_price_calendar(
     origin: Airport,
     destination: Airport,
-    start_date: Annotated[
-        dt.date | None, Field(description="First day YYYY-MM-DD, e.g. '2026-10-15'; default today.")
-    ] = None,
+    start_date: Annotated[dt.date | None, Field(description="First day YYYY-MM-DD; default today.")] = None,
     days: Annotated[int, Field(ge=1, le=180, description="Number of days to cover.")] = 30,
 ) -> dict[str, Any]:
     """Cheapest one-adult fare per day for a route over a date range, in one call.
 
-    Use to find the cheapest day to fly, then call mb_search_flights for that day. The values
-    are the site's cached minimums and can differ from a live search; days with no known fare
-    are left out (no flights, sold out or not cached).
+    Then call mb_search_flights for the chosen day. Values are cached minimums and can differ
+    from a live search; days with no known fare are left out.
     """
     start = start_date or dt.date.today()
     rows = await fetch(
@@ -153,14 +146,12 @@ async def mb_flight_fare_details(
         Field(
             min_length=1,
             max_length=400,
-            description="flight_id from mb_search_flights, e.g. '21919377' (international round trip: '21894997+21924108').",
+            description="flight_id from mb_search_flights, e.g. '21919377' or '21894997+21924108'.",
         ),
     ],
     return_date: Annotated[
         dt.date | None,
-        Field(
-            description="Only for an international round-trip package: its return date YYYY-MM-DD, e.g. '2026-10-23'."
-        ),
+        Field(description="Return date, only for an international round-trip package."),
     ] = None,
     adults: Adults = 1,
     children: Children = 0,
@@ -169,10 +160,8 @@ async def mb_flight_fare_details(
 ) -> dict[str, Any]:
     """Every fare of one flight with refund penalties, confirmed baggage, fare rules, notes and per-passenger prices.
 
-    Re-runs the mb_search_flights search (same route, date, party). baggage_checked_with_airline
-    true = re-checked with the airline (false = search value, usually right). refund_penalties:
-    penalty percent per window before departure, refund = paid x (100 - penalty_pct) / 100;
-    penalty_text when there is no percent.
+    Re-runs the mb_search_flights search (same route, date, party). refund_penalties: penalty
+    percent per window before departure, refund = paid x (100 - penalty_pct) / 100.
     """
     not_past(date)
     o, d = origin.upper(), destination.upper()
@@ -236,19 +225,19 @@ def _result(body: dict[str, Any], pax: tuple[int, int, int], f: dict[str, Any]) 
         if (f["after"] and hhmm < f["after"]) or (f["before"] and hhmm > f["before"]):
             continue
         fare = min(fares, key=lambda p: _pax_fare(p, "ADL") or 0)
-        rows.append(
-            {
-                "flight_id": _flight_id(fl),
-                "price_toman": toman(_pax_fare(fare, "ADL")),
-                "total_toman": party_total(fare, pax),
-                "seats_left": fare.get("Capacity"),
-                "cabin": fare.get("CabinClass"),
-                "charter": fare.get("IsCharter"),
-                "baggage": _baggage(fare.get("Baggage"), fare.get("BaggageType")),
-                "baggage_to_confirm": bool(fare.get("NeedGetPrice")),
-                "segments": [_segment(s) for s in segments],
-            }
-        )
+        row = {
+            "flight_id": _flight_id(fl),
+            "price_toman": toman(_pax_fare(fare, "ADL")),
+            "total_toman": party_total(fare, pax),
+            "seats_left": fare.get("Capacity"),
+            "cabin": fare.get("CabinClass"),
+            "charter": fare.get("IsCharter"),
+            "baggage": _baggage(fare.get("Baggage"), fare.get("BaggageType")),
+            "segments": [_segment(s) for s in segments],
+        }
+        if fare.get("NeedGetPrice"):
+            row["baggage_to_confirm"] = True
+        rows.append(row)
     if f["sort"] == "earliest":
         rows.sort(key=lambda r: r["segments"][0]["departure"] or "")
     else:
@@ -312,8 +301,9 @@ def _segment(s: dict[str, Any], full: bool = False) -> dict[str, Any]:
         "stops": max(len(legs) - 1, 0),
         "flights": [f"{leg.get('AirlineCode')} {leg.get('FlightNumber')}" for leg in legs],
         "airline": ((legs[0].get("Airline") or {}).get("PersianTitle")) if legs else None,
-        "aircraft": ((legs[0].get("AirCraft") or {}).get("ShortTitle")) if legs else None,
     }
+    if legs and (legs[0].get("AirCraft") or {}).get("ShortTitle"):
+        out["aircraft"] = legs[0]["AirCraft"]["ShortTitle"]
     if full:
         out["legs"] = [
             {

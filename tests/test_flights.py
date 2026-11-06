@@ -24,7 +24,6 @@ async def test_mb_search_flights_one_way_party_total(client, api):
         "cabin": "Economy",
         "charter": True,
         "baggage": "20 KG",
-        "baggage_to_confirm": False,
         "segments": [
             {
                 "from": "THR",

@@ -43,10 +43,8 @@ async def mb_notices(
 ) -> dict[str, Any]:
     """Notices MrBilit currently shows on its pages (disruptions, rule changes, payment options), for a service or route.
 
-    Route codes build the site path the notice rules match against: /flights/THR-MHD,
-    /trains/tehran-mashhad, /hotel/mashhad. search_mode limits a flight notice to domestic or
-    international searches; site_wide_active counts every active notice, not only these. Use
-    before recommending a trip, alongside the search tools.
+    Route codes build the site path the notices match (/flights/THR-MHD, /trains/tehran-mashhad,
+    /hotel/mashhad). site_wide_active counts every active notice. Use before recommending a trip.
     """
     rows = await fetch(f"{CONTENT}/messages", {"web": "true"})  # web=false rows are old, switched-off texts
     path = None
@@ -142,18 +140,15 @@ async def mb_help(
     ],
     source: Annotated[
         Literal["all", "terms", "faq", "support"],
-        Field(
-            description="terms = official rules (refunds, baggage, ID), faq = general FAQ, support = help-center guides and request forms."
-        ),
+        Field(description="terms = official rules, faq = general FAQ, support = help-center guides."),
     ] = "all",
     limit: Annotated[int, Field(ge=1, le=10, description="Max passages.")] = 5,
     full_text: FullText = False,
 ) -> dict[str, Any]:
     """Search MrBilit's official rules, FAQ and help-center guides; returns the best matching passages.
 
-    Use for refund and cancellation rules, ID and baggage rules, how auto-reserve works, how to
-    request a change, etc. Passages are plain text with the section they come from. Rules of
-    one fare are in mb_flight_fare_details / mb_search_trains / mb_search_buses instead.
+    Use for refund, cancellation, ID and baggage rules. Rules of one fare are in
+    mb_flight_fare_details / mb_search_trains / mb_search_buses instead.
     """
     wanted = [src for src in HELP_LOADERS if source in ("all", src)]
     loaded = await asyncio.gather(*(_cached(f"help:{src}", HELP_LOADERS[src]) for src in wanted))
@@ -187,8 +182,8 @@ async def mb_travel_guide(
     """MrBilit's guide for a route or city (summary, FAQ, article) and matching travel-magazine posts.
 
     Route guide: service + origin + destination (flight IATA codes, train/bus English slugs such
-    as 'tehran'; hotel: destination city slug only). Magazine: query. Editorial text: prices or
-    rules quoted in it can be out of date; use the search tools for live prices.
+    as 'tehran'; hotel: destination city slug only). Magazine: query. Quoted prices can be out
+    of date.
     """
     if not (service and destination) and not query:
         raise ToolError("Give service + destination for a route guide, or query for magazine posts.")

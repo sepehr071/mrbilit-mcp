@@ -43,18 +43,15 @@ async def mb_find_place(
     query: Query,
     mode: Annotated[
         Literal["flight", "train", "bus", "taxi", "hotel"],
-        Field(description="Which search the code is for; each mode uses its own ids."),
+        Field(description="Which search the code is for."),
     ],
     limit: Annotated[int, Field(ge=1, le=30, description="Max places per list.")] = 10,
 ) -> dict[str, Any]:
     """Turn a city, airport, station or hotel name into the code a search takes.
 
-    flight: `airports` (Iranian, IATA code; Tehran domestic is THR, not IKA; prefer these to
-    XXXALL for domestic routes) and `cities` (any country; `XXXALL` = all its airports).
-    train: station ids (Tehran 1, Mashhad 191). bus / taxi: 8-digit city ids (Tehran 11320000 =
-    all terminals; 11321006 = Tehran South). hotel: city slugs (mb_search_hotels,
-    mb_city_hotels) and hotel slugs (mb_hotel, mb_hotel_rooms).
-    Next: mb_search_flights, mb_search_trains, mb_search_buses, mb_search_taxis or mb_search_hotels.
+    flight: `airports` (Iranian IATA codes; Tehran is THR; prefer to XXXALL for domestic routes)
+    and `cities` (any country; XXXALL = all its airports). train: station ids. bus / taxi: 8-digit
+    city ids (11320000 = Tehran, all terminals). hotel: city and hotel slugs.
     """
     q = norm(query)
     if mode == "flight":
@@ -137,7 +134,7 @@ async def mb_find_place(
 async def mb_companies(
     mode: Annotated[
         Literal["flight", "train", "bus"],
-        Field(description="Airlines, rail operators, or bus companies and taxi classes."),
+        Field(description="Airlines, rail operators, or bus companies."),
     ],
     query: Annotated[
         str | None,
@@ -147,9 +144,8 @@ async def mb_companies(
 ) -> dict[str, Any]:
     """List airlines (IATA code), rail operators or bus companies (id) with Persian and English names.
 
-    Use to name a code seen in results (airline 'W5', bus company 4) or to find an airline code
-    for the `airlines` filter of mb_search_flights. Rail operators repeat under several ids; each
-    row lists all of them. Bus ids 276/278/280 are the taxi classes VIP/Economy/Formal.
+    Use to name a code seen in results or to find a code for the `airlines` filter. Bus ids
+    276/278/280 are the taxi classes VIP/Economy/Formal.
     """
     q = norm(query or "")
     if mode == "flight":
