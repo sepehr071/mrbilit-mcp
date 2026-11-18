@@ -346,7 +346,7 @@ npx @modelcontextprotocol/inspector uvx mrbilit-mcp
 - Read-only: no login or OTP, no seat hold, reservation, order, payment, wallet, price alert or review posting.
   The only POSTs are searches and price lookups the site itself makes before booking.
 - Admin fields (`created_by`, `updated_by`) of the content CMS are never passed through.
-- Sends a real Chrome TLS fingerprint and headers (via curl_cffi) and at most two requests at a time with a short random delay, since the API hosts share one server.
+- Sends at most two requests at a time with a short random delay, since the API hosts share one server.
 - If MrBilit serves a bot-check page, the server can clear it in a headless browser: `pip install mrbilit-mcp[browser]`, then `patchright install chromium`.
 
 <a id="فارسی"></a>

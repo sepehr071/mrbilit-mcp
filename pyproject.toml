@@ -1,6 +1,6 @@
 [project]
 name = "mrbilit-mcp"
-version = "0.5.1"
+version = "0.5.2"
 description = "Unofficial read-only MCP server for MrBilit: cheapest flights, trains, buses, taxis and hotels in Iran, with seats, refund rules and exact prices."
 readme = "README.md"
 license = "PolyForm-Noncommercial-1.0.0"
