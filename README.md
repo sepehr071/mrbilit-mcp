@@ -20,7 +20,7 @@ find the cheapest option on a date or over a month, see seats, baggage and refun
 [![Install in Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=mrbilit&config=eyJjb21tYW5kIjoidXZ4IiwiYXJncyI6WyJtcmJpbGl0LW1jcCJdfQ==)
 [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_mrbilit--mcp-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=mrbilit&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22mrbilit-mcp%22%5D%7D)
 
-[For AI agents](#for-ai-agents) · [Why](#why) · [What it can do](#what-it-can-do) · [Quick start](#quick-start) · [Tools](#tools) · [How it works](#how-it-works) · [Good to know](#good-to-know) · [FAQ](#faq) · [Configuration](#configuration) · [فارسی](#فارسی) · [Development](#development) · [Related servers](#related-servers) · [Disclaimer](#disclaimer) · [License](#license)
+[For AI agents](#for-ai-agents) · [Why](#why) · [What it can do](#what-it-can-do) · [Quick start](#quick-start) · [Tools](#tools) · [Good to know](#good-to-know) · [FAQ](#faq) · [Configuration](#configuration) · [فارسی](#فارسی) · [Development](#development) · [Related servers](#related-servers) · [Disclaimer](#disclaimer) · [License](#license)
 
 </div>
 
@@ -249,23 +249,6 @@ trains (Tehran `1`, Mashhad `191`), 8-digit city ids for buses and taxis (Tehran
 </details>
 
 All 22 tools are annotated `readOnlyHint: true` and return compact structured JSON, so they don't flood the agent's context.
-
-## How it works
-
-```text
-  AI agent  (Claude, Cursor, Copilot, ...)
-      │
-      │  MCP over stdio
-      ▼
-  mrbilit-mcp  (runs on your machine)
-      │
-      │  HTTPS (REST, optional proxy)
-      ├──────▶  flight.atighgasht.com, train.mrbilit.com, masir.mrbilit.com, bus.mrbilit.ir, hotel.mrbilit.ir
-      └──────▶  content.mrbilit.ir, directus.mrbilit.ir, mrbilit.com (site lists, magazine)
-```
-
-`mrbilit-mcp` runs locally and calls the same public endpoints the mrbilit.com website uses. There's no hosted
-server in between, no API key, and nothing about you is sent anywhere else.
 
 ## Good to know
 
